@@ -68,13 +68,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\HeaderFooter.css" />
+    <Content Include="WebForm\BuyArtwork.aspx" />
     <Content Include="WebForm\Homepage.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm\StyleSheet1.css" />
     <Content Include="WebForm\Artwork.aspx" />
     <Content Include="WebForm\Artist.aspx" />
+    <Content Include="WebForm\SellArtwork.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WebForm\BuyArtwork.aspx.cs">
+      <DependentUpon>BuyArtwork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\BuyArtwork.aspx.designer.cs">
+      <DependentUpon>BuyArtwork.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm\Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -103,6 +111,13 @@
     </Compile>
     <Compile Include="WebForm\Artist.aspx.designer.cs">
       <DependentUpon>Artist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\SellArtwork.aspx.cs">
+      <DependentUpon>SellArtwork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\SellArtwork.aspx.designer.cs">
+      <DependentUpon>SellArtwork.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
