@@ -18,7 +18,7 @@
             <table style="width:100%;">
                 <tr>
                     <td>
-            <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" BackColor="#fff576" DynamicMenuItemStyle-BackColor="Red">
+            <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" DynamicMenuItemStyle-BackColor="Red" DynamicHoverStyle-ForeColor="Red">
                 <DynamicMenuItemStyle BackColor="Red" />
         </asp:Menu>
             
