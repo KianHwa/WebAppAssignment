@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebAppAssignment.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="../CSS/HeaderFooter.css"/>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div class="navBar">
+            
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <table style="width:100%;">
+                <tr>
+                    <td>
+            <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" BackColor="#fff576" DynamicMenuItemStyle-BackColor="Red">
+                <DynamicMenuItemStyle BackColor="Red" />
+        </asp:Menu>
+            
+                    </td>
+                    <td>
+            <asp:Menu ID="Menu2" runat="server" DataSourceID="SiteMapDataSource2">
+            </asp:Menu>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+            
+        </div>
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" SiteMapProvider="SiteMapDataSource1"/>
+            <asp:SiteMapDataSource ID="SiteMapDataSource2" runat="server" SiteMapProvider="SiteMapDataSource2"/>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

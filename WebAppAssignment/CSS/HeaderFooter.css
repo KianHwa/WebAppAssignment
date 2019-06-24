@@ -1,0 +1,14 @@
+﻿body {
+    margin:0;
+}
+
+.navBar {
+    width: 100%;
+    height:100px;
+    background-color:yellow;
+    margin:0;
+}
+
+#form1{
+    margin:0;
+}
