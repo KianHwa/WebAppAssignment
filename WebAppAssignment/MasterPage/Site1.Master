@@ -7,13 +7,14 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link rel="stylesheet" href="../CSS/HeaderFooter.css"/>
+    <link rel="stylesheet" href="../CSS/HeaderFooter.css" type="text/css" runat="server" media="screen"/>
     <style>
-        .gg{
+        .menuItemHover{
             padding:15px;
             width:250px;
             transition:0.5s;
         }
+
     </style>
 </head>
 
@@ -25,12 +26,10 @@
                 <table style="width:100%;" >
                     <tr>
                         <td class="auto-style1">
-                <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Font-Size="Large" ForeColor="Black"  DynamicMenuItemStyle-BackColor="White" DynamicMenuItemStyle-CssClass="gg" DynamicHoverStyle-BackColor="#cccccc" DynamicHoverStyle-ForeColor="White">
-                    
-                            </asp:Menu>
+                <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Font-Size="Large" ForeColor="Black"  DynamicMenuItemStyle-BackColor="White" DynamicMenuItemStyle-CssClass="menuItemHover" DynamicHoverStyle-BackColor="black" DynamicHoverStyle-ForeColor="White" StaticHoverStyle-ForeColor="White"></asp:Menu>
                         </td>
                         <td>
-                <asp:Menu ID="Menu2" runat="server" DataSourceID="SiteMapDataSource2" Font-Size="Large" ForeColor="Black" StaticHoverStyle-ForeColor="White"></asp:Menu>
+                <asp:Menu ID="Menu2" runat="server" DataSourceID="SiteMapDataSource2" Font-Size="Large" ForeColor="Black" DynamicMenuItemStyle-BackColor="White" DynamicMenuItemStyle-CssClass="menuItemHover" DynamicHoverStyle-ForeColor ="White" DynamicHoverStyle-BackColor="black" StaticHoverStyle-ForeColor="White"></asp:Menu>
                         </td>
                     </tr>
                 </table>
