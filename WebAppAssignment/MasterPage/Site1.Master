@@ -7,14 +7,82 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link rel="stylesheet" href="../CSS/HeaderFooter.css" type="text/css" runat="server" media="screen"/>
+    <link rel="stylesheet" href="../CSS/HeaderFooter.css" type="text/css" />
     <style>
         .menuItemHover{
             padding:15px;
             width:250px;
             transition:0.5s;
         }
+        body {
+    margin: 0;
+}
 
+.logo {
+    width: 15%;
+    float: left;
+    height: 80px;
+}
+
+.navBar1 {
+    width: 40%;
+    height: 80px;
+    background-color: white;
+    margin: 0;
+    float: left;
+}
+
+.navBar2 {
+    width: 45%;
+    height: 80px;
+    float: left;
+}
+
+.navBar1 td {
+    padding: 20px;
+    padding-left: 120px;
+    width: 33%;
+}
+
+
+
+#form1 {
+    margin: 0;
+}
+
+
+
+.navBar1 td:hover {
+    background: #cccccc;
+    color: white;
+    transition: 0.5s;
+}
+
+.navBar1 td {
+    position: relative;
+}
+
+    .navBar1 td:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        border-bottom: 2px solid black;
+        bottom: 0px;
+        transform: scaleX(0);
+        transition: transform 0.2s ease-in;
+        margin-left: -120px;
+    }
+
+    .navBar1 td:hover:before {
+        transform: scaleX(1);
+    }
+
+    .textbox{
+        height:30px;
+        border:none;
+        border-bottom:1px solid gray;
+    }  
+        
     </style>
 </head>
 
@@ -28,7 +96,7 @@
                         <td class="auto-style1">
                 <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Font-Size="Large" ForeColor="Black"  DynamicMenuItemStyle-BackColor="White" DynamicMenuItemStyle-CssClass="menuItemHover" DynamicHoverStyle-BackColor="black" DynamicHoverStyle-ForeColor="White" StaticHoverStyle-ForeColor="White"></asp:Menu>
                         </td>
-                        <td>
+                        <td class="auto-style2">
                 <asp:Menu ID="Menu2" runat="server" DataSourceID="SiteMapDataSource2" Font-Size="Large" ForeColor="Black" DynamicMenuItemStyle-BackColor="White" DynamicMenuItemStyle-CssClass="menuItemHover" DynamicHoverStyle-ForeColor ="White" DynamicHoverStyle-BackColor="black" StaticHoverStyle-ForeColor="White"></asp:Menu>
                         </td>
                     </tr>
@@ -38,17 +106,17 @@
         <div class="navBar2">
             <table class="auto-style5">
                 <tr>
-                    <td>a</td>
-                    <td>a</td>
-                    <td>a</td>
+                    <td><asp:TextBox ID="txtSearch" CssClass="textbox" runat="server"></asp:TextBox></td>
+                    <td><a href=""></a>Login</td>
+                    <td><a href=""></a>Sign Up</td>
                 </tr>
             </table>
         </div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" SiteMapProvider="SiteMapDataSource1"/>
             <asp:SiteMapDataSource ID="SiteMapDataSource2" runat="server" SiteMapProvider="SiteMapDataSource2"/>
         </div>
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" SiteMapProvider="SiteMapDataSource1"/>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
     </form>
 </body>
 </html>
