@@ -19,9 +19,12 @@ body {
 
 .logo {
     width: 15%;
-    float: left;
+    float:left;
     height: 70px;
-    background-color: white;
+    background-image: url('../Images/logo2.png');
+    background-color:#ffffff;
+    background-size: 220px 90px;
+    background-repeat: no-repeat;
 }
 
 .navBar1 {
@@ -80,6 +83,7 @@ body {
 }
 
 #navBar {
+   
     height: 70px;
     border-bottom: 1px solid #d9d9d9;
     position: fixed;
