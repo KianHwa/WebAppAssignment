@@ -1,0 +1,127 @@
+﻿.menuItemHover {
+    padding: 15px;
+    width: 250px;
+    transition: 0.5s;
+}
+
+body {
+    margin: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top:80px;
+}
+
+@media screen and (max-width: 1400px) {
+    body {
+        overflow: auto;
+        width: 1400px;
+    }
+}
+
+.logo {
+    width: 15%;
+    float: left;
+    height: 70px;
+    background-color: white;
+}
+
+.navBar1 {
+    width: 20%;
+    height: 70px;
+    background-color: white;
+    margin: 0;
+    float: left;
+}
+
+.navBar2 {
+    width: 45%;
+    height: 70px;
+    float: right;
+    background-color: white;
+}
+
+.navBar2 a {
+    text-decoration: none;
+    color:black;
+}
+
+.navBar2 a:hover{
+    color:white;
+    transition:0.5s;
+}
+
+.navBar1 td {
+    padding: 16px;
+    padding-left: 40px;
+}
+
+#form1 {
+    margin: 0;
+}
+
+.navBar1 td:hover, .login:hover, .signup:hover {
+    background: #cccccc;
+    color: white;
+    transition: 0.5s;
+}
+
+.navBar1 td, .login, .signup {
+    position: relative;
+}
+
+.navBar1 td:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    border-bottom: 2px solid black;
+    bottom: 0px;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in;
+    margin-left: -40px;
+}
+
+#navBar {
+    height: 70px;
+    border-bottom: 1px solid #d9d9d9;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    transition: 0.5s;
+    box-shadow: 0px 3px 6px 6px rgba(204,204,204,0.5);
+}
+
+.login:before, .signup:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    border-bottom: 2px solid black;
+    bottom: 0px;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in;
+    transition: 0.5s;
+}
+
+
+.navBar1 td:hover:before, .login:hover:before, .signup:hover:before {
+    transform: scaleX(1);
+}
+
+    
+
+.textbox {
+    padding: 8px;
+    margin-top:5px;
+    height: 25px;
+    border: none;
+    border-bottom: 2px solid #d9d9d9;
+    margin-left: 50px;
+    width: 300px;
+    background-image:url("../Images/search.png");
+}
+
+.textbox:hover{
+    transition:0.5s;
+    background-color:#f2f2f2;
+}
+
+

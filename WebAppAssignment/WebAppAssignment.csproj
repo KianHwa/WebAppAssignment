@@ -67,7 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CSS\HeaderFooter.css" />
+    <Content Include="WebForm\HeaderFooter.css" />
+    <Content Include="Images\search.png" />
     <Content Include="WebForm\BuyArtwork.aspx" />
     <Content Include="WebForm\Homepage.aspx" />
     <Content Include="Web.config" />
