@@ -41,7 +41,8 @@
             <table style="width:100%;">
                 <tr>
                     <td style="width:30%;"><asp:TextBox ID="txtSearch" CssClass="textbox" runat="server" placeholder="Search .."></asp:TextBox></td>
-                    <td style="width:10%;" class="signup"><a href="" style="padding-left:30px;">Sign Up</a></td>
+                    <td style="width:10%;" class="addtocart"><a href="" style="padding-left:30px;"></a></td>
+                    <!--<td style="width:10%;" class="signup"><a href="" style="padding-left:30px;">Sign Up</a></td>-->
                     <td style="width:10%;" class="login""><a href="" style="padding-left:30px;">Login</a></td>
                 </tr>
             </table>
