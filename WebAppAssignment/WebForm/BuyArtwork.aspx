@@ -13,7 +13,7 @@
                 <asp:DropDownList ID="ddlPrice" runat="server" AppendDataBoundItems="True" CssClass="categoryFilterDdl" AutoPostBack="True" OnSelectedIndexChanged="filter_SelectedIndexChanged">
                     <asp:ListItem Text="Select a price range" Value="0" />
                     <asp:ListItem>Less than 100</asp:ListItem>
-                    <asp:ListItem>Between 100 and 500</asp:ListItem>
+                    <asp:ListItem>Between 100 and 5000</asp:ListItem>
                     <asp:ListItem>Between 500 and 1000</asp:ListItem>
                     <asp:ListItem>Above 1000</asp:ListItem>
                 </asp:DropDownList>
