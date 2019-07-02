@@ -21,7 +21,7 @@ namespace WebAppAssignment.WebForm
 
         protected void filter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String query = "Select * from Artist inner join Artwork on Artist.artistID = Artwork.artistID where ";
+            String query = "Select * from aspnet_Membership inner join aspnet_Users on aspnet_Membership.UserId = aspnet_Users.UserId inner join Artwork on aspnet_Membership.UserId = Artwork.artistID where ";
             int counter = 0;
             if (!ddlCategory.SelectedItem.Text.Equals("Select a category"))
             {
@@ -51,12 +51,12 @@ namespace WebAppAssignment.WebForm
             {
                 if (counter == 0)
                 {
-                    query += "Artist.artistName ='" + ddlArtist.Text + "' ";
+                    query += "aspnet_Users.UserName ='" + ddlArtist.Text + "' ";
                     counter = 3;
                 }
                 else
                 {
-                    query += "and Artist.artistName ='" + ddlArtist.Text + "' ";
+                    query += "and aspnet_Users.UserName ='" + ddlArtist.Text + "' ";
                 }
             }
             if (counter == 0)
