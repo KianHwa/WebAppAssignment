@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -83,6 +84,22 @@ namespace WebAppAssignment.WebForm
             SqlDataSource3.SelectCommand = "Select * from Artwork where artworkName like '%" + search + "%'";
             SqlDataSource3.DataBind();
             Repeater1.DataBind();
+        }
+
+        protected void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
+            String sql = "insert into Artwork (artworkName) values('haha')";
+
+            cmd = new SqlCommand(sql,conn);
+            conn.Open();
+            adapter.InsertCommand = new SqlCommand(sql,conn);
+            adapter.InsertCommand.ExecuteNonQuery();
+            cmd.Dispose();
+            conn.Close();
+
         }
     }
 }
