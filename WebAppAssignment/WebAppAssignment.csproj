@@ -84,6 +84,7 @@
     <Content Include="WebForm\Artist.aspx" />
     <Content Include="WebForm\Registration.aspx" />
     <Content Include="WebForm\SellArtwork.aspx" />
+    <Content Include="WebForm\Testimonial.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="WebForm\BuyArtwork.aspx.cs">
@@ -135,6 +136,13 @@
     </Compile>
     <Compile Include="WebForm\SellArtwork.aspx.designer.cs">
       <DependentUpon>SellArtwork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Testimonial.aspx.cs">
+      <DependentUpon>Testimonial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Testimonial.aspx.designer.cs">
+      <DependentUpon>Testimonial.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
