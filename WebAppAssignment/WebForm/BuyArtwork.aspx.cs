@@ -98,7 +98,7 @@ namespace WebAppAssignment.WebForm
             SqlDataReader reader;
             SqlDataAdapter adapter = new SqlDataAdapter();
             SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
-            String ordersSql = "insert into Orders (orderStatus,memberID,orderDate) values('Pending','" + Session["UserId"].ToString() + "','07-06-2019')";
+            String ordersSql = "insert into Orders (orderStatus,UserId,orderDate) values('Pending','" + Session["UserId"].ToString() + "','07-06-2019')";
             
             //Insert into Order table
             cmd = new SqlCommand(ordersSql, conn);
