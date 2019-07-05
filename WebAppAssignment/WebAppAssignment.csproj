@@ -92,7 +92,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Stylesheet\Wishlist.css" />
+    <Content Include="WebForm\Wishlist.css" />
     <Content Include="WebForm\BuyArtwork.css" />
     <Content Include="Stylesheet\HeaderFooter.css" />
     <Content Include="Images\search.png" />
@@ -103,8 +103,8 @@
     <Content Include="WebForm\Artist.aspx" />
     <Content Include="WebForm\Registration.aspx" />
     <Content Include="WebForm\SellArtwork.aspx" />
-	<Content Include="WebForm\Testimonial.aspx" />
-	<Content Include="WebForm\Wishlist.aspx" />
+    <Content Include="WebForm\Testimonial.aspx" />
+    <Content Include="WebForm\Wishlist.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MasterPage\LoggedInHeader.Master.cs">
@@ -226,6 +226,13 @@
     </Compile>
     <Compile Include="WebForm\SellArtwork.aspx.designer.cs">
       <DependentUpon>SellArtwork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Wishlist.aspx.cs">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Wishlist.aspx.designer.cs">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

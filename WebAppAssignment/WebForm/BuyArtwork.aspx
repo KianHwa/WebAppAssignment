@@ -31,7 +31,7 @@
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource3">
                 <ItemTemplate>
                     <div class="artwork">
-                    <div class="artworkimg"></div>
+                    <div class="artworkimg"><img src="<%# Eval("artworkURL")%>" /></div>
                         <div class="artworkdetails">
                         <h1><%#Eval("artworkName")%></h1>
                         <p class="price"><%# Eval("artworkPrice") %></p>
