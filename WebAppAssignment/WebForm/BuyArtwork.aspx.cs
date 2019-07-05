@@ -133,12 +133,29 @@ namespace WebAppAssignment.WebForm
         protected void btnAddToWishlist_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
+            Boolean wishlistDuplication = false;
             SqlCommand cmd;
             SqlDataReader reader;
             SqlDataAdapter adapter = new SqlDataAdapter();
             SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
             String wishlistSql = "insert into Wishlist (UserId) values ('" + Session["UserId"].ToString() + "')";
 
+            //Check duplicate wishlist item
+            conn.Open();
+            cmd = new SqlCommand("select Wishlist.UserId, WishlistDetails.artworkID from Wishlist inner join WishlistDetails on Wishlist.wishlistID = WishlistDetails.wishlistID join aspnet_Membership on Wishlist.UserId = aspnet_Membership.UserId where aspnet_Membership.UserId='" + Session["UserId"].ToString() + "' and WishlistDetails.artworkID ='" + btn.CommandArgument + "'", conn);
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader.GetValue(0).ToString().Equals(Session["UserId"].ToString()) && (int)reader.GetValue(1) == Convert.ToInt32(btn.CommandArgument))
+                {
+                    wishlistDuplication = true;
+                }
+            }
+            conn.Close();
+
+
+            if (wishlistDuplication == false)
+            {
             //Insert into Wishlist table
             cmd = new SqlCommand(wishlistSql, conn);
             conn.Open();
@@ -158,14 +175,16 @@ namespace WebAppAssignment.WebForm
             }
             conn.Close();
 
-            //Insert into Associative Table (Wishlist Details table)
-            String wishlistDetailsSql = "insert into WishlistDetails (wishlistID, artworkID) select w.wishlistID, a.artworkID from Wishlist w cross join Artwork a where w.wishlistID ='" + wishlistID + "' and a.artworkID = '" + btn.CommandArgument + "'";
-            cmd = new SqlCommand(wishlistDetailsSql, conn);
-            conn.Open();
-            adapter.InsertCommand = new SqlCommand(wishlistDetailsSql, conn);
-            adapter.InsertCommand.ExecuteNonQuery();
-            cmd.Dispose();
-            conn.Close();
+                //Insert into Associative Table (Wishlist Details table)
+                String wishlistDetailsSql = "insert into WishlistDetails (wishlistID, artworkID) select w.wishlistID, a.artworkID from Wishlist w cross join Artwork a where w.wishlistID ='" + wishlistID + "' and a.artworkID = '" + btn.CommandArgument + "'";
+                cmd = new SqlCommand(wishlistDetailsSql, conn);
+                conn.Open();
+                adapter.InsertCommand = new SqlCommand(wishlistDetailsSql, conn);
+                adapter.InsertCommand.ExecuteNonQuery();
+                cmd.Dispose();
+                conn.Close();
+            }
+            
         }
     }
 }
