@@ -1,21 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ArtistProfile.aspx.cs" Inherits="WebAppAssignment.ArtistProfile" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="ArtistProfile.aspx.cs" Inherits="WebAppAssignment.ArtistProfile" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-
-<html>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-        .card {
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-          max-width: 500px;
-          margin: auto;
-          text-align: center;
-          font-family: arial;
-        }
+        
 
         .title {
           color: grey;
@@ -32,7 +21,7 @@
           background-color: #000;
           text-align: center;
           cursor: pointer;
-          width: 100%;
+          width: 500px;
           font-size: 18px;
         }
 
@@ -47,30 +36,31 @@
         }
         .artProf{
             font-size: 25px;
-            text-align: center;
+            text-align: left;
         }
 </style>
-</head>
-<body>
+
     <h2 style="text-align:center">User Profile</h2>
-    <form id="form1" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    <div  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           max-width: 500px;
           margin: auto;
           text-align: center;
-          font-family: arial;" runat="server">
-
-        <img style="width:100%;" 
+          font-family: arial;">
+   <img style="width:100%;" 
                     src="../Images/artist-Scott.jpg" />
+        
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="ApplicationId,LoweredUserName" DataSourceID="SqlDataSource1">
         
+        
+            
                 <EditItemTemplate>
                  
-                  <p class="artProf">  UserName:
+                  <p class="artProf">  User Name:
             <asp:TextBox ID="UserNameTextBox" runat="server" Text='<%# Bind("UserName") %>' />
                     <br />
                   </p>
                     <p class="artProf">
-                    MobileAlias:
+                    Mobile Phone:
                     <asp:TextBox ID="MobileAliasTextBox" runat="server" Text='<%# Bind("MobileAlias") %>' />
                     <br />
                     </p>
@@ -81,12 +71,12 @@
                 <InsertItemTemplate>
                    
                    
-                    <p class="artProf">  UserName:
+                    <p class="artProf">  User Name:
             <asp:TextBox ID="UserNameTextBox" runat="server" Text='<%# Bind("UserName") %>' />
                     <br />
                   </p>
                     <p class="artProf">
-                    MobileAlias:
+                    Mobile Phone:
                     <asp:TextBox ID="MobileAliasTextBox" runat="server" Text='<%# Bind("MobileAlias") %>' />
                     <br />
                     </p>
@@ -97,12 +87,12 @@
                
                 <ItemTemplate>
                     
-                   <p class="artProf" style="padding-left: 90px;">  UserName:
+                   <p class="artProf" style="padding-left: 90px;">  User Name:
             <asp:Label ID="UserNameTextBox" runat="server" Text='<%# Bind("UserName") %>' />
                     <br />
                   </p>
                     <p class="artProf" style="padding-left: 90px;">
-                    MobileAlias:
+                    Mobile Phone:
                     <asp:Label ID="MobileAliasTextBox" runat="server" Text='<%# Bind("MobileAlias") %>' />
                     <br />
                     </p>
@@ -111,13 +101,8 @@
                     
                 </ItemTemplate>
             </asp:FormView>
+        </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [vw_aspnet_Users]"></asp:SqlDataSource>
-        
+   
 
-       
-        
-
-    </form>
-
-</body>
-</html>
+</asp:Content>
