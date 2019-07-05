@@ -69,15 +69,16 @@ body {
     margin: 0;
 }
 
-.navBar1 td:hover, .login:hover, .signup:hover{
+.navBar1 td:hover, .login:hover, .signup:hover, .signout:hover{
     background: #cccccc;
     color: white;
     transition: 0.5s;
 }
 
-.navBar1 td, .login, .signup {
+.navBar1 td, .login, .signup, .signout {
     position: relative;
 }
+
 
 .navBar1 td:before {
     content: '';
@@ -102,7 +103,7 @@ body {
     box-shadow: 0px 3px 6px 6px rgba(204,204,204,0.5);
 }
 
-.login:before, .signup:before {
+.login:before, .signup:before, .signout:before {
     content: '';
     position: absolute;
     width: 100%;
@@ -114,11 +115,10 @@ body {
 }
 
 
-.navBar1 td:hover:before, .login:hover:before, .signup:hover:before {
+.navBar1 td:hover:before, .login:hover:before, .signup:hover:before, .signout:hover:before {
     transform: scaleX(1);
 }
 
-    
 
 .textbox {
     padding: 8px;
@@ -139,9 +139,24 @@ body {
     background-repeat:no-repeat;
     background-image: url('../Images/addtocart.png');
     background-size:contain;
+    background-position:center;
+    transform:scale(0.8);
 }
 
+    .addtocart:hover {
+        background-color: #cccccc;
+        transition:0.5s;
+    }
 
-.addtocart:hover{
-    background-color:red;
+.wishlist {
+    background-repeat: no-repeat;
+    background-image: url('../Images/addtowishlist.png');
+    background-size: contain;
+    background-position: center;
+    transform: scale(0.8);
+}
+
+.wishlist:hover {
+    background-color: #cccccc;
+    transition: 0.5s;
 }

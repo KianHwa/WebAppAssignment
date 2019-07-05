@@ -1,13 +1,14 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/Site1.Master" AutoEventWireup="true" CodeBehind="BuyArtwork.aspx.cs" Inherits="WebAppAssignment.WebForm.BuyArtwork" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="BuyArtwork.aspx.cs" Inherits="WebAppAssignment.WebForm.BuyArtwork" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="../Stylesheet/BuyArtwork.css" type="text/css" runat="server"/>
+    <link rel="stylesheet" href="BuyArtwork.css" type="text/css" runat="server"/>
    
     <div class="body">
             <div class="categoryFilter">
                 <asp:DropDownList ID="ddlCategory" runat="server" DataSourceID="SqlDataSource1" DataTextField="artworkCategory" DataValueField="artworkCategory" AppendDataBoundItems="True" CssClass="categoryFilterDdl" AutoPostBack="True" OnSelectedIndexChanged="filter_SelectedIndexChanged">
                     <asp:ListItem Text="Select a category" Value="0" />
                     <asp:ListItem>Painting</asp:ListItem>
+                    <asp:ListItem>Potrait</asp:ListItem>
                     <asp:ListItem>Potrait</asp:ListItem>
                 </asp:DropDownList>
                 <asp:DropDownList ID="ddlPrice" runat="server" AppendDataBoundItems="True" CssClass="categoryFilterDdl" AutoPostBack="True" OnSelectedIndexChanged="filter_SelectedIndexChanged">
@@ -22,6 +23,7 @@
                 </asp:DropDownList>
                 <asp:TextBox ID="txtSearchArtwork" runat="server" OnTextChanged="txtSearchArtwork_TextChanged" CssClass="txtSearchArtwork"></asp:TextBox>
                 <asp:Button ID="btnSearchArtwork" runat="server" OnClick="txtSearch_Click" Text="Search" CssClass="btnSearchArtwork"/>
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
             </div>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Artwork]"></asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [UserName] FROM [vw_aspnet_Users]"></asp:SqlDataSource>
@@ -34,7 +36,8 @@
                         <h1><%#Eval("artworkName")%></h1>
                         <p class="price"><%# Eval("artworkPrice") %></p>
                         <p>msun denim lorem jeansum.</p>
-                        <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddToCart_Click"/>
+                        <asp:Button ID="btnAddToWishlist" runat="server" Text="Add To Wishlist" CssClass="btnAddToWishlist" CommandArgument='<%# Eval("artworkID")%>' OnClick="btnAddToWishlist_Click"/>
+                        <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" CommandArgument='<%# Eval("artworkID")%>' OnClick="btnAddToCart_Click"/>
                     </div>
                     </div>
                 </ItemTemplate>
