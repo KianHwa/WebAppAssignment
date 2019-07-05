@@ -8,7 +8,7 @@
           max-width: 400px;
           float: left;
        
-          margin: 50px 0 0 50px;
+          margin: 80px 0 0 120px;
           text-align: center;
           font-family: arial;
         }
@@ -23,29 +23,59 @@
         
         }
         
+      .artistH img{
+        
+          margin-right: 20px;
+          border-radius: 80%;
+          height: 150px;
+          
+      }
+        .justify {
+            display: block;
+            margin-left: 200px;
+            margin-right:200px;
+        }
+        .lead {
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+        .text-justify{
+            text-align: justify!important;
+        }
 </style>
 
 
-    <br /><br /><br /> <br /><br /><br /><br />
+    <h1 style="font-size: 50px;">Artist Profile</h1>
+    <div class="artistH">
+    <img class="artistImage" style="width:240px;" 
+            src="../Images/artist-Scott.jpg" />
+        Scott Christensen Artist
+        </div>
+    <br /><br /><br /><br /><br />
+    <h2 style="text-align: center;margin-bottom: 50px;">Testimonial</h2>
+    <div class="text-justify lead">
+        <p class="justify">
+        I am a very very very interesting artist whom seek for motivation to draw an amazing drawings to amaze my customer. During my work, I do search through online to find the creative idea to 
+        do my best drawing and presented it to my artwork.
+        </p>
+    </div>
+    
+  <br />
+    <h2 style="text-align: center;">Below is the artist's artwork</h2>
         <div>
               <div  class="grid_image">
-                  <img class="artistImage" style="width:240px;" 
+                  <img class="artistImage" style="width:340px;" 
             src="../Images/artist-Scott.jpg" />
                   <h1>Arteuresz</h1>
                
                   <p>The art of ocean and sky together.</p>
                   
               </div>
-              <div  class="grid_image">
-                  <img class="artistImage" style="width:240px;" 
-            src="../Images/artist-Scott.jpg" />
-                  <h1>Arteuresz</h1>
-           
-                  <p></p>
-                 
-              </div>
+              
                <div  class="grid_image">
-                  <img class="artistImage" style="width:240px;" 
+                  <img class="artistImage" style="width:340px;" 
             src="../Images/artist-Scott.jpg" />
                   <h1>Arteuresz</h1>
                   
@@ -53,7 +83,7 @@
                  
               </div>
                <div  class="grid_image">
-                  <img class="artistImage" style="width:240px;" 
+                  <img class="artistImage" style="width:340px;" 
             src="../Images/artist-Scott.jpg" />
                   <h1>Arteuresz</h1>
                   
@@ -61,7 +91,7 @@
                  
               </div>
              <div  class="grid_image">
-                  <img class="artistImage" style="width:240px;" 
+                  <img class="artistImage" style="width:340px;" 
             src="../Images/artist-Scott.jpg" />
                   <h1>Arteuresz</h1>
                   
@@ -69,7 +99,7 @@
                   
               </div>
              <div  class="grid_image">
-                  <img class="artistImage" style="width:240px;" 
+                  <img class="artistImage" style="width:340px;" 
             src="../Images/artist-Scott.jpg" />
                   <h1>Arteuresz</h1>
                   

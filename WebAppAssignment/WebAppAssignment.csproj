@@ -71,6 +71,7 @@
     <Content Include="App_Data\ArtworkGallery_log.ldf">
       <DependentUpon>ArtworkGallery.mdf</DependentUpon>
     </Content>
+    <Content Include="ArtistProfile.aspx" />
     <Content Include="Images\addtocart.png" />
     <Content Include="Images\addtowishlist.png" />
     <Content Include="Images\Capture.PNG" />
@@ -87,6 +88,13 @@
     <Content Include="WebForm\Testimonial.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtistProfile.aspx.cs">
+      <DependentUpon>ArtistProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistProfile.aspx.designer.cs">
+      <DependentUpon>ArtistProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm\BuyArtwork.aspx.cs">
       <DependentUpon>BuyArtwork.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

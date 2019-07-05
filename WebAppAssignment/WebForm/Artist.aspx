@@ -49,7 +49,7 @@
            display: inline-block;
            font-size: inherit;
        }
-       .btnArt{
+       .btnArts{
            background-color: black;
            border: none;
            color: white;
@@ -60,7 +60,7 @@
            transition: 0.3s;
            float: right;
        }
-       .btnArt:hover{
+       .btnArts:hover{
            background-color: gray;
            color: white;
        }
@@ -69,9 +69,9 @@
         
         <div class="artistH">
             <img class="artistImage" style="width:90px;" 
-            src="../Images/artist-Scott.jpg" />
-       <button class="btnArt">Click Me!</button>
-                <p class="p1" style="">Scott Christensen
+            src="../Images/artist-Scott.jpg" /><p class="p1" style="">
+                <asp:Button ID="btnArt" class="btnArts" runat="server" PostBackUrl="~/WebForm/Testimonial.aspx" Text="View Profile" />
+                Scott Christensen
                         <br /> <br />
                   <em>
                       <span class="fa fa-quote-left">
@@ -86,41 +86,6 @@
                 
             
         </div>
-      <div class="artistH">
-            <img class="artistImage" style="width:90px;" 
-            src="../Images/artist-Scott.jpg" />
-        <button class="btnArt">Click Me!</button>
-                <p class="p1" style="">Scott Christensen
-                        <br /> <br />
-                  <em>
-                      <span class="fa fa-quote-left">
-                  
-                      </span>
-                      I love ocean.
-                      <span class="fa fa-quote-right">
-                  
-                      </span>
-                  </em>
-                </p>
-            
-        </div>
-     <div class="artistH">
-            <img class="artistImage" style="width:90px;" 
-            src="../Images/artist-Scott.jpg" />
-       <button class="btnArt">Click Me!</button>
-                <p class="p1" style="">Scott Christensen
-                        <br /> <br />
-                  <em>
-                      <span class="fa fa-quote-left">
-                  
-                      </span>
-                      I love ocean. HEHEHEHEHEHEHEHEHEHHEE
-                      <span class="fa fa-quote-right">
-                  
-                      </span>
-                  </em>
-                </p>
-            
-        </div>
+      
   
 </asp:Content>
