@@ -5,6 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            height: 26px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -72,7 +77,12 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="center" colspan="2">
+                                    <td align="center" colspan="2" class="auto-style1">
+                                        Address:<asp:TextBox ID="txtAddress" runat="server"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" colspan="2" style="color:Red;">
                                         <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword" Display="Dynamic" ErrorMessage="The Password and Confirmation Password must match." ValidationGroup="CreateUserWizard1"></asp:CompareValidator>
                                     </td>
                                 </tr>
@@ -87,7 +97,7 @@
                             <table border="0" cellspacing="5" style="width:100%;height:100%;">
                                 <tr align="right">
                                     <td align="right" colspan="0">
-                                        <asp:Button ID="StepNextButton" runat="server" CommandName="MoveNext" OnClick="StepNextButton_Click" Text="Create User" ValidationGroup="CreateUserWizard1" />
+                                        <asp:Button ID="StepNextButton" runat="server" CommandName="MoveNext" Text="Create User" ValidationGroup="CreateUserWizard1" />
                                     </td>
                                 </tr>
                             </table>
@@ -104,7 +114,7 @@
                                 </tr>
                                 <tr>
                                     <td align="right" colspan="2">
-                                        <asp:Button ID="ContinueButton" runat="server" CausesValidation="False" CommandName="Continue" OnClick="ContinueButton_Click" Text="Continue" ValidationGroup="CreateUserWizard1" />
+                                        <asp:Button ID="ContinueButton" runat="server" CausesValidation="False" CommandName="Continue"  Text="Continue" ValidationGroup="CreateUserWizard1" />
                                     </td>
                                 </tr>
                             </table>

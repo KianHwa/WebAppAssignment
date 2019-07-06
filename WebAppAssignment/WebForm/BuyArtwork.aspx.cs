@@ -111,7 +111,7 @@ namespace WebAppAssignment.WebForm
             //Find order ID
             conn.Open();
             int orderid = 0;
-            cmd = new SqlCommand("select top(1) orderID  from Orders order by orderID desc",conn);
+            cmd = new SqlCommand("select top(1) orderID from Orders order by orderID desc",conn);
             reader = cmd.ExecuteReader();
             while (reader.Read())
             {
