@@ -42,7 +42,7 @@
                 <tr>
                     <td style="width:30%;"><asp:TextBox ID="txtSearch" CssClass="textbox" runat="server" placeholder="Search .."></asp:TextBox></td>
                     <td style="width:10%;" class="addtocart"><a href="" style="padding-left:30px;"></a></td>
-                    <td style="width:10%;" class="wishlist"><a href="" style="padding-left:30px;"></a></td>
+                    <td style="width:10%;" class="wishlist"><a href="Wishlist.aspx" style="padding-left:30px;"></a></td>
                     <td style="width:10%;" class="signout"><a href="" style="padding-left:30px;">Sign Out</a></td>
                 </tr>
             </table>

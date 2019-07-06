@@ -5,7 +5,8 @@
 
     <div class="body">
         <div class="wishlistTitle">
-            <h1>Your Wishlist</h1>
+            <h1>Your Wishlist<asp:Label ID="Label1" runat="server"></asp:Label>
+            </h1>
         </div>
         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
             <ItemTemplate>
@@ -14,10 +15,10 @@
                     <img src="<%#Eval("artworkURL")%>" />
                 </div>
                 <div class="wishlistDesc">
-                    ffffffffffffff
+                    Something here...
                 </div>
                 <div class="removeWishlist">
-                    <asp:Button ID="Button1" runat="server" Text= CssClass="btnRemoveWishlist"/>
+                    <asp:Button ID="deleteWishlistBtn" runat="server" Text="Button" CssClass="btnRemoveWishlist" OnClick="deleteWishlistBtn_Click" CommandArgument='<%#Eval("wishlistID")+";"+ Eval("artworkID")%>'/>
                 </div>
             </div>
             </ItemTemplate>
