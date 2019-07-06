@@ -1,0 +1,1 @@
+﻿select Wishlist.UserId, WishlistDetails.artworkID from Wishlist inner join WishlistDetails on Wishlist.wishlistID = WishlistDetails.wishlistID join aspnet_Membership on Wishlist.UserId = aspnet_Membership.UserId where aspnet_Membership.UserId='e1f44526-dce3-4b11-99e3-c2be25d96473' and WishlistDetails.artworkID=1

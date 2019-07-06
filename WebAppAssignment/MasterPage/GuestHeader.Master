@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="GuestHeader.Master.cs" Inherits="WebAppAssignment.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="../Stylesheet/HeaderFooter.css" type="text/css" runat="server"/>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div id="navBar">
+            <a href="../WebForm/Homepage.aspx"><div class="logo"></div></a>
+            <div class="navBar1">
+                <table style="width:100%;" >
+                    <tr>
+                        <td>
+                <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Font-Size="Large" ForeColor="Black"  DynamicMenuItemStyle-BackColor="White" DynamicMenuItemStyle-CssClass="menuItemHover" DynamicHoverStyle-BackColor="black" DynamicHoverStyle-ForeColor="White" StaticHoverStyle-ForeColor="White"></asp:Menu>
+                        </td>
+                        <td>
+                <asp:Menu ID="Menu2" runat="server" DataSourceID="SiteMapDataSource2" Font-Size="Large" ForeColor="Black" DynamicMenuItemStyle-BackColor="White" DynamicMenuItemStyle-CssClass="menuItemHover" DynamicHoverStyle-ForeColor ="White" DynamicHoverStyle-BackColor="black" StaticHoverStyle-ForeColor="White"></asp:Menu>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        <script>
+            window.onscroll = function () { scrollFunction() };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("navBar").style.top = "0";
+                } else {
+                    document.getElementById("navBar").style.top = "-80px";
+                }
+            }
+</script>
+        <div class="navBar2">
+            <table style="width:100%;">
+                <tr>
+                    <td style="width:30%;"><asp:TextBox ID="txtSearch" CssClass="textbox" runat="server" placeholder="Search .."></asp:TextBox></td>
+                    <!--<td style="width:10%;" class="addtocart"><a href="" style="padding-left:30px;"></a></td>-->
+                    <td style="width:10%;" class="signup"><a href="" style="padding-left:30px;">Sign Up</a></td>
+                    <td style="width:10%;" class="login""><a href="" style="padding-left:30px;">Login</a></td>
+                </tr>
+            </table>
+        </div>
+            <asp:SiteMapDataSource ID="SiteMapDataSource2" runat="server" SiteMapProvider="SiteMapDataSource2"/>
+        </div>
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" SiteMapProvider="SiteMapDataSource1"/>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+    </form>
+    
+</body>
+</html>
