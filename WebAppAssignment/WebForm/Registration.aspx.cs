@@ -20,6 +20,10 @@ namespace WebAppAssignment.WebForm
                 {
                     Roles.CreateRole("Member");
                 }
+                else if (!Roles.RoleExists("Artist"))
+                {
+                    Roles.CreateRole("Artist");
+                }
             }
         }
 

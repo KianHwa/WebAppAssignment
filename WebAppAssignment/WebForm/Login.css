@@ -1,0 +1,25 @@
+﻿body{
+    height:100%;
+    margin:0;
+    font-family:Arial,Arial, Helvetica, sans-serif;
+}
+.bgimage {
+    background-image:url('../Images/Moss-Artwork.png');
+    background-repeat:no-repeat;
+    background-size:100%;
+    filter:blur(1px);
+}
+.bgtext {
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4);
+    color:white;
+    font-weight:bold;
+    border:2px solid #f1f1f1;
+    position:absolute;
+}
+
+#form1{
+    position:absolute;
+    margin:auto;top:40%;
+    left:40%;
+}

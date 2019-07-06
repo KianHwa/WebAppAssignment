@@ -71,12 +71,16 @@
     <Content Include="App_Data\ArtworkGallery_log.ldf">
       <DependentUpon>ArtworkGallery.mdf</DependentUpon>
     </Content>
+    <Content Include="Images\Moss-Artwork.png" />
+    <Content Include="ModifyPassword.aspx" />
     <Content Include="Images\addtocart.png" />
     <Content Include="Images\addtowishlist.png" />
     <Content Include="Images\Capture.PNG" />
+    <Content Include="WebForm\Login.aspx" />
     <Content Include="Stylesheet\BuyArtwork.css" />
     <Content Include="Stylesheet\HeaderFooter.css" />
     <Content Include="Images\search.png" />
+    <Content Include="WebForm\Login.css" />
     <Content Include="WebForm\BuyArtwork.aspx" />
     <Content Include="WebForm\Homepage.aspx" />
     <Content Include="Web.config" />
@@ -87,6 +91,20 @@
     <Content Include="WebForm\Testimonial.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModifyPassword.aspx.cs">
+      <DependentUpon>ModifyPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModifyPassword.aspx.designer.cs">
+      <DependentUpon>ModifyPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm\BuyArtwork.aspx.cs">
       <DependentUpon>BuyArtwork.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
