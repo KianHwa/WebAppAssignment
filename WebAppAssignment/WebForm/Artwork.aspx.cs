@@ -11,7 +11,15 @@ namespace WebAppAssignment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(IsPostBack == false)
+            {
+                String artworkID = Request.QueryString["artworkID"];
 
+                SqlDataSource1.SelectCommand = "Select * from Artwork where artworkID ='" + artworkID + "'";
+                SqlDataSource1.DataBind();
+                FormView1.DataBind();
+
+            }
         }
     }
 }

@@ -79,13 +79,12 @@
     <Content Include="App_Data\ArtworkGallery_log.ldf">
       <DependentUpon>ArtworkGallery.mdf</DependentUpon>
     </Content>
+    <Content Include="Images\545451.jpg" />
     <Content Include="Images\addtocart.png" />
     <Content Include="Images\addtowishlist.png" />
+    <Content Include="Images\artist-Scott.jpg" />
+    <Content Include="Images\background1.jpg" />
     <Content Include="Images\Capture.PNG" />
-    <Content Include="Images\city.jpg" />
-    <Content Include="Images\Moss-Artwork.png" />
-    <Content Include="Images\oldcity.jpg" />
-    <Content Include="WebForm\Login.css" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -100,7 +99,7 @@
     <Content Include="WebForm\ModifyPassword.aspx" />
     <Content Include="WebForm\Wishlist.css" />
     <Content Include="WebForm\BuyArtwork.css" />
-    <Content Include="Stylesheet\HeaderFooter.css" />
+    <Content Include="WebForm\HeaderFooter.css" />
     <Content Include="Images\search.png" />
     <Content Include="WebForm\BuyArtwork.aspx" />
     <Content Include="WebForm\Homepage.aspx" />
@@ -183,12 +182,26 @@
     <Compile Include="Models\Wishlist.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="WebForm\ArtistProfile.aspx.cs">
+      <DependentUpon>ArtistProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\ArtistProfile.aspx.designer.cs">
+      <DependentUpon>ArtistProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm\BuyArtwork.aspx.cs">
       <DependentUpon>BuyArtwork.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebForm\BuyArtwork.aspx.designer.cs">
       <DependentUpon>BuyArtwork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm\Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
@@ -218,20 +231,6 @@
     </Compile>
     <Compile Include="WebForm\Artist.aspx.designer.cs">
       <DependentUpon>Artist.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm\ModifyPassword.aspx.cs">
-      <DependentUpon>ModifyPassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm\ModifyPassword.aspx.designer.cs">
-      <DependentUpon>ModifyPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm\Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
@@ -280,6 +279,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

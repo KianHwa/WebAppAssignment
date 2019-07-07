@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="WebForm/Artist.aspx" title="Artist"  description="Artist page">
+    <siteMapNode url="WebForm/Testimonial.aspx" title="Testimonial" description="View artist profile allery"></siteMapNode>
   </siteMapNode>
 </siteMap>
