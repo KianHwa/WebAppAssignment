@@ -41,7 +41,7 @@
             <table style="width:100%;">
                 <tr>
                     <td style="width:30%;"><asp:TextBox ID="txtSearch" CssClass="textbox" runat="server" placeholder="Search .."></asp:TextBox></td>
-                    <td style="width:10%;" class="addtocart"><a href=""><img src="../Images/addtocart.png" /></a></td>
+                    <td style="width:10%;" class="addtocart"><a href="Cart.aspx"><img src="../Images/addtocart.png" /></a></td>
                     <td style="width:10%;" class="wishlist"><a href="Wishlist.aspx"><img src="../Images/addtowishlist.png" /></a></td>
                     <td style="width:10%;" class="signout"><a href="" >Sign Out</a></td>
                 </tr>

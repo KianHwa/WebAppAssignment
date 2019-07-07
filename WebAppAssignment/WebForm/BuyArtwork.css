@@ -16,8 +16,18 @@ body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin:10px;
     float:left;
-
+    word-wrap:break-word;
+    height:630px;
+    background:rgba(255,255,255,0.2);
 }
+
+    .artwork:hover {
+        transition: 0.3s;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+        background: rgba(255,255,255,1.0);
+    }
+
+
 
 .artworkimg img {
     width:90%;
@@ -39,7 +49,7 @@ body {
     text-align: center;
     cursor: pointer;
     width: 100%;
-    font-size: 18px;
+    font-size: 14px;
 }
 
     .btnAddToCart:hover, .btnAddToWishlist:hover {

@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="BuyArtwork.aspx.cs" Inherits="WebAppAssignment.WebForm.BuyArtwork" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="../Stylesheet/BuyArtwork.css" type="text/css" runat="server"/>
+    <link rel="stylesheet" href="BuyArtwork.css" type="text/css" runat="server"/>
     
 
     <div class="body">
@@ -36,6 +36,7 @@
             <script src="HeaderFooter.js"></script>
             </div>
         <%}} %>
+
             <div class="categoryFilter">
                 <h4>Filter your search here </h4>
                 <asp:DropDownList ID="ddlCategory" runat="server" DataSourceID="SqlDataSource1" DataTextField="artworkCategory" DataValueField="artworkCategory" AppendDataBoundItems="True" CssClass="categoryFilterDdl" AutoPostBack="True" OnSelectedIndexChanged="filter_SelectedIndexChanged">
@@ -59,18 +60,21 @@
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Artwork]"></asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [UserName] FROM [vw_aspnet_Users]"></asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Artwork]"></asp:SqlDataSource>
+            
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource3">
                 <ItemTemplate>
+                    <a href="Artwork.aspx?artworkID=<%# Eval("artworkID")%>">
                     <div class="artwork">
                     <div class="artworkimg"><img src="<%# Eval("artworkURL")%>" /></div>
-                        <div class="artworkdetails">
-                        <h1><%#Eval("artworkName")%></h1>
-                        <p class="price"><%# Eval("artworkPrice") %></p>
-                        <p>msun denim lorem jeansum.</p>
+                    <div class="artworkdetails" style="padding:10px;">
+                        <h1 style="color:#383838"><%#Eval("artworkName")%></h1>
+                        <p class="price">RM <%# Eval("artworkPrice") %></p>
+                        <p style="color:#383838">Description here..aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
                         <asp:Button ID="btnAddToWishlist" runat="server" Text="Add To Wishlist" CssClass="btnAddToWishlist" CommandArgument='<%# Eval("artworkID")%>' OnClick="btnAddToWishlist_Click"/>
                         <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" CommandArgument='<%# Eval("artworkID")%>' OnClick="btnAddToCart_Click"/>
                     </div>
                     </div>
+                    </a>
                 </ItemTemplate>
             </asp:Repeater>
 
