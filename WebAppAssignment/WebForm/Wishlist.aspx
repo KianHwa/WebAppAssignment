@@ -18,7 +18,7 @@
                     Something here...
                 </div>
                 <div class="removeWishlist">
-                    <asp:Button ID="deleteWishlistBtn" runat="server" Text="Button" CssClass="btnRemoveWishlist" OnClick="deleteWishlistBtn_Click" CommandArgument='<%#Eval("wishlistID")+";"+ Eval("artworkID")%>'/>
+                    <asp:Button ID="deleteWishlistBtn" runat="server" Text="Remove" CssClass="btnRemoveWishlist" OnClick="deleteWishlistBtn_Click" CommandArgument='<%#Eval("wishlistID")+";"+ Eval("artworkID")%>'/>
                 </div>
             </div>
             </ItemTemplate>
