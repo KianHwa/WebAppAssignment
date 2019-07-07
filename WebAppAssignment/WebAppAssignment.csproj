@@ -82,6 +82,10 @@
     <Content Include="Images\addtocart.png" />
     <Content Include="Images\addtowishlist.png" />
     <Content Include="Images\Capture.PNG" />
+    <Content Include="Images\city.jpg" />
+    <Content Include="Images\Moss-Artwork.png" />
+    <Content Include="Images\oldcity.jpg" />
+    <Content Include="WebForm\Login.css" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -92,6 +96,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="WebForm\Login.aspx" />
+    <Content Include="WebForm\ModifyPassword.aspx" />
     <Content Include="WebForm\Wishlist.css" />
     <Content Include="WebForm\BuyArtwork.css" />
     <Content Include="Stylesheet\HeaderFooter.css" />
@@ -213,6 +219,20 @@
     <Compile Include="WebForm\Artist.aspx.designer.cs">
       <DependentUpon>Artist.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\ModifyPassword.aspx.cs">
+      <DependentUpon>ModifyPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\ModifyPassword.aspx.designer.cs">
+      <DependentUpon>ModifyPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm\Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -244,6 +264,8 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="FontStyle\Endless Script DF.ttf" />
+    <Content Include="WebForm\The Artist.otf" />
     <None Include="packages.config" />
     <Content Include="MasterPage\GuestHeader.Master" />
     <None Include="Web.Debug.config">

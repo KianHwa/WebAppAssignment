@@ -63,9 +63,19 @@ namespace WebAppAssignment.WebForm
             Roles.AddUserToRole(txBox.Text,"Member");*/
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void CreateUserWizard1_CreatedUser1(object sender, EventArgs e)
         {
-            
+
+        }
+
+        protected void StepNextButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ContinueButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

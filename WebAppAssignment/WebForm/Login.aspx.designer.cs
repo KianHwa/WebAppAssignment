@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebAppAssignment {
+namespace WebAppAssignment.WebForm {
     
     
     public partial class Login {
