@@ -1,12 +1,12 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/Site1.Master" AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="WebAppAssignment.Homepage" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="WebAppAssignment.Homepage" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" type="text/css" href="../Stylesheet/Home.css">
+    <link rel="stylesheet" type="text/css" href="Home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="Homepage.js"></script>
     <!--CSS PART HERE-->
-    <div name="margins">
+    <div class="margins">
 <!--Section 1-->
 <section>
 <div>
@@ -124,63 +124,13 @@
                   <h1>Arteuresz</h1>
                   <p>The art of ocean and sky together.</p>
                  
-              </div>
-             <!--Part 4-->
-               <div  class="grid_image">
-                  <img class="artistImage" style="width:240px; border-radius:20px;" src="../Images/artist-Scott.jpg" />
-                  <h1>Arteuresz</h1>
-                  
-                  <p>The art of ocean and sky together.</p>
-              </div>
-            <!--Part 5-->
-        <div  class="grid_image">
-                  <img class="artistImage" style="width:240px; border-radius:20px;" src="../Images/artist-Scott.jpg" />
-                  <h1>Arteuresz</h1>
-                  <p>The art of ocean and sky together.</p>
-              </div>
+              </div>  
         </div>
 </div>
-<br /><br />
+
 
         <div class="section">
-<h1>Famous Artist</h1>
-<div class="background">
-            <!--Part 1-->
-               <div  class="grid_image">
-                  <img class="artistImage" style="width:240px; border-radius:20px;" src="../Images/artist-Scott.jpg" />
-                  <h1>Arteuresz</h1>
-                  <p>The art of ocean and sky together.</p>
-              </div>
-            <!--Part 2-->
-               <div  class="grid_image">
-                  <a href="#"><img class="artistImage" style="width:240px; border-radius:20px;"src="../Images/artist-Scott.jpg" /></a>
-                  <h1>Arteuresz</h1>       
-                  <p>The art of ocean and sky together.</p>  
-              </div>
-            <!--Part 3-->
-            <div  class="grid_image">
-                  <img class="artistImage" style="width:240px; border-radius:20px;"src="../Images/artist-Scott.jpg" />
-                  <h1>Arteuresz</h1>
-                  <p>The art of ocean and sky together.</p>
-                 
-              </div>
-             <!--Part 4-->
-               <div  class="grid_image">
-                  <img class="artistImage" style="width:240px; border-radius:20px;" src="../Images/artist-Scott.jpg" />
-                  <h1>Arteuresz</h1>
-                  
-                  <p>The art of ocean and sky together.</p>
-              </div>
-            <!--Part 5-->
-        <div  class="grid_image">
-                  <img class="artistImage" style="width:240px; border-radius:20px;" src="../Images/artist-Scott.jpg" />
-                  <h1>Arteuresz</h1>
-                  <p>The art of ocean and sky together.</p>
-              </div>
-</div>
-</div>
-<br /><br /><br />
-
+<br /><br />
 <!-- ZIG ZAG PART START HERE-->
     <div class="container">
   <div class="row">
@@ -227,6 +177,7 @@
 </div>
 
     </div>
+        </div>
 
     <!-- The App Section -->
 <script>

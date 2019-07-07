@@ -79,12 +79,21 @@
     <Content Include="App_Data\ArtworkGallery_log.ldf">
       <DependentUpon>ArtworkGallery.mdf</DependentUpon>
     </Content>
+    <Content Include="Artwork.css" />
+    <Content Include="Home.css" />
     <Content Include="Images\545451.jpg" />
     <Content Include="Images\addtocart.png" />
     <Content Include="Images\addtowishlist.png" />
     <Content Include="Images\artist-Scott.jpg" />
     <Content Include="Images\background1.jpg" />
     <Content Include="Images\Capture.PNG" />
+    <Content Include="Images\city.jpg" />
+    <Content Include="Images\grey.jpg" />
+    <Content Include="Images\IMG_20190107_163608.jpeg" />
+    <Content Include="Images\logo1.png" />
+    <Content Include="Images\logo2.png" />
+    <Content Include="Images\Moss-Artwork.png" />
+    <Content Include="Images\oldcity.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -95,7 +104,16 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Stylesheet\Artwork.css" />
+    <Content Include="WebForm\Home.css" />
+    <Content Include="WebForm\ArtistProfile.aspx" />
+    <Content Include="WebForm\Cart.aspx" />
+    <Content Include="WebForm\Cart.css" />
+    <Content Include="WebForm\HeaderFooter.js" />
+    <Content Include="WebForm\Homepage.css" />
+    <Content Include="WebForm\Homepage.js" />
     <Content Include="WebForm\Login.aspx" />
+    <Content Include="WebForm\Login.css" />
     <Content Include="WebForm\ModifyPassword.aspx" />
     <Content Include="WebForm\Wishlist.css" />
     <Content Include="WebForm\BuyArtwork.css" />
@@ -232,6 +250,20 @@
     <Compile Include="WebForm\Artist.aspx.designer.cs">
       <DependentUpon>Artist.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\ModifyPassword.aspx.cs">
+      <DependentUpon>ModifyPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\ModifyPassword.aspx.designer.cs">
+      <DependentUpon>ModifyPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm\Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,6 +277,13 @@
     </Compile>
     <Compile Include="WebForm\SellArtwork.aspx.designer.cs">
       <DependentUpon>SellArtwork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Testimonial.aspx.cs">
+      <DependentUpon>Testimonial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Testimonial.aspx.designer.cs">
+      <DependentUpon>Testimonial.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm\Wishlist.aspx.cs">
       <DependentUpon>Wishlist.aspx</DependentUpon>
