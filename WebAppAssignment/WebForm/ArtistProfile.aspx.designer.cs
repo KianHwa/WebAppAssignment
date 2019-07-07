@@ -7,19 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebAppAssignment {
+namespace WebAppAssignment.WebForm {
     
     
     public partial class ArtistProfile {
         
         /// <summary>
-        /// FormView1 control.
+        /// fvArtistProf control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView1;
+        protected global::System.Web.UI.WebControls.FormView fvArtistProf;
         
         /// <summary>
         /// SqlDataSource1 control.

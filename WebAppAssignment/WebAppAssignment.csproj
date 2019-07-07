@@ -93,6 +93,7 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Stylesheet\Wishlist.css" />
+    <Content Include="WebForm\ArtistProfile.aspx" />
     <Content Include="WebForm\BuyArtwork.css" />
     <Content Include="Stylesheet\HeaderFooter.css" />
     <Content Include="Images\search.png" />
@@ -265,6 +266,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
