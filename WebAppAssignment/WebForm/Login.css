@@ -1,13 +1,14 @@
-﻿body{
-    height:100%;
-    margin:0;
-    font-family:Arial,Arial, Helvetica, sans-serif;
+﻿body {
+    min-height: 100%;
+    margin: 0;
+    font-family: Arial,Arial, Helvetica, sans-serif;
 }
+
 .bgimage {
     background-image:url('../Images/Moss-Artwork.png');
     background-repeat:no-repeat;
-    background-size:100%;
-    filter:blur(1px);
+    background-size:cover;
+    filter:blur(3px);
 }
 .bgtext {
     background-color:rgb(0,0,0);

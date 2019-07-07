@@ -16,10 +16,13 @@
         .auto-style3 {
             height: 80px;
         }
+        html{
+            height:100%;
+        }
     </style>
 </head>
-<body>
-    <div class="bgimage"></div>
+<body style="height:100%">
+    <div class="bgimage" style="height:100%"></div>
     <form id="form1" runat="server">
             <div align="center">
             <span class="auto-style1">Sign In</span><br />

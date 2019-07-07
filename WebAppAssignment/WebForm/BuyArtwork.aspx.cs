@@ -33,7 +33,7 @@ namespace WebAppAssignment.WebForm
                 if (counter == 0)
                 {
                     query += "Artwork.artworkCategory ='" + ddlCategory.Text + "' ";
-                    counter = 1;
+                    counter = 2;
                 }
                 else
                 {
@@ -44,12 +44,50 @@ namespace WebAppAssignment.WebForm
             {
                 if (counter == 0)
                 {
-                    query += "Artwork.artworkPrice between 10 and 20000 ";
-                    counter = 2;
+                    if(ddlPrice.SelectedItem.Text.Equals("Less than 100"))
+                    {
+                        query += "Artwork.artworkPrice <100 ";
+                        counter = 2;
+                    }
+                    else if(ddlPrice.SelectedItem.Text.Equals("Between 100 and 500"))
+                    {
+                        query += "Artwork.artworkPrice between 100 and 500 ";
+                        counter = 2;
+                    }
+                    else if (ddlPrice.SelectedItem.Text.Equals("Between 501 and 1000"))
+                    {
+                        query += "Artwork.artworkPrice between 501 and 1000 ";
+                        counter = 2;
+                    }
+                    else
+                    {
+                        query += "Artwork.artworkPrice >1000 ";
+                        counter = 2;
+                    }
+
                 }
                 else
                 {
-                    query += "and Artwork.artworkPrice between 10 and 20000 ";
+                    if (ddlPrice.SelectedItem.Text.Equals("Less than 100"))
+                    {
+                        query += "and Artwork.artworkPrice <100 ";
+                        counter = 2;
+                    }
+                    else if (ddlPrice.SelectedItem.Text.Equals("Between 100 and 500"))
+                    {
+                        query += "and Artwork.artworkPrice between 100 and 500 ";
+                        counter = 2;
+                    }
+                    else if (ddlPrice.SelectedItem.Text.Equals("Between 501 and 1000"))
+                    {
+                        query += "and Artwork.artworkPrice between 501 and 1000 ";
+                        counter = 2;
+                    }
+                    else
+                    {
+                        query += "and Artwork.artworkPrice > 1000 ";
+                        counter = 2;
+                    }
                 }
             }
             if (!ddlArtist.SelectedItem.Text.Equals("Select an artist"))
@@ -57,16 +95,17 @@ namespace WebAppAssignment.WebForm
                 if (counter == 0)
                 {
                     query += "aspnet_Users.UserName ='" + ddlArtist.Text + "' ";
-                    counter = 3;
+                    counter = 2;
                 }
                 else
                 {
                     query += "and aspnet_Users.UserName ='" + ddlArtist.Text + "' ";
+                    counter = 2;
                 }
             }
             if (counter == 0)
             {
-                query = "Select * from Artwork";
+                query = "Select * from Artwork ";
             }
 
             SqlDataSource3.SelectCommand = query;
@@ -127,6 +166,7 @@ namespace WebAppAssignment.WebForm
             adapter.InsertCommand.ExecuteNonQuery();
             cmd.Dispose();
             conn.Close();
+            Response.Redirect("BuyArtwork.aspx?status=orderAdded");
 
         }
 
@@ -149,6 +189,7 @@ namespace WebAppAssignment.WebForm
                 if (reader.GetValue(0).ToString().Equals(Session["UserId"].ToString()) && (int)reader.GetValue(1) == Convert.ToInt32(btn.CommandArgument))
                 {
                     wishlistDuplication = true;
+                    Response.Redirect("BuyArtwork.aspx?status=duplicate");
                 }
             }
             conn.Close();
@@ -184,7 +225,7 @@ namespace WebAppAssignment.WebForm
                 cmd.Dispose();
                 conn.Close();
             }
-            
+            Response.Redirect("BuyArtwork.aspx?status=wishlistAdded");
         }
 
     }

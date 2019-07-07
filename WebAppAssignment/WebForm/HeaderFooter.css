@@ -49,8 +49,6 @@ body {
 }
 
 .navBar2 td{
-    padding-top:13px;
-    padding-bottom:13px;
 }
 
 .navBar2 a:hover{
@@ -135,12 +133,10 @@ body {
     background-color:#f2f2f2;
 }
 
-.addtocart {
-    background-repeat:no-repeat;
-    background-image: url('../Images/addtocart.png');
-    background-size:contain;
-    background-position:center;
-    transform:scale(0.8);
+.addtocart img {
+    width: 100%;
+    height: 65px;
+    transform: scale(0.6);
 }
 
     .addtocart:hover {
@@ -148,15 +144,14 @@ body {
         transition:0.5s;
     }
 
-.wishlist {
-    background-repeat: no-repeat;
-    background-image: url('../Images/addtowishlist.png');
-    background-size: contain;
-    background-position: center;
-    transform: scale(0.8);
+.wishlist img{
+    width:100%;
+    height:65px;
+    transform: scale(0.6);
 }
 
 .wishlist:hover {
     background-color: #cccccc;
     transition: 0.5s;
 }
+
