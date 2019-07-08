@@ -7,12 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace WebAppAssignment.WebForm
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Registration2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
+        protected void btnConfirm_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

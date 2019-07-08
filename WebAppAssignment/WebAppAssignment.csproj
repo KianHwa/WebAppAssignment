@@ -85,6 +85,8 @@
     <Content Include="Images\artist-Scott.jpg" />
     <Content Include="Images\background1.jpg" />
     <Content Include="Images\Capture.PNG" />
+    <Content Include="Images\drytree.jpg" />
+    <Content Include="Images\moon.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -95,8 +97,19 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Stylesheet\Artwork.css" />
+    <Content Include="Stylesheet\Home.css" />
+    <Content Include="WebForm\ArtistProfile.aspx" />
+    <Content Include="WebForm\Cart.aspx" />
+    <Content Include="WebForm\Cart.css" />
+    <Content Include="WebForm\HeaderFooter.js" />
+    <Content Include="WebForm\Homepage.css" />
+    <Content Include="WebForm\Homepage.js" />
     <Content Include="WebForm\Login.aspx" />
+    <Content Include="WebForm\Login.css" />
     <Content Include="WebForm\ModifyPassword.aspx" />
+    <Content Include="WebForm\RecoverPassword.aspx" />
+    <Content Include="WebForm\Registration2.aspx" />
     <Content Include="WebForm\Wishlist.css" />
     <Content Include="WebForm\BuyArtwork.css" />
     <Content Include="WebForm\HeaderFooter.css" />
@@ -232,6 +245,27 @@
     <Compile Include="WebForm\Artist.aspx.designer.cs">
       <DependentUpon>Artist.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\ModifyPassword.aspx.cs">
+      <DependentUpon>ModifyPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\ModifyPassword.aspx.designer.cs">
+      <DependentUpon>ModifyPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\RecoverPassword.aspx.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\RecoverPassword.aspx.designer.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm\Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -239,12 +273,26 @@
     <Compile Include="WebForm\Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm\Registration2.aspx.cs">
+      <DependentUpon>Registration2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Registration2.aspx.designer.cs">
+      <DependentUpon>Registration2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm\SellArtwork.aspx.cs">
       <DependentUpon>SellArtwork.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebForm\SellArtwork.aspx.designer.cs">
       <DependentUpon>SellArtwork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Testimonial.aspx.cs">
+      <DependentUpon>Testimonial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Testimonial.aspx.designer.cs">
+      <DependentUpon>Testimonial.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm\Wishlist.aspx.cs">
       <DependentUpon>Wishlist.aspx</DependentUpon>
