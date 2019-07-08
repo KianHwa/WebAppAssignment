@@ -2,40 +2,84 @@
     margin:100px;
 }
 
+body {
+    background: url('../Images/grey.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .artItem{
     width:100%;
+    height:400px;
+    border:2px solid #d9d9d9;
 }
 
 .artImg{
     width:35%;
     float:left;
-    height:500px;
-    background-color:red;
+    height:400px;
 }
 
 .artImg img{
-    width:100%;
+    width:90%;
     margin-top:20%;
     margin-bottom:20%;
+    padding:20px;
 }
 
 .artName {
     width: 65%;
-    height: 150px;
+    height: 100px;
     float: left;
-    background-color: yellow;
 }
+
+    .artName p {
+        margin-left:50px;
+        font-size: 40px;
+        color: black;
+    }
+
+.artPrice p {
+    font-size: 25px;
+    margin-left: 50px;
+    color: #a6a6a6;
+    
+}
+
 
 .artPrice {
     width: 65%;
-    height: 150px;
+    height: 100px;
     float: left;
-    background-color: blue;
 }
 
 .orderBtn {
     width: 65%;
     height: 200px;
     float: left;
-    background-color: green;
+}
+
+.lblQty{
+    margin-left:50px;
+}
+
+.txtQty{
+    width:100px;
+    height:35px;
+}
+
+.btnAddToCart {
+    margin-left:200px;
+    width:200px;
+    height:40px;
+    background-color:white;
+    border:2px solid #d9d9d9;
+    margin-top:50px;
+}
+
+.btnAddToCart:hover{
+    color:white;
+    background-color:black;
+    transition:0.3s;
 }

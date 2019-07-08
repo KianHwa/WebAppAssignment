@@ -78,10 +78,7 @@
                   
                       </span>
                       I love ocean. HEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHHEHEHEHEHEHHEHE
-                      <span class="fa fa-quote-right">
-                  
-                      </span>
-                  </em>
+                      </em>
                 </p>
                 
             
