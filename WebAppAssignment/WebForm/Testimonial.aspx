@@ -1,39 +1,45 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="Testimonial.aspx.cs" Inherits="WebAppAssignment.WebForm2" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/Site1.Master" AutoEventWireup="true" CodeBehind="Testimonial.aspx.cs" Inherits="WebAppAssignment.WebForm2" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content1"  ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
     <style>
+        body {
+            background: url('../Images/grey.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow: auto;
+        }
         .grid_image {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           max-width: 400px;
-          float: left;
-       
+          float:left;
+          
           margin: 80px 0 0 120px;
           text-align: center;
           font-family: arial;
         }
-        .price {
-          color: grey;
-          font-size: 22px;
-        }
-        .grid_image > div {
-          background-color: rgba(255, 255, 255, 0.8);
+        
+        .grid_image div {
+          
           border: hidden;
-          text-align: center;
+          text-align: left;
         
         }
         
       .artistH img{
         
-          margin-right: 20px;
+          margin-right: 40px;
           border-radius: 80%;
           height: 150px;
           
       }
         .justify {
             display: block;
-            margin-left: 200px;
-            margin-right:200px;
+           margin-right: 400px;
+           margin-left: 400px;
+            
         }
         .lead {
             margin-bottom: 20px;
@@ -44,68 +50,58 @@
         .text-justify{
             text-align: justify!important;
         }
-</style>
+       
+      
+       
+    </style>
 
 
-    <h1 style="font-size: 50px;">Artist Profile</h1>
-    <div class="artistH">
-    <img class="artistImage" style="width:240px;" 
-            src="../Images/artist-Scott.jpg" />
-        Scott Christensen Artist
-        </div>
-    <br /><br /><br /><br /><br />
-    <h2 style="text-align: center;margin-bottom: 50px;">Testimonial</h2>
-    <div class="text-justify lead">
-        <p class="justify">
-        I am a very very very interesting artist whom seek for motivation to draw an amazing drawings to amaze my customer. During my work, I do search through online to find the creative idea to 
-        do my best drawing and presented it to my artwork.
-        </p>
-    </div>
+       <asp:FormView ID="FormView1" runat="server" DataKeyNames="artworkID,UserId,ApplicationId,LoweredUserName" DataSourceID="SqlDataSource1" Width="100%">
+                          
+                          <ItemTemplate>
+                          
+                            <div class="artistH" style="float:left;">
+                                <h1 style="margin-left: 110px;"><%# Eval("UserName") %></h1>
+                            <img class="artistImage" style="width:260px; height:200px; margin-left:50px;" 
+                                    src="<%# Eval("profilePicURL")%>" />
+                               
+                                
+                                </div>
+                            
+                            <h2 style="text-align: center;margin-right:340px;margin-bottom: 50px;">Testimonial</h2>
+                            <div class="text-justify lead">
+                                <blockquote>
+                                    <p class="justify" style="word-break: break-word;">
+                                        <%# Eval("biography") %>
+                                    </p>
+                               </blockquote>
+                            </div>
     
-  <br />
-    <h2 style="text-align: center;">Below is the artist's artwork</h2>
-        <div>
-              <div  class="grid_image">
-                  <img class="artistImage" style="width:340px;" 
-            src="../Images/artist-Scott.jpg" />
-                  <h1>Arteuresz</h1>
+                          <br /><br /><br /><br /><br /><br /><br /><br />
+                            <h2 style="text-align: center;">Below is the artist's artwork</h2>
+                      
+                          </ItemTemplate>
+                 
+                      </asp:FormView>
+       
+                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                            <ItemTemplate>
+                                            
+                                        <div  class="grid_image">
+                                             <img class="artistImage" style="width:340px;height:250px;" 
+                                              src="<%# Eval("artworkURL")%>" />
+                                              <h1><%# Eval("artworkName") %></h1>
+                                              <p><%# Eval("artworkCategory") %></p>
+                            
+                                         </div>                
+                                       
+                                </ItemTemplate>
+                        </asp:Repeater>
+
+                  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="select * from Artwork inner join UserProfile on
+                    Artwork.artistID = UserProfile.UserId inner join aspnet_Users on
+                    UserProfile.UserId = aspnet_Users.UserId"></asp:SqlDataSource>
                
-                  <p>The art of ocean and sky together.</p>
-                  
-              </div>
-              
-               <div  class="grid_image">
-                  <img class="artistImage" style="width:340px;" 
-            src="../Images/artist-Scott.jpg" />
-                  <h1>Arteuresz</h1>
-                  
-                  <p>The art of ocean and sky together.</p>
-                 
-              </div>
-               <div  class="grid_image">
-                  <img class="artistImage" style="width:340px;" 
-            src="../Images/artist-Scott.jpg" />
-                  <h1>Arteuresz</h1>
-                  
-                  <p>The art of ocean and sky together.</p>
-                 
-              </div>
-             <div  class="grid_image">
-                  <img class="artistImage" style="width:340px;" 
-            src="../Images/artist-Scott.jpg" />
-                  <h1>Arteuresz</h1>
-                  
-                  <p>The art of ocean and sky together.</p>
-                  
-              </div>
-             <div  class="grid_image">
-                  <img class="artistImage" style="width:340px;" 
-            src="../Images/artist-Scott.jpg" />
-                  <h1>Arteuresz</h1>
-                  
-                  <p>The art of ocean and sky together.</p>
-                  
-              </div>
-        </div>
     
+               
 </asp:Content>

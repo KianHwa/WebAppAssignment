@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ModifyPassword.aspx.cs" Inherits="WebAppAssignment.ChangePassword" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ModifyPassword.aspx.cs"%>
 
 <!DOCTYPE html>
 
@@ -27,7 +27,7 @@
 </head>
 <body style="height:100%;">
     <img src="../Images/city.jpg" alt="background" style="height:100%; width:100%; background-repeat:no-repeat; background-size:cover;margin-left:auto; margin-right:auto; display:block; filter:blur(2px);"/>
-    <form id="form1" runat="server" style="position:fixed; right:30%; left:30%; top:25%;">
+    <form id="form1" runat="server" style="position:fixed; right:30%; left:30%; top:20%;">
         <div>
             <div style="text-align:center;">
             <span class="auto-style2">Change your password</span><br />
@@ -53,7 +53,7 @@
                                                 <asp:Label ID="CurrentPasswordLabel" runat="server" AssociatedControlID="CurrentPassword">Password</asp:Label>
                                             </td>
                                             <td>
-                                                <asp:TextBox ID="CurrentPassword" runat="server" placeholder="Old Password" CssClass="txtBoxInput" TextMode="Password"></asp:TextBox>
+                                                <asp:TextBox ID="CurrentPassword" style="width:80%;" runat="server" placeholder="Old Password" CssClass="txtBoxInput" TextMode="Password"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="CurrentPasswordRequired" runat="server" ControlToValidate="CurrentPassword" ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="ChangePassword1">*</asp:RequiredFieldValidator>
                                             </td>
                                         </tr>
@@ -62,7 +62,7 @@
                                                 <asp:Label ID="NewPasswordLabel" runat="server" AssociatedControlID="NewPassword">New Password</asp:Label>
                                             </td>
                                             <td>
-                                                <asp:TextBox ID="NewPassword" runat="server" placeholder="New Password" CssClass="txtBoxInput" TextMode="Password"></asp:TextBox>
+                                                <asp:TextBox ID="NewPassword" style="width:80%;" runat="server" placeholder="New Password" CssClass="txtBoxInput" TextMode="Password"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="NewPasswordRequired" runat="server" ControlToValidate="NewPassword" ErrorMessage="New Password is required." ToolTip="New Password is required." ValidationGroup="ChangePassword1">*</asp:RequiredFieldValidator>
                                             </td>
                                         </tr>
@@ -71,7 +71,7 @@
                                                 <asp:Label ID="ConfirmNewPasswordLabel" runat="server" AssociatedControlID="ConfirmNewPassword">Confirm New Password</asp:Label>
                                             </td>
                                             <td>
-                                                <asp:TextBox ID="ConfirmNewPassword" runat="server" placeholder="Confirm Password" CssClass="txtBoxInput" TextMode="Password"></asp:TextBox>
+                                                <asp:TextBox ID="ConfirmNewPassword" style="width:80%;" runat="server" placeholder="Confirm Password" CssClass="txtBoxInput" TextMode="Password"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="ConfirmNewPasswordRequired" runat="server" ControlToValidate="ConfirmNewPassword" ErrorMessage="Confirm New Password is required." ToolTip="Confirm New Password is required." ValidationGroup="ChangePassword1">*</asp:RequiredFieldValidator>
                                             </td>
                                         </tr>
