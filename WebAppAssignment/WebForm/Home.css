@@ -1,11 +1,15 @@
-﻿* {
+﻿body {
+}
+
+* {
     box-sizing: border-box;
+    
 }
 
 body {
     font-family: Verdana, sans-serif;
-    background-color:purple;
-    /*background-image:url(../Images/grey.jpg);*/
+    background-color: #ffffff;
+    background-image: url('../Images/grey.jpg');
 }
 
 .mySlides {
@@ -127,7 +131,6 @@ h3 {
     background-size: cover;
     background-position: center;
     height: 400px;
-    padding-bottom:50px;
 }
 
 .section {
@@ -143,6 +146,7 @@ h3 {
 }
 
 .grid_image {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 400px;
     float: left;
     margin: 50px 0 0 50px;
@@ -152,12 +156,6 @@ h3 {
     border-radius: 20px;
     cursor: pointer;
 }
-
-    .grid_image:hover img {
-        transform: scale(1.1);
-        transition: all 0.4s;
-    }
-
 
 .price {
     color: grey;
@@ -175,6 +173,7 @@ h3 {
     width: 100%;
     border-radius: 25px;
     margin-bottom: 32px;
+    margin-left: 14%;
     overflow: hidden;
 }
 
@@ -192,7 +191,7 @@ h3 {
             padding: 8px 17px;
             border: 2px solid #000000;
             margin-right: 10px;
-            margin-left: 40px;
+            margin-left: 10px;
             text-transform: uppercase;
             display: block;
             text-decoration: none;
@@ -219,7 +218,6 @@ h3 {
 /*zigzag layer*/
 .container {
     padding: 64px;
-    margin-top:30px;
 }
 
 .row:after {
@@ -254,12 +252,11 @@ h3 {
     padding: 14px 28px;
     font-size: 16px;
     cursor: pointer;
-    background: #fff;
+    background-color: #ffffff;
     border-radius: 50px;
     transition: all 0.4s ease-in-out;
-    border: 2px solid #000000;
+    border: 2px solid #4CAF50;
 }
-
 
 .imgZigZag {
     display: block;
@@ -277,11 +274,7 @@ h3 {
 
 .button:hover,
 .button:focus {
-    /*background-image: linear-gradient(to right, #2ac275, #cbdc0b, #2ac275);
-    background: #2ac275;
-    background: linear-gradient(to right, #2ac275, #cbdc0b, #2ac275);*/
-    background-color:#717171;
-    transform: scale(1.1);
-    transition: all 0.4s;
-    color:#fff;
+    background-color: #68dc6d;
+    color: #ffffff;
+    padding: 25px 30px;
 }

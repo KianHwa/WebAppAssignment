@@ -23,7 +23,7 @@
             height: 184px;
             width: 368px;
         }
-    </style>
+        </style>
 </head>
 <body style="height:100%;">
     <img src="../Images/Moss-Artwork.png" alt="background" style="height:100%; width:100%; background-repeat:no-repeat; background-size:cover;margin-left:auto; margin-right:auto; display:block; filter:blur(3px);"/>
@@ -31,7 +31,7 @@
         <div align="center">
             <span class="auto-style1">Sign In</span><br />
             <br />
-            <asp:Login ID="Login1" runat="server" Height="184px" Width="368px" DestinationPageUrl="Homepage.aspx">
+            <asp:Login ID="Login1" runat="server" Height="184px" Width="368px" DestinationPageUrl="Homepage.aspx?status=loggedIn">
                 <LayoutTemplate>
                     <table cellpadding="1" cellspacing="0" style="border-collapse: collapse;">
                         <tr>
@@ -74,8 +74,8 @@
                                     </tr>
                                     <tr>
                                         <td colspan="2" class="auto-style2">
-                                            <asp:Button CssClass="myButton" ID="LoginButton" runat="server" CommandName="Login" Text="Sign In" ValidationGroup="Login1" OnClick="LoginButton_Click" />
-                                            <asp:Button CssClass="myButton" ID="btnForgotPassword" runat="server" Text="Forgot Password?" OnClick="btnForgotPassword_Click" />
+                                            <asp:Button CssClass="myButton" ID="LoginButton" runat="server" CommandName="Login" Text="Sign In" ValidationGroup="Login1" />
+                                            <asp:Button CssClass="myButton" ID="btnForgotPassword" runat="server" Text="Forgot Password?" />
                                             <br />
                                         </td>
                                     </tr>

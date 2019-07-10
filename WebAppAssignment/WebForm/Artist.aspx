@@ -84,7 +84,7 @@
                       <span class="fa fa-quote-left">
                   
                       </span>
-                      <%# Eval("quote") %>
+                      I love ocean. HEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHHEHEHEHEHEHHEHE
                       <span class="fa fa-quote-right">
                   
                       </span>
