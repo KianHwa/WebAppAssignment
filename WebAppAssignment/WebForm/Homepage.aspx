@@ -1,18 +1,20 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/GuestHeader.Master" AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="WebAppAssignment.Homepage" %>
-
+﻿ <%@ Page Language="C#" MasterPageFile="~/MasterPage/GuestHeader.Master"  AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="WebAppAssignment.Homepage"%> 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" type="text/css" href="../Stylesheet/Home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="Homepage.js"></script>
+    
     <!--CSS PART HERE-->
     <div name="margins">
-<!--Section 1-->
+       
+       
 <section>
 <div>
 <div class="slideshow-container">
 
 <div class="mySlides fade">
+    <asp:Label ID="Label1" runat="server"></asp:Label>
   <img src="../Images/download.jpg" style="width:100%; height:350px;">
   <div class="text">Caption Text</div>
 </div>
@@ -252,4 +254,4 @@
 
     </script>
 
-</asp:Content>
+ </asp:Content>

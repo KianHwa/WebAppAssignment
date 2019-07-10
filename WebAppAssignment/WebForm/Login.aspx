@@ -23,29 +23,7 @@
             height: 184px;
             width: 368px;
         }
-        .auto-style5 {
-            -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-            -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-            box-shadow: inset 0px 1px 0px 0px #ffffff;
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
-            background-color: #ffffff;
-            -moz-border-radius: 6px;
-            -webkit-border-radius: 6px;
-            border-radius: 6px;
-            border: 1px solid #dcdcdc;
-            display: inline-block;
-            cursor: pointer;
-            color: #666666;
-            font-family: Artist;
-            font-size: 15px;
-            font-weight: bold;
-            padding: 6px 24px;
-            text-decoration: none;
-            text-shadow: 0px 1px 0px #ffffff;
-            opacity: 0.8;
-            margin-top: 6px;
-        }
-    </style>
+        </style>
 </head>
 <body style="height:100%;">
     <img src="../Images/Moss-Artwork.png" alt="background" style="height:100%; width:100%; background-repeat:no-repeat; background-size:cover;margin-left:auto; margin-right:auto; display:block; filter:blur(3px);"/>
@@ -53,7 +31,7 @@
         <div align="center">
             <span class="auto-style1">Sign In</span><br />
             <br />
-            <asp:Login ID="Login1" runat="server" Height="184px" Width="368px" DestinationPageUrl="Homepage.aspx">
+            <asp:Login ID="Login1" runat="server" Height="184px" Width="368px" DestinationPageUrl="Homepage.aspx?status=loggedIn">
                 <LayoutTemplate>
                     <table cellpadding="1" cellspacing="0" style="border-collapse: collapse;">
                         <tr>
