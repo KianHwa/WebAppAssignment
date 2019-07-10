@@ -72,6 +72,27 @@ table.CartGridView td{
         color: white;
     }
 
+.noResultMsg{
+    margin:80px;
+    margin-left:150px;
+}
+
+.oops{
+    width:25%;
+    float:left;
+}
+
+.oops img{
+    width:200px;
+    height:200px;
+}
+
+.oopsMsg{
+    float:left;
+    width:75%;
+    padding-top:50px;
+}
+
 
 
 

@@ -19,7 +19,7 @@
                         <div class="orderBtn">
                             <asp:Label ID="lblQty" runat="server" Text="Quantity : " CssClass="lblQty"></asp:Label>
                             <asp:TextBox ID="txtQty" runat="server" CssClass="txtQty" Text="1"></asp:TextBox>
-                            <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddToCart_Click"/>
+                            <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddToCart_Click" CommandArgument='<%# Eval("artworkID") %>'/>
                         </div>
                     </div>
                 </ItemTemplate>

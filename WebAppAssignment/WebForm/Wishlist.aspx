@@ -25,7 +25,15 @@
         </asp:Repeater>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Wishlist]"></asp:SqlDataSource>
         
+        <%
+            String count = Repeater1.Items.Count.ToString();
 
+            if (Convert.ToInt32(count) == 0){ %>
+                    <div class="noResult">
+                        <h2 style="text-align:center">Currently you dont have any wishlist</h2>
+                    </div>
+
+            <%}%>
             
         
         </div>
