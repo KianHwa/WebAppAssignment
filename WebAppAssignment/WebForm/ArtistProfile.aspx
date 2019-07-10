@@ -2,7 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/Cart.css">
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/HeaderFooter.css">
+   
+   
 <style>
         
 
@@ -11,8 +14,8 @@
           font-size: 23px;
 
         }
-
-        .button {
+        
+        .btnEdit {
           border: none;
           outline: 0;
           display: inline-block;
@@ -25,13 +28,24 @@
           font-size: 18px;
         }
 
-        a {
-          text-decoration: none;
-          font-size: 28px;
-          color: black;
+        .btnEditCancel{
+            background-color: #000;
+            border: none;
+            color: white;
+            width:199px;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            float:left;
+            outline: 0;
+            cursor: pointer;
         }
-
-        .button:hover, a:hover {
+        .btnEditCancel:hover{
+            opacity: 0.7;
+        }
+        .btnEdit:hover, a:hover {
           opacity: 0.7;
         }
         .artProf{
@@ -39,22 +53,57 @@
             text-align: center;
             word-break: break-word;
         }
+        .overlay {
+          position: absolute;
+          top: 126px;
+          bottom: 0;
+          left: 560px;
+          right: 0;
+          height: 310px;
+          width: 401px;
+          opacity: 0;
+          transition: .5s ease;
+          background-color:lightgray;
+        }
+
+        .containerArtist:hover .overlay {
+          opacity: 1;
+        }
+
+        .text {
+          color: white;
+          font-size: 20px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: center;
+        }
 </style>
 
     <h2 style="text-align:center">Artist Profile</h2>
-    <div  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           max-width: 400px;
           margin: auto;
-          text-align: left;
+          text-align: center;
           font-family: arial;
+          
           ">
-        <img style="width:100%;" src="<%#Eval("profilePicURL")%>" />
-   <img style="width:100%;" src="../Images/artist-Scott.jpg" />
+       
         
     <asp:FormView ID="fvArtistProf" runat="server" DataSourceID="SqlDataSource1" > 
             
                 <EditItemTemplate>
-                    <div>
+                    <div class="containerArtist" style="width: 100%;">
+            
+            <img style="width:400px;" src="<%# Eval("profilePicURL")%>" />
+       
+        
+        </div>
+                    <div class="artProf">
+                    
                         <blockquote>
                     <p>
                     Name:
@@ -62,12 +111,7 @@
                     
                         </p>
                     <br />
-                    <p>
-                    Picture:
-                    <asp:TextBox ID="pictureTxt" runat="server" Text='<%# Bind("profilePicURL") %>' />
-                  
-                        </p>
-                      <br />
+                   
                     <p>
                     Address:
                     <asp:TextBox ID="addressTxt" runat="server" Text='<%# Bind("address") %>' />
@@ -93,25 +137,36 @@
                     
                         </p>
                       <br />
-                    <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" OnClick="UpdateButton_Click" />
+                      </blockquote>
+                       
+                    <asp:Button ID="UpdateButton" class="btnEditCancel" runat="server" CausesValidation="True" CommandName="Update" Text="Update" OnClick="UpdateButton_Click" />
 
-                    &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-                            </blockquote>
+                    <asp:Button ID="UpdateCancelButton" class="btnEditCancel" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                       
+                            
                         </div>
                 </EditItemTemplate>
-        
+       
                 <ItemTemplate>
+                    <div class="containerArtist" style="width: 100%;">
+            
+            <img style="width:400px; height: 307px;" src="<%# Eval("profilePicURL")%>" />
+       
+        <div class="overlay">
+            <div class="text">
+                <asp:FileUpload  ID="artistUpload" runat="server" />
+                <asp:Button ID="UpdatePicButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" OnClick="UpdatePicButton_Click" />
+            </div>
+            
+        </div>
+        </div>
                     <div class="artProf">
                     <p>
                     Name:
                     <asp:Label ID="UserNameLabel" runat="server" Text='<%# Eval("UserName") %>' />
                     </p>
                         <br />
-                    <p>
-                    Picture:
-                    <asp:Label ID="profilePicURLLabel" runat="server" Text='<%# Eval("profilePicURL") %>' />
-                    </p>
-                        <br />
+                  
                     <p>
                     Address:
                     <asp:Label ID="addressLabel" runat="server" Text='<%# Eval("address") %>' />
@@ -139,7 +194,7 @@
                             </blockquote>
                     </p>
                         <br />
-                    <asp:Button ID="EditButton" class="button" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
+                    <asp:Button ID="EditButton" class="btnEdit" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
                      </div>   
                 </ItemTemplate>
             </asp:FormView>
