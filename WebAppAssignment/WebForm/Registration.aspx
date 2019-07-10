@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" href="Login.css" type="text/css" />
+<link rel="stylesheet" href="../Stylesheet/Login.css" type="text/css" />
 <head runat="server">
     <title></title>
     <style type="text/css">
