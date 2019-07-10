@@ -23,6 +23,28 @@
             height: 184px;
             width: 368px;
         }
+        .auto-style5 {
+            -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+            -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+            box-shadow: inset 0px 1px 0px 0px #ffffff;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+            background-color: #ffffff;
+            -moz-border-radius: 6px;
+            -webkit-border-radius: 6px;
+            border-radius: 6px;
+            border: 1px solid #dcdcdc;
+            display: inline-block;
+            cursor: pointer;
+            color: #666666;
+            font-family: Artist;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 6px 24px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #ffffff;
+            opacity: 0.8;
+            margin-top: 6px;
+        }
     </style>
 </head>
 <body style="height:100%;">
@@ -74,8 +96,8 @@
                                     </tr>
                                     <tr>
                                         <td colspan="2" class="auto-style2">
-                                            <asp:Button CssClass="myButton" ID="LoginButton" runat="server" CommandName="Login" Text="Sign In" ValidationGroup="Login1" OnClick="LoginButton_Click" />
-                                            <asp:Button CssClass="myButton" ID="btnForgotPassword" runat="server" Text="Forgot Password?" OnClick="btnForgotPassword_Click" />
+                                            <asp:Button CssClass="myButton" ID="LoginButton" runat="server" CommandName="Login" Text="Sign In" ValidationGroup="Login1" />
+                                            <asp:Button CssClass="myButton" ID="btnForgotPassword" runat="server" Text="Forgot Password?" />
                                             <br />
                                         </td>
                                     </tr>
