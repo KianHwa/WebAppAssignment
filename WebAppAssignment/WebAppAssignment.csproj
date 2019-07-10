@@ -80,7 +80,7 @@
       <DependentUpon>ArtworkGallery.mdf</DependentUpon>
     </Content>
     <Content Include="Artwork.css" />
-    <Content Include="Home.css" />
+    <Content Include="Stylesheet\Home.css" />
     <Content Include="Images\545451.jpg" />
     <Content Include="Images\addtocart.png" />
     <Content Include="Images\addtowishlist.png" />
