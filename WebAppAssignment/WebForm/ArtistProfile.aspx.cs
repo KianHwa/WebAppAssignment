@@ -15,7 +15,11 @@ namespace WebAppAssignment.WebForm
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            SqlDataSource1.SelectCommand = "SELECT aspnet_Users.UserName, UserProfile.profilePicURL from aspnet_Users inner join UserProfile on aspnet_Users.UserId = UserProfile.UserId inner " +
+                                           "join aspnet_UsersInRoles on aspnet_Users.UserId = aspnet_UsersInRoles.UserId inner " +
+                                           "join aspnet_Roles on aspnet_UsersInRoles.RoleId = aspnet_Roles.RoleId inner join Artwork on aspnet_Users.UserId = Artwork.artistID where aspnet_Roles.RoleName = '" + Session["Role"].ToString() + "' and aspnet_Users.UserName = '" + Session["UserName"].ToString() + "'";
+
+            SqlDataSource1.DataBind();
 
         }
 

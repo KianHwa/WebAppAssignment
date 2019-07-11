@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebAppAssignment {
+namespace WebAppAssignment.WebForm {
     
     
-    public partial class WebForm2 {
+    public partial class Artist {
         
         /// <summary>
         /// artistRepeater control.
@@ -22,12 +22,12 @@ namespace WebAppAssignment {
         protected global::System.Web.UI.WebControls.Repeater artistRepeater;
         
         /// <summary>
-        /// artistHomeSqlDataSource control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource artistHomeSqlDataSource;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

@@ -231,6 +231,6 @@
                 </ItemTemplate>
             </asp:FormView>
         </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber,
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber,
             Us.quote, Us.biography FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>
         </asp:Content>

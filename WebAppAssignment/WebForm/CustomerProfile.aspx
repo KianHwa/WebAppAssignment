@@ -158,18 +158,7 @@
                     
                     </p>
                     <br />
-                    <p>
-                        Quote:
-                        <asp:TextBox ID="quoteTxt" runat="server" Text='<%# Bind("quote") %>' />
-                   
-                    </p>
-                    <br />
-                    <p>
-                        Biography:
-                        <asp:TextBox ID="biotxt" runat="server" Text='<%# Bind("biography") %>' />
                     
-                    </p>
-                    <br />
                     </blockquote>
                        
                     <asp:Button ID="UpdateButton" class="btnEditCancel"  runat="server" CausesValidation="True" CommandName="Update" Text="Update   " OnClick="UpdateButton_Click" />
@@ -210,28 +199,13 @@
                     <asp:Label ID="phoneNumberLabel" runat="server" Text='<%# Eval("phoneNumber") %>' />
                     </p>
                         <br />
-                    <p>
-                    Quote:
-                        <blockquote>
-                            <q>
-                                <asp:Label ID="quoteLabel" runat="server" Text='<%# Eval("quote") %>' />
-                            </q>
-                        </blockquote>
-                    
-                    </p>
-                        <br />
-                    <p>
-                    Biography:
-                        <blockquote>
-                    <asp:Label ID="biographyLabel" runat="server" Text='<%# Bind("biography") %>' />
-                            </blockquote>
-                    </p>
-                        <br />
+                   
+                   
                     <asp:Button ID="EditButton" class="btnEdit" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
                      </div>   
                 </ItemTemplate>
             </asp:FormView>
         </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber,
-            Us.quote, Us.biography FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber
+            FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>
         </asp:Content>
