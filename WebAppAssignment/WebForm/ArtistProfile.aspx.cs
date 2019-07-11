@@ -15,10 +15,19 @@ namespace WebAppAssignment.WebForm
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack == false)
+            
+
+        }
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if (Session["Username"] != null)
             {
-                Session["Username"] = "Ali";
-                Session["UserID"] = "e1f44526-dce3-4b11-99e3-c2be25d96473";
+                MasterPageFile = "~/MasterPage/LoggedInHeader.Master";
+            }
+            else
+            {
+                MasterPageFile = "~/MasterPage/GuestHeader.Master";
             }
         }
 

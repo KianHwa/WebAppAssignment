@@ -7,13 +7,13 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link rel="stylesheet" href="~/WebForm/HeaderFooter.css" type="text/css" runat="server"/>
+    <link rel="stylesheet" href="../CSS/HeaderFooter.css" type="text/css" runat="server"/>
 </head>
 
 <body>
     <form id="form1" runat="server">
         <div id="navBar">
-            <a href="../WebForm/Homepage.aspx"><div class="logo"></div></a>
+            <a href="../WebForm/Homepage.aspx?status=loggedOut"><div class="logo"></div></a>
             <div class="navBar1">
                 <table style="width:100%;" >
                     <tr>
@@ -41,16 +41,8 @@
             <table style="width:100%;">
                 <tr>
                     <td style="width:30%;"><asp:TextBox ID="txtSearch" CssClass="textbox" runat="server" placeholder="Search .."></asp:TextBox></td>
-                    <!--<td style="width:10%;" class="addtocart"><a href="" style="padding-left:30px;"></a></td>-->
-                    <td style="width:10%;" class="signup"><a href="Registration.aspx" style="padding-left:30px; text-align:center;">Sign Up</a></td>
-                    <td style="width:10%; text-align:center;" class="login">
-                        <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="RedirectToLoginPage" />
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width:30%;">&nbsp;</td>
-                    <td style="width:10%;" class="signup">&nbsp;</td>
-                    <td style="width:10%;" class="login"">&nbsp;</td>
+                    <td style="width:10%;" class="signup"><a href="Registration.aspx">Sign Up</a></td>
+                    <td style="width:10%; " class="login"><a href="../WebForm/Login.aspx">Login</a></td>
                 </tr>
             </table>
         </div>

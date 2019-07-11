@@ -14,15 +14,24 @@ namespace WebAppAssignment
         {
             if(IsPostBack == false)
             {
+               
                 String artworkID = Request.QueryString["artworkID"];
 
                 SqlDataSource1.SelectCommand = "Select * from Artwork where artworkID ='" + artworkID + "'";
                 SqlDataSource1.DataBind();
                 FormView1.DataBind();
+            }
+        }
 
-                Session["Username"] = "Ali";
-                Session["UserID"] = "e1f44526-dce3-4b11-99e3-c2be25d96473";
-
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if (Session["Username"] != null)
+            {
+                MasterPageFile = "~/MasterPage/LoggedInHeader.Master";
+            }
+            else
+            {
+                MasterPageFile = "~/MasterPage/GuestHeader.Master";
             }
         }
 
@@ -57,7 +66,7 @@ namespace WebAppAssignment
             conn.Close();
 
             //Insert into Associative Table (OrderDetails Table)
-            String orderDetailsSql = "insert into OrderDetails (orderID, artworkID,orderQuantity) select o.orderID, a.artworkID," + tbQty + " from Orders o cross join Artwork a where o.orderID ='" + orderid + "' and a.artworkID = " + btn.CommandArgument;
+            String orderDetailsSql = "insert into OrderDetails (orderID, artworkID,orderQuantity) select o.orderID, a.artworkID," + Convert.ToInt32(tbQty.Text) + " from Orders o cross join Artwork a where o.orderID ='" + orderid + "' and a.artworkID = " + btn.CommandArgument;
             cmd = new SqlCommand(orderDetailsSql, conn);
             conn.Open();
             adapter.InsertCommand = new SqlCommand(orderDetailsSql, conn);

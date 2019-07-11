@@ -15,12 +15,23 @@ namespace WebAppAssignment.WebForm
         {
             if(IsPostBack == false)
             {
+
                 SqlDataSource3.SelectCommand = "Select * from Artwork";
                 SqlDataSource3.DataBind();
                 Repeater1.DataBind();
 
-                Session["Username"] = "Ali";
-                Session["UserID"] = "e1f44526-dce3-4b11-99e3-c2be25d96473";
+            }
+        }
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if (Session["Username"] != null)
+            {
+                MasterPageFile = "~/MasterPage/LoggedInHeader.Master";
+            }
+            else
+            {
+                MasterPageFile = "~/MasterPage/GuestHeader.Master";
             }
         }
 
@@ -131,101 +142,113 @@ namespace WebAppAssignment.WebForm
 
         protected void btnAddToCart_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            
-            SqlCommand cmd;
-            SqlDataReader reader;
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
-            String ordersSql = "insert into Orders (orderStatus,UserId,orderDate) values('Pending','" + Session["UserId"].ToString() + "','07-06-2019')";
-            
-            //Insert into Order table
-            cmd = new SqlCommand(ordersSql, conn);
-            conn.Open();
-            adapter.InsertCommand = new SqlCommand(ordersSql, conn);
-            adapter.InsertCommand.ExecuteNonQuery();
-            cmd.Dispose();
-            conn.Close();
-
-            //Find order ID
-            conn.Open();
-            int orderid = 0;
-            cmd = new SqlCommand("select top(1) orderID from Orders order by orderID desc",conn);
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
+            if (Session["Username"] != null)
             {
-                orderid = (int)reader.GetValue(0);
+                Button btn = (Button)sender;
+
+                SqlCommand cmd;
+                SqlDataReader reader;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
+                String ordersSql = "insert into Orders (orderStatus,UserId,orderDate) values('Pending','" + Session["UserId"].ToString() + "','07-06-2019')";
+
+                //Insert into Order table
+                cmd = new SqlCommand(ordersSql, conn);
+                conn.Open();
+                adapter.InsertCommand = new SqlCommand(ordersSql, conn);
+                adapter.InsertCommand.ExecuteNonQuery();
+                cmd.Dispose();
+                conn.Close();
+
+                //Find order ID
+                conn.Open();
+                int orderid = 0;
+                cmd = new SqlCommand("select top(1) orderID from Orders order by orderID desc", conn);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    orderid = (int)reader.GetValue(0);
+                }
+                conn.Close();
+
+                //Insert into Associative Table (OrderDetails Table)
+                String orderDetailsSql = "insert into OrderDetails (orderID, artworkID,orderQuantity) select o.orderID, a.artworkID,1 from Orders o cross join Artwork a where o.orderID ='" + orderid + "' and a.artworkID = " + btn.CommandArgument; ;
+                cmd = new SqlCommand(orderDetailsSql, conn);
+                conn.Open();
+                adapter.InsertCommand = new SqlCommand(orderDetailsSql, conn);
+                adapter.InsertCommand.ExecuteNonQuery();
+                cmd.Dispose();
+                conn.Close();
+                Response.Redirect("BuyArtwork.aspx?status=orderAdded");
             }
-            conn.Close();
-
-            //Insert into Associative Table (OrderDetails Table)
-            String orderDetailsSql = "insert into OrderDetails (orderID, artworkID,orderQuantity) select o.orderID, a.artworkID,1 from Orders o cross join Artwork a where o.orderID ='" + orderid + "' and a.artworkID = " + btn.CommandArgument; ;
-            cmd = new SqlCommand(orderDetailsSql, conn);
-            conn.Open();
-            adapter.InsertCommand = new SqlCommand(orderDetailsSql, conn);
-            adapter.InsertCommand.ExecuteNonQuery();
-            cmd.Dispose();
-            conn.Close();
-            Response.Redirect("BuyArtwork.aspx?status=orderAdded");
-
+            else
+            {
+                Response.Redirect("Login.aspx?status=pleaseSignIn");
+            }
         }
 
         protected void btnAddToWishlist_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            Boolean wishlistDuplication = false;
-            SqlCommand cmd;
-            SqlDataReader reader;
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
-            String wishlistSql = "insert into Wishlist (UserId) values ('" + Session["UserId"].ToString() + "')";
+            if (Session["Username"] !=null) {
+                Button btn = (Button)sender;
+                Boolean wishlistDuplication = false;
+                SqlCommand cmd;
+                SqlDataReader reader;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
+                String wishlistSql = "insert into Wishlist (UserId) values ('" + Session["UserId"].ToString() + "')";
 
-            //Check duplicate wishlist item
-            conn.Open();
-            cmd = new SqlCommand("select Wishlist.UserId, WishlistDetails.artworkID from Wishlist inner join WishlistDetails on Wishlist.wishlistID = WishlistDetails.wishlistID join aspnet_Membership on Wishlist.UserId = aspnet_Membership.UserId where aspnet_Membership.UserId='" + Session["UserId"].ToString() + "' and WishlistDetails.artworkID ='" + btn.CommandArgument + "'", conn);
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                if (reader.GetValue(0).ToString().Equals(Session["UserId"].ToString()) && (int)reader.GetValue(1) == Convert.ToInt32(btn.CommandArgument))
-                {
-                    wishlistDuplication = true;
-                    Response.Redirect("BuyArtwork.aspx?status=duplicate");
-                }
-            }
-            conn.Close();
-
-
-            if (wishlistDuplication == false)
-            {
-            //Insert into Wishlist table
-            cmd = new SqlCommand(wishlistSql, conn);
-            conn.Open();
-            adapter.InsertCommand = new SqlCommand(wishlistSql, conn);
-            adapter.InsertCommand.ExecuteNonQuery();
-            cmd.Dispose();
-            conn.Close();
-
-            //Find wishlist ID
-            conn.Open();
-            int wishlistID = 0;
-            cmd = new SqlCommand("select top(1) wishlistID from Wishlist order by wishlistID desc", conn);
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                wishlistID = (int)reader.GetValue(0);
-            }
-            conn.Close();
-
-                //Insert into Associative Table (Wishlist Details table)
-                String wishlistDetailsSql = "insert into WishlistDetails (wishlistID, artworkID) select w.wishlistID, a.artworkID from Wishlist w cross join Artwork a where w.wishlistID ='" + wishlistID + "' and a.artworkID = '" + btn.CommandArgument + "'";
-                cmd = new SqlCommand(wishlistDetailsSql, conn);
+                //Check duplicate wishlist item
                 conn.Open();
-                adapter.InsertCommand = new SqlCommand(wishlistDetailsSql, conn);
-                adapter.InsertCommand.ExecuteNonQuery();
-                cmd.Dispose();
+                cmd = new SqlCommand("select Wishlist.UserId, WishlistDetails.artworkID from Wishlist inner join WishlistDetails on Wishlist.wishlistID = WishlistDetails.wishlistID join aspnet_Membership on Wishlist.UserId = aspnet_Membership.UserId where aspnet_Membership.UserId='" + Session["UserId"].ToString() + "' and WishlistDetails.artworkID ='" + btn.CommandArgument + "'", conn);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader.GetValue(0).ToString().Equals(Session["UserId"].ToString()) && (int)reader.GetValue(1) == Convert.ToInt32(btn.CommandArgument))
+                    {
+                        wishlistDuplication = true;
+                        Response.Redirect("BuyArtwork.aspx?status=duplicate");
+                    }
+                }
                 conn.Close();
+
+
+                if (wishlistDuplication == false)
+                {
+                    //Insert into Wishlist table
+                    cmd = new SqlCommand(wishlistSql, conn);
+                    conn.Open();
+                    adapter.InsertCommand = new SqlCommand(wishlistSql, conn);
+                    adapter.InsertCommand.ExecuteNonQuery();
+                    cmd.Dispose();
+                    conn.Close();
+
+                    //Find wishlist ID
+                    conn.Open();
+                    int wishlistID = 0;
+                    cmd = new SqlCommand("select top(1) wishlistID from Wishlist order by wishlistID desc", conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        wishlistID = (int)reader.GetValue(0);
+                    }
+                    conn.Close();
+
+                    //Insert into Associative Table (Wishlist Details table)
+                    String wishlistDetailsSql = "insert into WishlistDetails (wishlistID, artworkID) select w.wishlistID, a.artworkID from Wishlist w cross join Artwork a where w.wishlistID ='" + wishlistID + "' and a.artworkID = '" + btn.CommandArgument + "'";
+                    cmd = new SqlCommand(wishlistDetailsSql, conn);
+                    conn.Open();
+                    adapter.InsertCommand = new SqlCommand(wishlistDetailsSql, conn);
+                    adapter.InsertCommand.ExecuteNonQuery();
+                    cmd.Dispose();
+                    conn.Close();
+                }
+                Response.Redirect("BuyArtwork.aspx?status=wishlistAdded");
             }
-            Response.Redirect("BuyArtwork.aspx?status=wishlistAdded");
+            else
+            {
+                Response.Redirect("Login.aspx?status=pleaseSignIn");
+            }
         }
 
     }
