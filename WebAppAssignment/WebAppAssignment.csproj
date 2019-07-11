@@ -82,6 +82,7 @@
     <Content Include="CSS\Cart.css" />
     <Content Include="CSS\HeaderFooter.css" />
     <Content Include="CSS\Home.css" />
+    <Content Include="CSS\SellArtwork.css" />
     <Content Include="Images\545451.jpg" />
     <Content Include="Images\addtocart.png" />
     <Content Include="Images\addtowishlist.png" />

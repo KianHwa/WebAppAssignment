@@ -111,7 +111,7 @@
             position:absolute;
             z-index:1;
             width:1000px;
-            margin-left:200px;
+            margin-left:270px;
             margin-top:40px;
             height:140px;
         }
