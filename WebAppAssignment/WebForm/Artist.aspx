@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/GuestHeader.Master" AutoEventWireup="true" CodeBehind="Artist.aspx.cs" Inherits="WebAppAssignment.WebForm2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  
+    <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
     <style>
         body {
             background: url('../Images/grey.jpg');

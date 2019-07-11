@@ -16,7 +16,15 @@ namespace WebAppAssignment
 
         protected void Page_PreInit(object sender, EventArgs e)
         {
-
+            if (Session["Username"] != null)
+            {
+                MasterPageFile = "~/MasterPage/LoggedInHeader.Master";
+            }
+            else
+            {
+                MasterPageFile = "~/MasterPage/GuestHeader.Master";
+            }
+            
 
         }
     }

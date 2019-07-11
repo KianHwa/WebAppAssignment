@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" href="../Stylesheet/Login.css" type="text/css" />
+
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" href="../Stylesheet/Login.css" type="text/css" />
     <style type="text/css">
         .auto-style1 {
             height: 24px;

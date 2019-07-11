@@ -14,15 +14,24 @@ namespace WebAppAssignment
         {
             if(IsPostBack == false)
             {
+               
                 String artworkID = Request.QueryString["artworkID"];
 
                 SqlDataSource1.SelectCommand = "Select * from Artwork where artworkID ='" + artworkID + "'";
                 SqlDataSource1.DataBind();
                 FormView1.DataBind();
+            }
+        }
 
-                Session["Username"] = "Ali";
-                Session["UserID"] = "e1f44526-dce3-4b11-99e3-c2be25d96473";
-
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if (Session["Username"] != null)
+            {
+                MasterPageFile = "~/MasterPage/LoggedInHeader.Master";
+            }
+            else
+            {
+                MasterPageFile = "~/MasterPage/GuestHeader.Master";
             }
         }
 
