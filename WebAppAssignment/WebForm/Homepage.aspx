@@ -1,7 +1,7 @@
 ﻿ <%@ Page Language="C#" MasterPageFile="~/MasterPage/GuestHeader.Master"  AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="WebAppAssignment.Homepage"%> 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" type="text/css" href="../CSS/Home.css">
+    <link rel="stylesheet" type="text/css" href="Home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!--CSS PART HERE-->
 
@@ -13,7 +13,7 @@
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <img src="../Images/download.jpg" style="width:100%; height:350px;">
+  <img src="../Images/download.jpg" style="width:100%; height:500px;">
   <div class="text">Caption Text</div>
 </div>
 
@@ -39,6 +39,7 @@
 </div>
 <br/>
 
+
 <!--The dot line in here-->
 <div style="text-align:center">
   <span class="dot"></span> 
@@ -53,7 +54,9 @@
 <hr />
 
 <!--Section 2 the Ul part-->
+<h1><b>Category</b></h1>
 <div class="ulside">
+
 <div>
 <ul class="filter-wrapper">
         <li><a href="#"">All</a></li>
@@ -73,23 +76,23 @@
 <div class="background">
             <!--Part 1-->
                <div  class="grid_image">
-                  <img class="artistImage" style="width:240px; border-radius:20px;" src="../Images/artist-Scott.jpg" />
-                   <label>Leonardo Da Vin C</label>
+                  <img class="artistImage" style="width:200px; border-radius:20px;" src="../Images/leonardo.jpg" />
+                   <label>Leonardo da Vinci</label>
               </div>
             <!--Part 2-->
                <div  class="grid_image">
-                  <a href="#"><img class="artistImage" style="width:240px; border-radius:20px;"src="../Images/artist-Scott.jpg" /></a>
-
+                  <a href="#"><img class="artistImage" style="width:200px; border-radius:20px;"src="../Images/salvadordali.jpg" /></a>
+                   <label>Salvaldor Dali</label>
               </div>
             <!--Part 3-->
             <div  class="grid_image">
-                  <img class="artistImage" style="width:240px; border-radius:20px;"src="../Images/artist-Scott.jpg" />
-                 
+                  <img class="artistImage" style="width:200px; border-radius:20px;"src="../Images/edgardegas.jpg" />
+                  <label>Edgar Degas</label>
               </div>
              <!--Part 4-->
                <div  class="grid_image">
-                  <img class="artistImage" style="width:240px; border-radius:20px;" src="../Images/artist-Scott.jpg" />
-
+                  <img class="artistImage" style="width:200px; border-radius:20px;" src="../Images/pikaso.jpg" />
+                   <label>Pablo Picasso</label>
               </div>
     </div>
     </div>
@@ -99,13 +102,13 @@
 <div class="container" style="background-color:rgba(255,255,255,0.5)">
   <div class="row">
     <div class="innerColumn">
-      <img src="../Images/mornalisa.jpg" alt="App" width="335" height="471">
+      <img src="../Images/lion.gif" alt="App" width="335" height="471" style="border-radius:15px;">
     </div>
     <div class="column">
       <h1 class="largefont"><b>Artist</b></h1>
-      <h1 class="bigfont" style="color:red;"><b>Pixels, who?</b></h1>
-      <p><span style="font-size:24px">A revolution in resolution.</span> Sharp and clear photos with the world's best photo engine, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      <button class="button">Read More</button>
+      <h1 class="bigfont" style="color:red;"><b>Looking for the best artist artwork?</b></h1>
+      <p><span style="font-size:24px">Best artist create </span>best art. Art enable us find ourselves and lost ourselves at the same time.</p>
+      <button class="button">Find more</button>
     </div>
      
   </div>
@@ -141,7 +144,7 @@
       </span>
     </div>
     <div class="innerColumn">
-        <img src="../Images/artist.jpg" width="335" height="471">
+        <img src="../Images/mornalisa.jpg" width="335" height="471" style="border-radius:15px;">
     </div>
   </div>
 </div>
@@ -150,13 +153,13 @@
 <div class="container" style="background-color:rgba(255,255,255,0.4)">
   <div class="row">
     <div class="innerColumn">
-      <img src="../Images/background1.jpg" alt="App" width="335" height="471">
+      <img src="../Images/yaesakura.jpg" alt="App" width="380" height="471" style="border-radius:15px;">
     </div>
     <div class="column">
-      <h1 class="largefont"><b>Clarity</b></h1>
-      <h1 class="bigfont" style="color:red;"><b>Pixels, who?</b></h1>
-      <p><span style="font-size:24px">A revolution in resolution.</span> Sharp and clear photos with the world's best photo engine, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      <button class="button">Read More</button>
+      <h1 class="largefont"><b>Wanna Show & Sell Your Artwork?</b></h1>
+      <h1 class="bigfont" style="color:red;"><b>Join Us</b></h1>
+      <p><span style="font-size:24px">Show your skill and creativity.</span>Creativity is contagious. Pass it on and earn money from your artwork.</p>
+      <button class="button">Join Now</button>
     </div>
   </div>
 </div>
@@ -165,13 +168,13 @@
 <div class="container">
   <div class="row">
     <div class="column">
-      <h1 class="largefont"><b>The App</b></h1>
-      <h1 class="bigfont" style="color:MediumSeaGreen;"><b>Why buy it?</b></h1>
-      <p><span style="font-size:36px">Draw a pro.</span> You should buy this app because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      <button class="button">Download Application</button>
+      <h1 class="largefont"><b>Discover and collect the perfect art</b></h1>
+      <h1 class="bigfont" style="color:red;"><b>Looking for art?</b></h1>
+      <p><span style="font-size:36px"></span> The leading gallery for original art online.</p>
+      <a href="#"><button class="button">Shop Now</button></a>
     </div>
-    <div class="column-33">
-        <img src="../Images/background1.jpg" width="335" height="471" >
+    <div>
+        <img src="../Images/scream.gif" width="335" height="471" style="border-radius:15px; background-size:cover;" >
     </div>
   </div>
 </div>

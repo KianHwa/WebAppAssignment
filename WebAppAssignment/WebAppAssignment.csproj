@@ -79,11 +79,17 @@
     <Content Include="App_Data\ArtworkGallery_log.ldf">
       <DependentUpon>ArtworkGallery.mdf</DependentUpon>
     </Content>
+    <Content Include="CSS\Cart.css" />
+    <Content Include="CSS\HeaderFooter.css" />
+    <Content Include="Images\edgardegas.jpg" />
+    <Content Include="Images\leonardo.jpg" />
+    <Content Include="Images\lion.gif" />
+    <Content Include="Images\pikaso.jpg" />
+    <Content Include="Images\salvadordali.jpg" />
+    <Content Include="Images\scream.gif" />
+    <Content Include="Images\yaesakura.jpg" />
+    <Content Include="WebForm\Home.css" />
     <Content Include="Images\artist.jpg" />
-    <Content Include="Images\mornalisa.jpg" />
-    <Content Include="Stylesheet\Cart.css" />
-    <Content Include="Stylesheet\HeaderFooter.css" />
-    <Content Include="Stylesheet\Home.css" />
     <Content Include="Images\545451.jpg" />
     <Content Include="Images\addtocart.png" />
     <Content Include="Images\addtowishlist.png" />
@@ -93,6 +99,7 @@
     <Content Include="Images\city.jpg" />
     <Content Include="Images\grey.jpg" />
     <Content Include="Images\IMG_20190107_163608.jpeg" />
+    <Content Include="Images\mornalisa.jpg" />
     <Content Include="Images\oops.png" />
     <Content Include="Images\logo1.png" />
     <Content Include="Images\logo2.png" />
