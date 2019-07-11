@@ -119,7 +119,7 @@
 <h1>Famous Artist</h1>
 <div class="background">
             <!--Part 1-->
-<%--     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+     <%--<asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
          <ItemTemplate>
                <div  class="grid_image">
                   <img class="artistImage" style="width:240px; border-radius:20px;" src=" <%# Eval("artworkURL") %>" />

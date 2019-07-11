@@ -6,6 +6,14 @@
    
    
 <style>
+        
+    body {
+            background: url('../Images/grey.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow: auto;
+        }
         .title {
           color: grey;
           font-size: 23px;
@@ -60,7 +68,8 @@
           width: 401px;
           opacity: 0;
           transition: .5s ease;
-          background-color:lightgray;
+          background-color: darkgray;
+          
         }
 
         .containerArtist:hover .overlay {
@@ -77,7 +86,38 @@
           -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
           text-align: center;
+          
         }
+        .updatePic{
+           
+            border: none;
+              color: white;
+             
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin-top: 50px;
+              margin-right: 20px;
+              padding: 8px 30px 8px 30px;
+              transition-duration: 0.4s;
+              cursor: pointer;
+        }
+        .updatePic:hover {
+              background-color: black;
+              color: white;
+        }
+        .uploadArtist{
+              border: none;
+              color: white;
+             
+              font-size: 16px;
+             
+              margin-top: 40px;
+             
+              
+        }
+       
 </style>
 
     <h2 style="text-align:center">Artist Profile</h2>
@@ -95,48 +135,43 @@
                 <EditItemTemplate>
                     <div class="containerArtist" style="width: 100%;">
             
-            <img style="width:400px;" src="<%# Eval("profilePicURL")%>" />
+                        <img style="width:400px;" src="<%# Eval("profilePicURL")%>" />
        
-        
-        </div>
+                    </div>
                     <div class="artProf">
                     
-                        <blockquote>
+                    <blockquote>
                     <p>
-                    Name:
-                    <asp:TextBox ID="usernameTxt" runat="server" Text='<%# Eval("UserName") %>' />
-                    
-                        </p>
+                        Name:
+                        <asp:TextBox ID="usernameTxt" runat="server" Text='<%# Eval("UserName") %>' />
+                    </p>
                     <br />
-                   
                     <p>
                     Address:
                     <asp:TextBox ID="addressTxt" runat="server" Text='<%# Bind("address") %>' />
-                    
                     </p>
                       <br />
                     <p>
                         Mobile Phone:
-                    <asp:TextBox ID="phoneTxt" runat="server" Text='<%# Bind("phoneNumber") %>' />
+                        <asp:TextBox ID="phoneTxt" runat="server" Text='<%# Bind("phoneNumber") %>' />
                     
-                        </p>
-                     <br />
+                    </p>
+                    <br />
                     <p>
-                    Quote:
-
-                    <asp:TextBox ID="quoteTxt" runat="server" Text='<%# Bind("quote") %>' />
+                        Quote:
+                        <asp:TextBox ID="quoteTxt" runat="server" Text='<%# Bind("quote") %>' />
                    
-                        </p>
-                     <br />
+                    </p>
+                    <br />
                     <p>
-                    Biography:
-                    <asp:TextBox ID="biotxt" runat="server" Text='<%# Bind("biography") %>' />
+                        Biography:
+                        <asp:TextBox ID="biotxt" runat="server" Text='<%# Bind("biography") %>' />
                     
-                        </p>
-                      <br />
-                      </blockquote>
+                    </p>
+                    <br />
+                    </blockquote>
                        
-                    <asp:Button ID="UpdateButton" class="btnEditCancel" runat="server" CausesValidation="True" CommandName="Update" Text="Update" OnClick="UpdateButton_Click" />
+                    <asp:Button ID="UpdateButton" class="btnEditCancel"  runat="server" CausesValidation="True" CommandName="Update" Text="Update   " OnClick="UpdateButton_Click" />
 
                     <asp:Button ID="UpdateCancelButton" class="btnEditCancel" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                        
@@ -151,8 +186,8 @@
        
         <div class="overlay">
             <div class="text">
-                <asp:FileUpload  ID="artistUpload" runat="server" />
-                <asp:Button ID="UpdatePicButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" OnClick="UpdatePicButton_Click" />
+                <asp:FileUpload  ID="artistUpload" class="uploadArtist"  runat="server" />
+                <asp:Button ID="UpdatePicButton" class="updatePic" runat="server" CausesValidation="True" CommandName="Update" Text="Edit" OnClick="UpdatePicButton_Click" />
             </div>
             
         </div>
@@ -196,6 +231,6 @@
                 </ItemTemplate>
             </asp:FormView>
         </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber,
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber,
             Us.quote, Us.biography FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>
         </asp:Content>

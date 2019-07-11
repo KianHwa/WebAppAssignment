@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebAppAssignment {
+namespace WebAppAssignment.WebForm {
     
     
-    public partial class WebForm2 {
+    public partial class Testimonial {
         
         /// <summary>
         /// FormView1 control.
