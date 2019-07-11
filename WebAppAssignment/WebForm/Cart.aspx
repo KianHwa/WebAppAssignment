@@ -1,7 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage/LoggedInHeader.Master" CodeBehind="Cart.aspx.cs" Inherits="WebAppAssignment.WebForm.Cart" %>
 
 <asp:Content ID="CartContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="Cart.css" type="text/css" runat="server"/>
+    <link rel="stylesheet" href="../Stylesheet/Cart.css" type="text/css" runat="server"/>
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/HeaderFooter.css">
     <div class="body">
         <h1>Your Order Cart</h1>
         <div class="divCartGridView">

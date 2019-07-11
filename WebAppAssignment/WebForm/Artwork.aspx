@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="../Stylesheet/Artwork.css" type="text/css" runat="server"/>
+    <link rel="stylesheet" href="../Stylesheet/HeaderFooter.css" type="text/css" runat="server"/>
         <div class="body">
 
             <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1">

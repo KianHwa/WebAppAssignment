@@ -1,8 +1,8 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/GuestHeader.Master" AutoEventWireup="true" CodeBehind="Testimonial.aspx.cs" Inherits="WebAppAssignment.WebForm2" %>
 
 <asp:Content ID="Content1"  ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/HeaderFooter.css">
     <style>
         body {
             background: url('../Images/grey.jpg');

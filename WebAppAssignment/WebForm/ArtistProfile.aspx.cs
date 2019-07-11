@@ -28,7 +28,7 @@ namespace WebAppAssignment.WebForm
 
             SqlCommand cmd;
             TextBox username = (TextBox)fvArtistProf.FindControl("usernameTxt");
-            TextBox pic = (TextBox)fvArtistProf.FindControl("pictureTxt");
+            
             TextBox address = (TextBox)fvArtistProf.FindControl("addressTxt");
             TextBox phoneNo = (TextBox)fvArtistProf.FindControl("phoneTxt");
             TextBox quote = (TextBox)fvArtistProf.FindControl("quoteTxt");

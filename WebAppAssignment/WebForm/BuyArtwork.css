@@ -39,8 +39,7 @@ body {
     color: grey;
     font-size: 22px;
 }
-
-.btnAddToCart, .btnAddToWishlist {
+.btnAddToWishlist {
     border: none;
     outline: 0;
     padding: 12px;
@@ -48,7 +47,20 @@ body {
     background-color: #000;
     text-align: center;
     cursor: pointer;
-    width: 100%;
+    width: 50%;
+    font-size: 14px;
+    float: left;
+}
+
+.btnAddToCart {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 50%;
     font-size: 14px;
 }
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="ArtistProfile.aspx.cs" Inherits="WebAppAssignment.WebForm.ArtistProfile" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="CustomerProfile.aspx.cs" Inherits="WebAppAssignment.WebForm.CustomerProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -54,7 +54,7 @@
         .btnEdit:hover, a:hover {
           opacity: 0.7;
         }
-        .artProf{
+        .artCust{
             font-size: 23px;
             text-align: center;
             word-break: break-word;
@@ -73,7 +73,7 @@
           
         }
 
-        .containerArtist:hover .overlay {
+        .containerCustomer:hover .overlay {
           opacity: 1;
         }
 
@@ -108,7 +108,7 @@
               background-color: black;
               color: white;
         }
-        .uploadArtist{
+        .uploadCustomer{
               border: none;
               color: white;
              
@@ -121,7 +121,7 @@
        
 </style>
 
-    <h2 style="text-align:center">Artist Profile</h2>
+    <h2 style="text-align:center">Customer Profile</h2>
     <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           max-width: 400px;
           margin: auto;
@@ -131,15 +131,15 @@
           ">
        
         
-    <asp:FormView ID="fvArtistProf" runat="server" DataSourceID="SqlDataSource1" > 
+    <asp:FormView ID="fvCustomerProf" runat="server" DataSourceID="SqlDataSource1" > 
             
                 <EditItemTemplate>
-                    <div class="containerArtist" style="width: 100%;">
+                    <div class="containerCustomer" style="width: 100%;">
             
                         <img style="width:400px;" src="<%# Eval("profilePicURL")%>" />
        
                     </div>
-                    <div class="artProf">
+                    <div class="artCust">
                     
                     <blockquote>
                     <p>
@@ -193,7 +193,7 @@
             
         </div>
         </div>
-                    <div class="artProf">
+                    <div class="artCust">
                     <p>
                     Name:
                     <asp:Label ID="UserNameLabel" runat="server" Text='<%# Eval("UserName") %>' />

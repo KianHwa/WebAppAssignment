@@ -1,9 +1,9 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="BuyArtwork.aspx.cs" Inherits="WebAppAssignment.WebForm.BuyArtwork" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="BuyArtwork.css" type="text/css" runat="server"/>
+    <link rel="stylesheet" href="../WebForm/BuyArtwork.css" type="text/css" runat="server"/>
     
-
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/HeaderFooter.css">
     <div class="body">
         <% 
     String status = Request.QueryString["status"];
@@ -70,7 +70,7 @@
                         <h1 style="color:#383838"><%#Eval("artworkName")%></h1>
                         <p class="price">RM <%# Eval("artworkPrice") %></p>
                         <p style="color:#383838">Description here..aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        <asp:Button ID="btnAddToWishlist" runat="server" Text="Add To Wishlist" CssClass="btnAddToWishlist" CommandArgument='<%# Eval("artworkID")%>' OnClick="btnAddToWishlist_Click"/>
+                        <asp:Button ID="btnAddToWishlist"   runat="server" Text="Add To Wishlist" CssClass="btnAddToWishlist" CommandArgument='<%# Eval("artworkID")%>' OnClick="btnAddToWishlist_Click"/>
                         <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" CommandArgument='<%# Eval("artworkID")%>' OnClick="btnAddToCart_Click"/>
                     </div>
                     </div>
