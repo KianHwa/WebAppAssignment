@@ -57,7 +57,7 @@ namespace WebAppAssignment
             conn.Close();
 
             //Insert into Associative Table (OrderDetails Table)
-            String orderDetailsSql = "insert into OrderDetails (orderID, artworkID,orderQuantity) select o.orderID, a.artworkID," + tbQty + " from Orders o cross join Artwork a where o.orderID ='" + orderid + "' and a.artworkID = " + btn.CommandArgument;
+            String orderDetailsSql = "insert into OrderDetails (orderID, artworkID,orderQuantity) select o.orderID, a.artworkID," + Convert.ToInt32(tbQty.Text) + " from Orders o cross join Artwork a where o.orderID ='" + orderid + "' and a.artworkID = " + btn.CommandArgument;
             cmd = new SqlCommand(orderDetailsSql, conn);
             conn.Open();
             adapter.InsertCommand = new SqlCommand(orderDetailsSql, conn);

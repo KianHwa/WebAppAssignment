@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,6 +11,8 @@ namespace WebAppAssignment.WebForm
 {
     public partial class ArtistProfile : System.Web.UI.Page
     {
+        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack == false)
@@ -57,17 +60,23 @@ namespace WebAppAssignment.WebForm
 
         }
 
-        // The id parameter should match the DataKeyNames value set on the control
-        // or be decorated with a value provider attribute, e.g. [QueryString]int id
-        public object FormView1_GetItem(int id)
+        protected void UpdatePicButton_Click(object sender, EventArgs e)
         {
-            return null;
-        }
+            FileUpload fp = (FileUpload)fvArtistProf.FindControl("artistUpload");
+            if (fp.PostedFile != null)
+            {
+                String imageArtistFile = Path.GetFileName(fp.PostedFile.FileName);
+                fp.SaveAs(HttpContext.Current.Server.MapPath("../Images/" + imageArtistFile));
+                SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
 
-        // The id parameter name should match the DataKeyNames value set on the control
-        public void FormView1_UpdateItem(int id)
-        {
+                conn.Open();
+                String artistImg = "Update UserProfile set profilePicURL = '../Images/" + imageArtistFile + "'";
+                SqlCommand cmd = new SqlCommand(artistImg, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
 
+                Response.Redirect("ArtistProfile.aspx");
+            }
         }
     }
 }

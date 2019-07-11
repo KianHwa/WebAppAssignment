@@ -1,14 +1,20 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/GuestHeader.Master" AutoEventWireup="true" CodeBehind="Artist.aspx.cs" Inherits="WebAppAssignment.WebForm2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="../CSS/ArtistHomepage.css"/>
+  
     <style>
-        
+        body {
+            background: url('../Images/grey.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow:auto;
+        }
         .artistH{
             border: 2px solid #ccc;
             background-color: #eee;
             border-radius: 5px;
-            margin: 20px 300px 0 300px; 
+            margin: 20px 300px 500px 300px; 
             padding: 30px;
             
         }
@@ -22,22 +28,13 @@
           margin-right: 20px;
           border-radius: 80%;
           height: 150px;
-          
+         
       }
      .artistH span{
          font-size: 20px;
          margin-right: 15px;
      }
-     @media (max-width: 500px){
-         .artistH{
-             text-align: center;
-         }
-         .artistH img{
-             margin: auto;
-             float: none;
-
-         }
-     }
+     
        
        .fa-quote-left:before{
            content: "\201C";
@@ -59,6 +56,7 @@
            margin: 40px 130px 0 0;
            transition: 0.3s;
            float: right;
+           cursor:pointer;
        }
        .btnArts:hover{
            background-color: gray;
@@ -67,22 +65,39 @@
     </style>
     
         
-        <div class="artistH">
+      
+  
+           
+      
+  
+    
+         <asp:Repeater ID="artistRepeater" runat="server" DataSourceID="artistHomeSqlDataSource">
+            
+        <ItemTemplate>
+            <div class="artistH">
             <img class="artistImage" style="width:90px;" 
-            src="../Images/artist-Scott.jpg" /><p class="p1" style="">
+            src="<%# Eval("profilePicURL") %>" /><p class="p1" style="">
                 <asp:Button ID="btnArt" class="btnArts" runat="server" PostBackUrl="~/WebForm/Testimonial.aspx" Text="View Profile" />
-                Scott Christensen
+                <%# Eval("UserName") %>
                         <br /> <br />
                   <em>
                       <span class="fa fa-quote-left">
                   
                       </span>
                       I love ocean. HEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHEHHEHEHEHEHEHHEHE
-                      </em>
+                      <span class="fa fa-quote-right">
+                  
+                      </span>
+                  </em>
                 </p>
-                
-            
+           
         </div>
+            
+        </ItemTemplate>
+             </asp:Repeater>
+ 
+
+    <asp:SqlDataSource ID="artistHomeSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT aspnet_Users.UserName, UserProfile.profilePicURL, UserProfile.quote FROM aspnet_Users INNER JOIN UserProfile ON aspnet_Users.UserId = UserProfile.UserId"></asp:SqlDataSource>
       
   
 </asp:Content>

@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/GuestHeader.Master" AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="WebAppAssignment.Homepage" %>
-
+﻿ <%@ Page Language="C#" MasterPageFile="~/MasterPage/GuestHeader.Master"  AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="WebAppAssignment.Homepage"%> 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" type="text/css" href="Home.css">
@@ -7,13 +6,14 @@
     <!--CSS PART HERE-->
 
     <div name="margins">
-<!--Section 1-->
+       
+       
 <section>
 <div>
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <a href="#"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
+  <img src="../Images/download.jpg" style="width:100%; height:350px;">
   <div class="text">Caption Text</div>
 </div>
 
@@ -206,4 +206,4 @@
 
     </script>
 
-</asp:Content>
+ </asp:Content>

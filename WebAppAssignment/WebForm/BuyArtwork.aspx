@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="BuyArtwork.aspx.cs" Inherits="WebAppAssignment.WebForm.BuyArtwork" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="BuyArtwork.css" type="text/css" runat="server"/>
+    <link rel="stylesheet" href="../Stylesheet/BuyArtwork.css" type="text/css" runat="server"/>
     
 
     <div class="body">
@@ -77,6 +77,14 @@
                     </a>
                 </ItemTemplate>
             </asp:Repeater>
+        <%
+            String count = Repeater1.Items.Count.ToString();
 
+            if (Convert.ToInt32(count) == 0){ %>
+                    <div class="noResult">
+                        <h2 style="text-align:center">No result was found</h2>
+                    </div>
+
+            <%}%>
         </div>
 </asp:Content>
