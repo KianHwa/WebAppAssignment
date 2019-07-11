@@ -83,7 +83,7 @@ namespace WebAppAssignment.WebForm
                 cmd.ExecuteNonQuery();
                 conn.Close();
 
-                Response.Redirect("ArtistProfile.aspx");
+                Response.Redirect("CustomerProfile.aspx");
             }
         }
     }

@@ -54,7 +54,7 @@
         .btnEdit:hover, a:hover {
           opacity: 0.7;
         }
-        .artCust{
+        .artProf{
             font-size: 23px;
             text-align: center;
             word-break: break-word;
@@ -73,7 +73,7 @@
           
         }
 
-        .containerCustomer:hover .overlay {
+        .containerArtist:hover .overlay {
           opacity: 1;
         }
 
@@ -108,7 +108,7 @@
               background-color: black;
               color: white;
         }
-        .uploadCustomer{
+        .uploadArtist{
               border: none;
               color: white;
              
@@ -139,7 +139,7 @@
                         <img style="width:400px;" src="<%# Eval("profilePicURL")%>" />
        
                     </div>
-                    <div class="artCust">
+                    <div class="artProf">
                     
                     <blockquote>
                     <p>
@@ -176,13 +176,13 @@
        
         <div class="overlay">
             <div class="text">
-                <asp:FileUpload  ID="artistUpload" class="uploadArtist"  runat="server" />
+                <asp:FileUpload  ID="artistUpload" class="uploadCustomer"  runat="server" />
                 <asp:Button ID="UpdatePicButton" class="updatePic" runat="server" CausesValidation="True" CommandName="Update" Text="Edit" OnClick="UpdatePicButton_Click" />
             </div>
             
         </div>
         </div>
-                    <div class="artCust">
+                    <div class="artProf">
                     <p>
                     Name:
                     <asp:Label ID="UserNameLabel" runat="server" Text='<%# Eval("UserName") %>' />
