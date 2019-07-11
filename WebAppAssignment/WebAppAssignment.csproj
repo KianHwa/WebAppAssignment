@@ -80,7 +80,7 @@
       <DependentUpon>ArtworkGallery.mdf</DependentUpon>
     </Content>
     <Content Include="Artwork.css" />
-    <Content Include="Stylesheet\Home.css" />
+    <Content Include="WebForm\Home.css" />
     <Content Include="Images\545451.jpg" />
     <Content Include="Images\addtocart.png" />
     <Content Include="Images\addtowishlist.png" />
@@ -298,7 +298,9 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Stylesheet\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
