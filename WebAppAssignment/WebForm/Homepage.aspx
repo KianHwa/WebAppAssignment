@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!--CSS PART HERE-->
 
-    <div name="margins">
+    <div class="margins">
        
        
 <section>
@@ -74,6 +74,7 @@
             <!--Part 1-->
                <div  class="grid_image">
                   <img class="artistImage" style="width:240px; border-radius:20px;" src="../Images/artist-Scott.jpg" />
+                   <label>Leonardo Da Vin C</label>
               </div>
             <!--Part 2-->
                <div  class="grid_image">
@@ -90,20 +91,15 @@
                   <img class="artistImage" style="width:240px; border-radius:20px;" src="../Images/artist-Scott.jpg" />
 
               </div>
-            <!--Part 5-->
-        <div  class="grid_image">
-                  <img class="artistImage" style="width:240px; border-radius:20px;" src="../Images/artist-Scott.jpg" />
-
-              </div>
     </div>
     </div>
 
 
 <!-- Clarity Section -->
-<div class="container" style="background-color:#f1f1f1">
+<div class="container" style="background-color:rgba(255,255,255,0.5)">
   <div class="row">
     <div class="innerColumn">
-      <img src="../Images/background1.jpg" alt="App" width="335" height="471">
+      <img src="../Images/mornalisa.jpg" alt="App" width="335" height="471">
     </div>
     <div class="column">
       <h1 class="largefont"><b>Artist</b></h1>
@@ -133,25 +129,25 @@
 
 </div>
 </div>
-<br /><br /><br />
+<br /><br />
 
         <!-- ZIG ZAG PART START HERE-->
     <div class="container">
   <div class="row">
     <div class="column">
-      <h1 class="largefont"><b>What is Art?</b></h1>
-      <h1 class="bigfont" style="color:MediumSeaGreen;"><b>How it Comes out</b></h1>
-      <p><span style="font-size:36px">Take photos like a pro.</span> You should buy this app because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <button class="button">Download Application</button>
+      <h1 class="largefont"><b>Buy or Sell art with confidence</b></h1>
+      <span style="font-size:20px">Manage your art acquisitions and sales  with unlimited scalability, total privacy, and full mobility Leading platform dedicated to sourcing art on buy and sell-side. Our gallery is carefully curated with blue-chip fine
+          art owned by us or by our tightly knit community. We help you buy and sell art via a network of trusted private and public partners.
+      </span>
     </div>
     <div class="innerColumn">
-        <img src="../Images/background1.jpg" width="335" height="471">
+        <img src="../Images/artist.jpg" width="335" height="471">
     </div>
   </div>
 </div>
 
 <!-- Clarity Section -->
-<div class="container" style="background-color:#f1f1f1">
+<div class="container" style="background-color:rgba(255,255,255,0.4)">
   <div class="row">
     <div class="innerColumn">
       <img src="../Images/background1.jpg" alt="App" width="335" height="471">
