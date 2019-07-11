@@ -2,13 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <link rel="stylesheet" type="text/css" href="../Stylesheet/Cart.css">
-    <link rel="stylesheet" type="text/css" href="../Stylesheet/HeaderFooter.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
    
    
 <style>
-        
-
         .title {
           color: grey;
           font-size: 23px;

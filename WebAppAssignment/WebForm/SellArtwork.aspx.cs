@@ -13,7 +13,20 @@ namespace WebAppAssignment.WebForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["UserID"] = "e1f44526-dce3-4b11-99e3-c2be25d96473";
+            
+
+        }
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if (Session["Username"] != null)
+            {
+                MasterPageFile = "~/MasterPage/LoggedInHeader.Master";
+            }
+            else
+            {
+                MasterPageFile = "~/MasterPage/GuestHeader.Master";
+            }
         }
 
         protected void btnUpload_Click(object sender, EventArgs e)
@@ -22,7 +35,9 @@ namespace WebAppAssignment.WebForm
             {
                 String artworkName = txtArtworkName.Text;
                 String artworkCategory = ddlArtworkCat.SelectedItem.Text;
+                String artworkDesc = txtArtworkDesc.Text;
                 float artworkPrice = float.Parse(txtArtworkPrice.Text);
+                int artworkStock = int.Parse(txtStock.Text);
 
 
                 String imageFile = Path.GetFileName(artworkUpload.PostedFile.FileName);
@@ -30,7 +45,7 @@ namespace WebAppAssignment.WebForm
                 SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
 
                 conn.Open();
-                String imageQuery = "insert into Artwork (artworkName, artistID, artworkPrice, artworkCategory, artworkURL) values ('" + artworkName + "','" + Session["UserId"].ToString() + "'," + artworkPrice + ",'" + artworkCategory +  "','../Images/" + imageFile + "')";
+                String imageQuery = "insert into Artwork (artworkName, artistID, artworkPrice, artworkCategory, artworkURL, artworkStock, artworkDesc) values ('" + artworkName + "','" + Session["UserId"].ToString() + "'," + artworkPrice + ",'" + artworkCategory +  "','../Images/" + imageFile + "','" + artworkStock + "','" + artworkDesc + "')";
                 SqlCommand cmd = new SqlCommand(imageQuery, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <link rel="stylesheet" href="../Stylesheet/Login.css" type="text/css" />
+    <link rel="stylesheet" href="../CSS/Login.css" type="text/css" />
 <head runat="server">
     <title></title>
     <style type="text/css">
@@ -41,14 +41,14 @@
                                     <asp:Label ID="lblQuote" runat="server">Quote</asp:Label>
                                 </td>
                                 <td class="auto-style2">
-                                    <textarea id="txtQuote" style="width:90%;" class="txtBoxInput" cols="20" name="S1" rows="2"></textarea></td>
+                                    <textarea id="txtQuote" style="width:90%;" class="txtBoxInput" cols="20" name="S1" rows="2" runat="server"></textarea></td>
                             </tr>
                             <tr>
                                 <td align="right">
                                     <asp:Label ID="lblBiography" runat="server">Biography</asp:Label>
                                 </td>
                                 <td class="auto-style2">
-                                    <textarea id="txtBiography" style="width:90%;" class="txtBoxInput" cols="20" name="S2" rows="2"></textarea></td>
+                                    <textarea id="txtBiography" style="width:90%;" class="txtBoxInput" cols="20" name="S2" rows="2" runat="server"></textarea></td>
                             </tr>
                             <tr>
                                 <td align="center" colspan="2" style="color:Red;">&nbsp;</td>
@@ -56,10 +56,11 @@
                             <tr>
                                 <td colspan="2" class="auto-style1">
                                     <asp:Button ID="btnConfirm" CssClass="myButton" runat="server" Text="Confirm" OnClick="btnConfirm_Click" />
-                                    <asp:Button ID="btnSkip" CssClass="myButton" runat="server" Text="Skip" PostBackUrl="Homepage.aspx" />
+                                    <asp:Button ID="btnSkip" CssClass="myButton" runat="server" Text="Skip" PostBackUrl="Login.aspx" OnClick="btnSkip_Click" />
                                 </td>
                             </tr>
                         </table>
+                        <asp:Label ID="Label1" runat="server"></asp:Label>
                     </td>
                 </tr>
             </table>

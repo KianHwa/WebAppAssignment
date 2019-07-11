@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" href="../Stylesheet/Login.css" type="text/css" />
+
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" href="../CSS/Login.css" type="text/css" />
     <style type="text/css">
         .auto-style1 {
             font-size: large;
@@ -21,9 +22,6 @@
         .auto-style5 {
             height: 72px;
             text-align:center;
-        }
-        .auto-style6 {
-            font-size: small;
         }
         html{
             height:100%;
@@ -100,10 +98,11 @@
                                 </tr>
                                 <tr>
                                     <td class="auto-style3" align="center">
-                                        <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal">
+                                        <asp:RadioButtonList ID="rblRole" runat="server" RepeatDirection="Horizontal">
                                             <asp:ListItem CssClass="one">Member</asp:ListItem>
                                             <asp:ListItem CssClass="one">Artist</asp:ListItem>
                                         </asp:RadioButtonList>
+                                        <asp:RequiredFieldValidator ID="RoleRequired" runat="server" ErrorMessage="Role is required" ControlToValidate="rblRole" ToolTip="Role is required" ValidationGroup="CreateUserWizard1"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
@@ -140,9 +139,16 @@
                                 <tr>
                                     <td class="auto-style3"><span class="auto-style2">Now you&#39;re ready to view, browse, and collecting your favourite </span> 
                                         <br> 
+                                        <br>
+                                        <br>
                                         <br></br>
                                         <span class="auto-style2">artworks by purchasing them.</span><br />
                                         <br />
+                                        <br>
+                                        <br></br>
+                                        </br>
+                                        </br>
+                                        </br>
                                         </br> </td>
                                 </tr>
                                  <tr>

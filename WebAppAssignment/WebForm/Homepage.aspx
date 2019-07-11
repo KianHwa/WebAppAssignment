@@ -1,7 +1,7 @@
 ﻿ <%@ Page Language="C#" MasterPageFile="~/MasterPage/GuestHeader.Master"  AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="WebAppAssignment.Homepage"%> 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" type="text/css" href="../Stylesheet/Home.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="Homepage.js"></script>
     

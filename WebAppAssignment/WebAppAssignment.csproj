@@ -79,9 +79,9 @@
     <Content Include="App_Data\ArtworkGallery_log.ldf">
       <DependentUpon>ArtworkGallery.mdf</DependentUpon>
     </Content>
-    <Content Include="Stylesheet\Cart.css" />
-    <Content Include="Stylesheet\HeaderFooter.css" />
-    <Content Include="Stylesheet\Home.css" />
+    <Content Include="CSS\Cart.css" />
+    <Content Include="CSS\HeaderFooter.css" />
+    <Content Include="CSS\Home.css" />
     <Content Include="Images\545451.jpg" />
     <Content Include="Images\addtocart.png" />
     <Content Include="Images\addtowishlist.png" />
@@ -96,6 +96,7 @@
     <Content Include="Images\logo2.png" />
     <Content Include="Images\Moss-Artwork.png" />
     <Content Include="Images\oldcity.jpg" />
+    <Content Include="Images\profile.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -106,19 +107,19 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Stylesheet\Artwork.css" />
-    <Content Include="Stylesheet\Login.css" />
-    <Content Include="Stylesheet\Wishlist.css" />
-    <Content Include="WebForm\Home.css" />
+    <Content Include="CSS\Artwork.css" />
+    <Content Include="CSS\Login.css" />
+    <Content Include="CSS\Wishlist.css" />
     <Content Include="WebForm\ArtistProfile.aspx" />
     <Content Include="WebForm\Cart.aspx" />
     <Content Include="WebForm\HeaderFooter.js" />
     <Content Include="WebForm\Homepage.js" />
     <Content Include="WebForm\Login.aspx" />
+    <Content Include="WebForm\Message.aspx" />
     <Content Include="WebForm\ModifyPassword.aspx" />
     <Content Include="WebForm\RecoverPassword.aspx" />
     <Content Include="WebForm\Registration2.aspx" />
-    <Content Include="Stylesheet\BuyArtwork.css" />
+    <Content Include="CSS\BuyArtwork.css" />
     <Content Include="Images\search.png" />
     <Content Include="WebForm\BuyArtwork.aspx" />
     <Content Include="WebForm\Homepage.aspx" />
@@ -258,6 +259,13 @@
     <Compile Include="WebForm\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm\Message.aspx.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Message.aspx.designer.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm\ModifyPassword.aspx.cs">
       <DependentUpon>ModifyPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -333,7 +341,9 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Stylesheet\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -12,7 +12,7 @@ body {
 }
 
 @media screen and (max-width: 1400px) {
-    body {
+    body{
         overflow: auto;
         width: 1400px;
     }
@@ -50,6 +50,7 @@ body {
 }
 
 .navBar2 td{
+    
 }
 
 .navBar2 a:hover{
@@ -72,6 +73,10 @@ body {
     background: #cccccc;
     color: white;
     transition: 0.5s;
+}
+
+.login{
+    height:70px;
 }
 
 .navBar1 td, .login, .signup, .signout {
@@ -125,7 +130,7 @@ body {
     border: none;
     border-bottom: 2px solid #d9d9d9;
     margin-left: 50px;
-    width: 300px;
+    width: 250px;
     background-image:url("../Images/search.png");
 }
 
@@ -155,4 +160,20 @@ body {
     background-color: #cccccc;
     transition: 0.5s;
 }
+
+.profileimg img {
+    width: 100%;
+    height: 65px;
+    transform: scale(0.6);
+}
+
+.profileimg{
+    width:100%;
+    height:65px;
+}
+
+    .profileimg:hover {
+        background-color: #cccccc;
+        transition: 0.5s;
+    }
 
