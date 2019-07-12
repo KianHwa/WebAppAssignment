@@ -83,9 +83,21 @@
     <Content Include="CSS\BuyArtwork.css" />
     <Content Include="CSS\Cart.css" />
     <Content Include="CSS\HeaderFooter.css" />
-    <Content Include="CSS\Home.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\Wishlist.css" />
+    <Content Include="Images\background.jpg" />
+    <Content Include="Images\background2.jpg" />
+    <Content Include="Images\background3.jpg" />
+    <Content Include="Images\edgardegas.jpg" />
+    <Content Include="Images\leonardo.jpg" />
+    <Content Include="Images\lion.gif" />
+    <Content Include="Images\pikaso.jpg" />
+    <Content Include="Images\raphael.jpg" />
+    <Content Include="Images\salvadordali.jpg" />
+    <Content Include="Images\scream.gif" />
+    <Content Include="Images\yaesakura.jpg" />
+    <Content Include="WebForm\Home.css" />
+    <Content Include="Images\artist.jpg" />
     <Content Include="Images\545451.jpg" />
     <Content Include="Images\addtocart.png" />
     <Content Include="Images\addtowishlist.png" />
@@ -95,6 +107,7 @@
     <Content Include="Images\city.jpg" />
     <Content Include="Images\grey.jpg" />
     <Content Include="Images\IMG_20190107_163608.jpeg" />
+    <Content Include="Images\mornalisa.jpg" />
     <Content Include="Images\oops.png" />
     <Content Include="Images\logo1.png" />
     <Content Include="Images\logo2.png" />
@@ -349,9 +362,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Stylesheet\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
