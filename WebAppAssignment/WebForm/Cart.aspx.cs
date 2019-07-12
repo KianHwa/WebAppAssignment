@@ -14,10 +14,6 @@ namespace WebAppAssignment.WebForm
         {
             if (IsPostBack == false)
             {
-                if (Session["Role"] == null)
-                {
-                        Response.Redirect("Message.aspx?status=loggedOut");
-                }
 
                 SqlDataSource1.SelectCommand = "Select Artwork.artworkURL, Artwork.artworkName, Artwork.artworkPrice, Orders.orderStatus, Orders.orderDate, OrderDetails.orderQuantity, aspnet_Membership.UserId, Orders.orderID, Artwork.artworkID " +
                                                "from Orders inner join OrderDetails on Orders.orderID = OrderDetails.orderID " +

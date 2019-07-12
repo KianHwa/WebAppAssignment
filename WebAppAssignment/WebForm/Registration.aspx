@@ -141,11 +141,19 @@
                                         <br> 
                                         <br>
                                         <br>
+                                        <br>
                                         <br></br>
                                         <span class="auto-style2">artworks by purchasing them.</span><br />
                                         <br />
                                         <br>
+                                        <br>
                                         <br></br>
+                                        <br></br>
+                                        <br></br>
+                                        <br></br>
+                                        <br></br>
+                                        </br>
+                                        </br>
                                         </br>
                                         </br>
                                         </br>
@@ -166,6 +174,7 @@
                     </asp:CompleteWizardStep>
                 </WizardSteps>
             </asp:CreateUserWizard>
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
         </div>
     </form>
 </body>

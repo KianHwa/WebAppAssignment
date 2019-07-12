@@ -41,7 +41,21 @@
             <table style="width:100%;">
                 <tr>
                     <td style="width:20%;"><asp:TextBox ID="txtSearch" CssClass="textbox" runat="server" placeholder="Search .."></asp:TextBox></td>
-                    <td style="width:10%" class="profileimg"><a href="ArtistProfile.aspx">
+                    <td style="width:10%" class="profileimg">
+                        <%
+                            String url = "";
+                            if (Session["Role"] != null)
+                            {
+                                if (Session["Role"].Equals("Artist"))
+                                {
+                                    url = "ArtistProfile";
+                                }
+                                else if (Session["Role"].Equals("Member"))
+                                {
+                                    url = "CustomerProfile";
+                                }
+                            } %>
+                        <a href="<%= url%>.aspx">
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT * FROM [UserProfile]"></asp:SqlDataSource>
                         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
                         <ItemTemplate>

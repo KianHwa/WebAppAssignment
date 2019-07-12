@@ -20,7 +20,6 @@ namespace WebAppAssignment.WebForm
         protected void CreateUserWizard1_ContinueButtonClick1(object sender, EventArgs e)
         {
             
-
             
 
         }
@@ -38,45 +37,45 @@ namespace WebAppAssignment.WebForm
             }
 
 
-            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
-            SqlCommand cmd;
-            SqlDataReader reader;
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            //SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
+            //SqlCommand cmd;
+            //SqlDataReader reader;
+            //SqlDataAdapter adapter = new SqlDataAdapter();
 
 
-            TextBox tbName = (TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("UserName");
-            conn.Open();
-            Guid userID = new Guid();
-            cmd = new SqlCommand("select aspnet_Membership.UserId from aspnet_Membership inner join aspnet_Users on aspnet_Membership.UserId = aspnet_Users.UserId where aspnet_Users.Username='" + tbName.Text + "'", conn);
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                userID = (Guid)reader.GetValue(0);
-            }
-            conn.Close();
+            //TextBox tbName = (TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("UserName");
+            //conn.Open();
+            //Guid userID = new Guid();
+            //cmd = new SqlCommand("select aspnet_Membership.UserId from aspnet_Membership inner join aspnet_Users on aspnet_Membership.UserId = aspnet_Users.UserId where aspnet_Users.Username='" + tbName.Text + "'", conn);
+            //reader = cmd.ExecuteReader();
+            //while (reader.Read())
+            //{
+            //    userID = (Guid)reader.GetValue(0);
+            //}
+            //conn.Close();
 
-            TextBox tbAddress = (TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("txtAddress");
-            TextBox tbPhone = (TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("txtPhoneNumber");
-            RadioButtonList rblRole = (RadioButtonList)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("rblRole");
+            //TextBox tbAddress = (TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("txtAddress");
+            //TextBox tbPhone = (TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("txtPhoneNumber");
+            //RadioButtonList rblRole = (RadioButtonList)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("rblRole");
 
-            String userProfileSql = "insert into UserProfile (UserId,address,phonenumber) values ('" + userID + "','" + tbAddress.Text + "','" + tbPhone.Text + "')";
+            //String userProfileSql = "insert into UserProfile (UserId,address,phonenumber) values ('" + userID + "','" + tbAddress.Text + "','" + tbPhone.Text + "')";
 
-            //Insert into UserProfile table
-            cmd = new SqlCommand(userProfileSql, conn);
-            conn.Open();
-            adapter.InsertCommand = new SqlCommand(userProfileSql, conn);
-            adapter.InsertCommand.ExecuteNonQuery();
-            cmd.Dispose();
-            conn.Close();
+            ////Insert into UserProfile table
+            //cmd = new SqlCommand(userProfileSql, conn);
+            //conn.Open();
+            //adapter.InsertCommand = new SqlCommand(userProfileSql, conn);
+            //adapter.InsertCommand.ExecuteNonQuery();
+            //cmd.Dispose();
+            //conn.Close();
 
-            if (rblRole.SelectedItem.Text.Equals("Member"))
-            {
-                Roles.AddUserToRole(tbName.Text, "Member");
-            }
-            else
-            {
-                Roles.AddUserToRole(tbName.Text, "Artist");
-            }
+            //if (rblRole.SelectedItem.Text.Equals("Member"))
+            //{
+            //    Roles.AddUserToRole(tbName.Text, "Member");
+            //}
+            //else
+            //{
+            //    Roles.AddUserToRole(tbName.Text, "Artist");
+            //}
         }
 
         protected void StepNextButton_Click(object sender, EventArgs e)
