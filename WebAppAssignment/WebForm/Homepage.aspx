@@ -7,8 +7,6 @@
 
     <div class="margins">
        
-       
-<section>
 <div>
 <div class="slideshow-container" ">
 
@@ -49,7 +47,6 @@
   <span class="dot"></span> 
 </div>
 </div>
-</section>
 <br />
 <hr />
 
@@ -59,11 +56,11 @@
 
 <div>
 <ul class="filter-wrapper">
-        <li><a href="#"">All</a></li>
-        <li><a href="#">Graphic</a></li>
-        <li><a href="#">Artist</a></li>
-        <li><a href="#">Photoshop</a></li>
-        <li><a href="#"">Art</a></li>
+        <li><a href="BuyArtwork.aspx"">Painting</a></li>
+        <li><a href="BuyArtwork.aspx">Portrait</a></li>
+        <li><a href="BuyArtwork.aspx">Color</a></li>
+        <li><a href="BuyArtwork.aspx">Photoshop</a></li>
+        <li><a href="BuyArtwork.aspx">Poster</a></li>
 </ul>
 
 </div>
@@ -76,32 +73,31 @@
 <div class="background">
             <!--Part 1-->
                <div  class="grid_image">
-                  <img class="artistImage" style="width:200px; border-radius:20px; height:270px;" src="../Images/leonardo.jpg" />
+                  <a href="BuyArtwork.aspx"><img class="artistImage" style="width:200px; border-radius:20px; height:270px;" src="../Images/leonardo.jpg" /></a>
                    <label>Leonardo da Vinci</label>
               </div>
             <!--Part 2-->
                <div  class="grid_image">
-                  <a href="#"><img class="artistImage" style="width:200px; border-radius:20px; height:270px;"src="../Images/salvadordali.jpg" /></a>
+                  <a href="BuyArtwork.aspx"><img class="artistImage" style="width:200px; border-radius:20px; height:270px;"src="../Images/salvadordali.jpg" /></a>
                    <label>Salvaldor Dali</label>
               </div>
             <!--Part 3-->
             <div  class="grid_image">
-                  <img class="artistImage" style="width:200px; border-radius:20px; height:270px; "src="../Images/edgardegas.jpg" />
+                  <a href="BuyArtwork.aspx"><img class="artistImage" style="width:200px; border-radius:20px; height:270px; "src="../Images/edgardegas.jpg" /></a>
                   <label>Edgar Degas</label>
               </div>
              <!--Part 4-->
                <div  class="grid_image">
-                  <img class="artistImage" style="width:200px; border-radius:20px; height:270px; " src="../Images/pikaso.jpg" />
+                  <a href="BuyArtwork.aspx"><img class="artistImage" style="width:200px; border-radius:20px; height:270px; " src="../Images/pikaso.jpg" /></a>
                    <label>Pablo Picasso</label>
               </div>
 
              <div  class="grid_image">
-                  <img class="artistImage" style="width:200px; border-radius:20px; height:270px; " src="../Images/raphael.jpg" />
+                  <a href="BuyArtwork.aspx"><img class="artistImage" style="width:200px; border-radius:20px; height:270px; " src="../Images/raphael.jpg" /></a>
                    <label>Raphael</label>
               </div>
     </div>
     </div>
-
 
 <!-- Clarity Section -->
 <div class="container" style="background-color:rgba(255,255,255,0.5)">
@@ -113,17 +109,17 @@
       <h1 class="largefont"><b>Artist</b></h1>
       <h1 class="bigfont" style="color:red;"><b>Looking for the best artist artwork?</b></h1>
       <p><span style="font-size:24px">Best artist create </span>best art. Art enable us find ourselves and lost ourselves at the same time.</p>
-      <button class="button">Find more</button>
+      <button class="button"><a href="BuyArtwork.aspx">Find More</a></button>
     </div>
      
   </div>
 </div>
 
-        <div class="section">
+        <%--<div class="section">
 <h1>Famous Artwork</h1>
 <div class="background">
             <!--Part 1-->
-     <%--<asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
          <ItemTemplate>
                <div  class="grid_image">
                   <img class="artistImage" style="width:240px; border-radius:20px;" src=" <%# Eval("artworkURL") %>" />
@@ -133,10 +129,10 @@
         </ItemTemplate>
          
       </asp:Repeater>
-      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ArtworkGalleryConnectionString %>" SelectCommand="SELECT artworkURL, artworkName, artworkCategory FROM Artwork"></asp:SqlDataSource>--%>
+      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ArtworkGalleryConnectionString %>" SelectCommand="SELECT artworkURL, artworkName, artworkCategory FROM Artwork"></asp:SqlDataSource>
 
 </div>
-</div>
+</div>--%>
 <br /><br />
 
         <!-- ZIG ZAG PART START HERE-->
@@ -164,7 +160,7 @@
       <h1 class="largefont"><b>Wanna Show & Sell Your Artwork?</b></h1>
       <h1 class="bigfont" style="color:red;"><b>Join Us</b></h1>
       <p><span style="font-size:24px">Show your skill and creativity.</span>Creativity is contagious. Pass it on and earn money from your artwork.</p>
-      <button class="button">Join Now</button>
+      <button class="button"><a href="Registration.aspx">Join Now</a></button>
     </div>
   </div>
 </div>
@@ -176,7 +172,7 @@
       <h1 class="largefont"><b>Discover and collect the perfect art</b></h1>
       <h1 class="bigfont" style="color:red;"><b>Looking for art?</b></h1>
       <p><span style="font-size:36px"></span> The leading gallery for original art online.</p>
-      <a href="#"><button class="button">Shop Now</button></a>
+      <button class="button"><a href="BuyArtwork.aspx"><a href="BuyArtwork.aspx">Shop Now</a></button>
     </div>
     <div>
         <img src="../Images/scream.gif" width="335" height="471" style="border-radius:15px; background-size:cover;" >

@@ -3,9 +3,10 @@
 }
 
 body {
+    top:0;
     font-family: Verdana, sans-serif;
-    background-color:indigo;
-    /*background-image:url(../Images/grey.jpg);*/
+    /*background-color:darkturquoise;*/
+    background-image:url(../Images/grey.jpg);
 }
 
 .mySlides {
@@ -15,13 +16,13 @@ body {
 
 img {
     vertical-align: middle;
-   display:block; 
+    display:block; 
 }
 
 /* Slideshow container */
 
 .slideshow-container {
-    max-width: 1000px;
+    width:1000px;
     margin: auto;
     border-radius: 30px;
     border: none;
@@ -159,8 +160,8 @@ h3 {
             letter-spacing: 2px;
             padding: 8px 17px;
             border: 2px solid #000000;
-            margin-right: 10px;
-            margin-left: 40px;
+            margin-right: 4px;
+            margin-left: 4px;
             text-transform: uppercase;
             display:block;
             text-decoration: none;
@@ -230,8 +231,13 @@ h3 {
     border-radius: 50px;
     transition: all 0.4s ease-in-out;
     border: 1px solid black;
+    
 }
 
+    .button a {
+        text-decoration: none;
+        color:black;
+    }
 
 .imgZigZag {
     display: block;
@@ -250,7 +256,7 @@ h3 {
 }
 
 .button:hover,
-.button:focus {
+.button:focus{
     /*background-image: linear-gradient(to right, #2ac275, #cbdc0b, #2ac275);
     background: #2ac275;
     background: linear-gradient(to right, #2ac275, #cbdc0b, #2ac275);*/
@@ -259,5 +265,5 @@ h3 {
     transition: all 0.4s;
     font-weight:700;
     border:0 none;
-    color:#fff;
+    color:gold;
 }
