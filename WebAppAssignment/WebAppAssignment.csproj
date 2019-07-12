@@ -84,9 +84,12 @@
     <Content Include="CSS\SellArtwork.css" />
     <Content Include="CSS\BuyArtwork.css" />
     <Content Include="CSS\Cart.css" />
-    <Content Include="CSS\HeaderFooter.css" />
+    <Content Include="WebForm\HeaderFooter.css" />
+    <Content Include="WebForm\Home.css" />
     <Content Include="CSS\Login.css" />
+    <Content Include="CSS\SellArtwork.css" />
     <Content Include="CSS\Wishlist.css" />
+    <Content Include="Images\Arrowhead-Down-01.png" />
     <Content Include="Images\background.jpg" />
     <Content Include="Images\background2.jpg" />
     <Content Include="Images\background3.jpg" />

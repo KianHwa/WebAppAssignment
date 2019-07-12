@@ -2,7 +2,6 @@
 
 <asp:Content ID="Wishlist_Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" type="text/css" href="../CSS/Wishlist.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
     <div class="body">
         <div class="wishlistTitle">
             <h1>Your Wishlist<asp:Label ID="Label1" runat="server"></asp:Label>
@@ -15,7 +14,7 @@
                     <img src="<%#Eval("artworkURL")%>" />
                 </div>
                 <div class="wishlistDesc">
-                    Something here...
+                    <p><%#Eval("artworkName")%></p>
                 </div>
                 <div class="removeWishlist">
                     <asp:Button ID="deleteWishlistBtn" runat="server" Text="Remove" CssClass="btnRemoveWishlist" OnClick="deleteWishlistBtn_Click" CommandArgument='<%#Eval("wishlistID")+";"+ Eval("artworkID")%>'/>
