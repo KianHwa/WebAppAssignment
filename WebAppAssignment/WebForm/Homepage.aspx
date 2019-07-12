@@ -8,39 +8,40 @@
     <div name="margins">
        
        
-<section>
+<section style="background-color:white;">
+    <br /><br />
 <div>
 <div class="slideshow-container">
 
-<div class="mySlides fade">
-  <img src="../Images/download.jpg" style="width:100%; height:350px;">
-  <div class="text">Caption Text</div>
-</div>
-
-<div class="mySlides fade">
-  <a href="#"><img src="../Images/background1.jpg" style="width:100%; height:500px;"></a>
-  <div class="text">Caption Two</div>
-</div>
-
-<div class="mySlides fade">
-  <a href="#"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
-  <div class="text">Caption Three</div>
-</div>
-
-<div class="mySlides fade">
-  <a href="#"><img src="../Images/background1.jpg" style="width:100%; height:500px;"></a>
-  <div class="text">Caption Four</div>
+<div class="mySlides">
+  <img src="../Images/oldcity.jpg" style="width:100%; height:500px; border-radius:10px;">
+  <div class="text"></div>
 </div>
 
 <div class="mySlides">
-  <a href="Wishlist.aspx"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
-  <div class="text">Caption Five</div>
+  <a href="#"><img src="../Images/city.jpg" style="width:100%; height:500px; border-radius:10px;"></a>
+  <div class="text"></div>
+</div>
+
+<div class="mySlides">
+  <a href="#"><img src="../Images/oldcity.jpg" style="width:100%; height:500px; border-radius:10px;"></a>
+  <div class="text"></div>
+</div>
+
+<div class="mySlides">
+  <a href="#"><img src="../Images/Moss-Artwork.png" style="width:100%; height:500px; border-radius:10px;"></a>
+  <div class="text"></div>
+</div>
+
+<div class="mySlides">
+  <a href="Wishlist.aspx"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px; border-radius:10px;"></a>
+  <div class="text"></div>
 </div>
 </div>
 <br/>
 
 <!--The dot line in here-->
-<div style="text-align:center">
+<div style="text-align:center; visibility:hidden;">
   <span class="dot"></span> 
   <span class="dot"></span> 
   <span class="dot"></span>
