@@ -80,6 +80,8 @@
       <DependentUpon>ArtworkGallery.mdf</DependentUpon>
     </Content>
     <Content Include="CSS\Artwork.css" />
+    <Content Include="CSS\Home.css" />
+    <Content Include="CSS\SellArtwork.css" />
     <Content Include="CSS\BuyArtwork.css" />
     <Content Include="CSS\Cart.css" />
     <Content Include="CSS\HeaderFooter.css" />
@@ -96,7 +98,6 @@
     <Content Include="Images\salvadordali.jpg" />
     <Content Include="Images\scream.gif" />
     <Content Include="Images\yaesakura.jpg" />
-    <Content Include="WebForm\Home.css" />
     <Content Include="Images\artist.jpg" />
     <Content Include="Images\545451.jpg" />
     <Content Include="Images\addtocart.png" />
