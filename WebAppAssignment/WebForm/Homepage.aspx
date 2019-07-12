@@ -8,26 +8,26 @@
     <div class="margins">
        
        
-<section>
+<section">
 <div>
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <img src="../Images/download.jpg" style="width:100%; height:500px;">
+  <a href="#"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
   <div class="text">Caption Text</div>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides">
   <a href="#"><img src="../Images/background1.jpg" style="width:100%; height:500px;"></a>
   <div class="text">Caption Two</div>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides">
   <a href="#"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
   <div class="text">Caption Three</div>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides">
   <a href="#"><img src="../Images/background1.jpg" style="width:100%; height:500px;"></a>
   <div class="text">Caption Four</div>
 </div>
@@ -140,7 +140,7 @@
 <br /><br />
 
         <!-- ZIG ZAG PART START HERE-->
-    <div class="container">
+    <div class="container" style="background-image:url('../Images/background3.jpg')">
   <div class="row">
     <div class="column">
       <h1 class="largefont"><b>Buy or Sell art with confidence</b></h1>

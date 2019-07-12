@@ -85,6 +85,9 @@
     <Content Include="CSS\HeaderFooter.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\Wishlist.css" />
+    <Content Include="Images\background.jpg" />
+    <Content Include="Images\background2.jpg" />
+    <Content Include="Images\background3.jpg" />
     <Content Include="Images\edgardegas.jpg" />
     <Content Include="Images\leonardo.jpg" />
     <Content Include="Images\lion.gif" />
