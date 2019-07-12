@@ -76,23 +76,28 @@
 <div class="background">
             <!--Part 1-->
                <div  class="grid_image">
-                  <img class="artistImage" style="width:200px; border-radius:20px;" src="../Images/leonardo.jpg" />
+                  <img class="artistImage" style="width:200px; border-radius:20px; height:270px;" src="../Images/leonardo.jpg" />
                    <label>Leonardo da Vinci</label>
               </div>
             <!--Part 2-->
                <div  class="grid_image">
-                  <a href="#"><img class="artistImage" style="width:200px; border-radius:20px;"src="../Images/salvadordali.jpg" /></a>
+                  <a href="#"><img class="artistImage" style="width:200px; border-radius:20px; height:270px;"src="../Images/salvadordali.jpg" /></a>
                    <label>Salvaldor Dali</label>
               </div>
             <!--Part 3-->
             <div  class="grid_image">
-                  <img class="artistImage" style="width:200px; border-radius:20px;"src="../Images/edgardegas.jpg" />
+                  <img class="artistImage" style="width:200px; border-radius:20px; height:270px; "src="../Images/edgardegas.jpg" />
                   <label>Edgar Degas</label>
               </div>
              <!--Part 4-->
                <div  class="grid_image">
-                  <img class="artistImage" style="width:200px; border-radius:20px;" src="../Images/pikaso.jpg" />
+                  <img class="artistImage" style="width:200px; border-radius:20px; height:270px; " src="../Images/pikaso.jpg" />
                    <label>Pablo Picasso</label>
+              </div>
+
+             <div  class="grid_image">
+                  <img class="artistImage" style="width:200px; border-radius:20px; height:270px; " src="../Images/raphael.jpg" />
+                   <label>Raphael</label>
               </div>
     </div>
     </div>
@@ -115,7 +120,7 @@
 </div>
 
         <div class="section">
-<h1>Famous Artist</h1>
+<h1>Famous Artwork</h1>
 <div class="background">
             <!--Part 1-->
      <%--<asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
