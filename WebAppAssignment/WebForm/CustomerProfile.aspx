@@ -32,6 +32,7 @@
           cursor: pointer;
           width: 400px;
           font-size: 18px;
+          border-radius: 4px;
         }
 
         .btnEditCancel{
@@ -47,6 +48,7 @@
             float:left;
             outline: 0;
             cursor: pointer;
+            border-radius: 4px;
         }
         .btnEditCancel:hover{
             opacity: 0.7;
@@ -58,6 +60,7 @@
             font-size: 23px;
             text-align: center;
             word-break: break-word;
+            border-radius: 4px;
         }
         .overlay {
           position: absolute;
@@ -70,6 +73,7 @@
           opacity: 0;
           transition: .5s ease;
           background-color: darkgray;
+           border-radius: 4px;
           
         }
 
@@ -118,48 +122,66 @@
              
               
         }
-       
+       .profileTxt{
+            padding: 4px 10px;
+            margin:8px 0;
+            display: inline-block;
+            border:1px solid #ccc;
+            border-radius: 4px;
+            box-sizing:border-box;
+            width:50%;
+            opacity:0.6;
+            margin-left: 10px;
+
+        }
+
+
+        .profileTxt:hover{
+            opacity:0.8;
+        }
 </style>
 
     <h2 style="text-align:center">Customer Profile</h2>
-    <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-          max-width: 400px;
-          margin: auto;
-          text-align: center;
-          font-family: arial;
-          
-          ">
+    <div style="box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.2);max-width: 400px;text-align: center;margin:auto; border-radius: 4px;margin-bottom: 40px; font-family: arial;">
        
         
     <asp:FormView ID="fvCustomerProf" runat="server" DataSourceID="SqlDataSource1" > 
             
                 <EditItemTemplate>
-                    <div class="containerCustomer" style="width: 100%;">
+                    <div class="containerArtist" style="width: 100%;">
             
-                        <img style="width:400px;" src="<%# Eval("profilePicURL")%>" />
+                        <img style="width:400px; height:307px; border-radius: 4px;" src="<%# Eval("profilePicURL")%>" />
        
                     </div>
                     <div class="artProf">
                     
-                    <blockquote>
-                    <p>
-                        Name:
-                        <asp:TextBox ID="usernameTxt" runat="server" Text='<%# Eval("UserName") %>' />
-                    </p>
-                    <br />
-                    <p>
-                    Address:
-                    <asp:TextBox ID="addressTxt" runat="server" Text='<%# Bind("address") %>' />
-                    </p>
-                      <br />
-                    <p>
-                        Mobile Phone:
-                        <asp:TextBox ID="phoneTxt" runat="server" Text='<%# Bind("phoneNumber") %>' />
+                        <blockquote>
+                            <p>
+                                Name:
+                            </p>
+                            <p>
+                                <asp:Label ID="usernameTxt" runat="server" Text='<%# Eval("UserName") %>' />
+                            </p>
+                            <br />
+                            <p>
+                                Address:
+                            </p>
+                            <p>
+                                <blockquote>
+                                    <asp:TextBox ID="addressTxt" class="profileTxt" Width="80%"  runat="server" Text='<%# Bind("address") %>' />
+                                </blockquote>    
+                            </p>
+                            <br />
+                            <p>
+                                Mobile
+                            </p>
+                            <p>
+                                <asp:TextBox ID="phoneTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("phoneNumber") %>' />
                     
-                    </p>
-                    <br />
+                            </p>
+                            <br />
                     
-                    </blockquote>
+                        </blockquote>
                        
                     <asp:Button ID="UpdateButton" class="btnEditCancel"  runat="server" CausesValidation="True" CommandName="Update" Text="Update   " OnClick="UpdateButton_Click" />
 
@@ -172,7 +194,7 @@
                 <ItemTemplate>
                     <div class="containerArtist" style="width: 100%;">
             
-            <img style="width:400px; height: 307px;" src="<%# Eval("profilePicURL")%>" />
+            <img style="width:400px; height: 307px; border-radius: 4px;" src="<%# Eval("profilePicURL")%>" />
        
         <div class="overlay">
             <div class="text">
@@ -184,21 +206,29 @@
         </div>
                     <div class="artProf">
                     <p>
-                    Name:
-                    <asp:Label ID="UserNameLabel" runat="server" Text='<%# Eval("UserName") %>' />
+                         Name:
                     </p>
-                        <br />
+                    <p style="color:darkgray;">
+                        <asp:Label ID="UserNameLabel" Font-Size="Medium"  runat="server" Text='<%# Bind("UserName") %>' />
+                    </p>
+                    <br />
                   
                     <p>
-                    Address:
-                    <asp:Label ID="addressLabel" runat="server" Text='<%# Eval("address") %>' />
+                        Address:
                     </p>
-                        <br />
+                        <blockquote>
+                    <p style="color:darkgray;">
+                        <asp:Label ID="addressLabel" Font-Size="Medium" runat="server" Text='<%# Eval("address") %>' />
+                    </p>
+                            </blockquote>
+                    <br />
                     <p>
-                    Mobile Phone:
-                    <asp:Label ID="phoneNumberLabel" runat="server" Text='<%# Eval("phoneNumber") %>' />
+                        Mobile Phone:
                     </p>
-                        <br />
+                    <p style="color:darkgray;">
+                        <asp:Label ID="phoneNumberLabel" Font-Size="Medium" runat="server" Text='<%# Eval("phoneNumber") %>' />
+                    </p>
+                    <br />
                    
                    
                     <asp:Button ID="EditButton" class="btnEdit" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
@@ -206,6 +236,8 @@
                 </ItemTemplate>
             </asp:FormView>
         </div>
+    
+    
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber
             FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>
         </asp:Content>

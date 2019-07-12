@@ -40,7 +40,7 @@ namespace WebAppAssignment.WebForm
             
 
             SqlCommand cmd;
-            TextBox username = (TextBox)fvArtistProf.FindControl("usernameTxt");
+            
             
             TextBox address = (TextBox)fvArtistProf.FindControl("addressTxt");
             TextBox phoneNo = (TextBox)fvArtistProf.FindControl("phoneTxt");
@@ -48,17 +48,7 @@ namespace WebAppAssignment.WebForm
             TextBox bio = (TextBox)fvArtistProf.FindControl("bioTxt");
             SqlDataAdapter adapter = new SqlDataAdapter();
             SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
-            String userSql = "Update aspnet_Users set UserName = '" + username.Text + "' where UserID = '" + Session["UserID"].ToString() + "'";
-            SqlDataSource1.DataBind();
-            fvArtistProf.DataBind();
-            //update aspnet_Users
-            conn.Open();
-            cmd = new SqlCommand(userSql, conn);
-            adapter.UpdateCommand = new SqlCommand(userSql, conn);
-            adapter.UpdateCommand.ExecuteNonQuery();
-            cmd.Dispose();
-            conn.Close();
-
+           
 
             String profileSql = "Update UserProfile set address = '" + address.Text + "', phoneNumber = '" + phoneNo.Text + "', quote = '" + quote.Text + "', biography = '" + bio.Text + "' where UserID='" + Session["UserID"].ToString() + "'";
             //update UserProfile

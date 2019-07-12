@@ -24,13 +24,14 @@
           border: none;
           outline: 0;
           display: inline-block;
-          padding: 5px;
+          padding: 6px;
           color: white;
           background-color: #000;
           text-align: center;
           cursor: pointer;
           width: 400px;
           font-size: 18px;
+          border-radius: 4px;
         }
 
         .btnEditCancel{
@@ -38,7 +39,7 @@
             border: none;
             color: white;
             width:199px;
-            padding: 5px;
+            padding: 6px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -46,6 +47,7 @@
             float:left;
             outline: 0;
             cursor: pointer;
+            border-radius: 4px;
         }
         .btnEditCancel:hover{
             opacity: 0.7;
@@ -57,6 +59,7 @@
             font-size: 23px;
             text-align: center;
             word-break: break-word;
+            border-radius: 4px;
         }
         .overlay {
           position: absolute;
@@ -69,7 +72,7 @@
           opacity: 0;
           transition: .5s ease;
           background-color: darkgray;
-          
+           border-radius: 4px;
         }
 
         .containerArtist:hover .overlay {
@@ -117,7 +120,22 @@
              
               
         }
-       
+       .profileTxt{
+            padding: 4px 20px;
+            margin:8px 0;
+            display: inline-block;
+            border:1px solid #ccc;
+            border-radius: 4px;
+            box-sizing:border-box;
+            width:50%;
+            opacity:0.6;
+        }
+
+
+        .profileTxt:hover{
+            opacity:0.8;
+        }
+        
 </style>
 
     <h2 style="text-align:center">Artist Profile</h2>
@@ -126,7 +144,8 @@
           margin: auto;
           text-align: center;
           font-family: arial;
-          
+          margin-bottom: 40px;
+          border-radius: 4px;
           ">
        
         
@@ -135,7 +154,7 @@
                 <EditItemTemplate>
                     <div class="containerArtist" style="width: 100%;">
             
-                        <img style="width:400px;" src="<%# Eval("profilePicURL")%>" />
+                        <img style="width:400px; height:307px; border-radius: 4px;" src="<%# Eval("profilePicURL")%>" />
        
                     </div>
                     <div class="artProf">
@@ -143,29 +162,41 @@
                     <blockquote>
                     <p>
                         Name:
-                        <asp:TextBox ID="usernameTxt" runat="server" Text='<%# Eval("UserName") %>' />
+                        </p>
+                        <b  style="color:darkgray;">
+                        <p>
+                        <asp:Label ID="usernameTxt" Font-Size="Medium" runat="server" Text='<%# Eval("UserName") %>' />
                     </p>
+                        </b>
                     <br />
                     <p>
                     Address:
-                    <asp:TextBox ID="addressTxt" runat="server" Text='<%# Bind("address") %>' />
+                        </p>
+                        <p style="darkgray">
+                    <asp:TextBox ID="addressTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("address") %>' />
                     </p>
                       <br />
                     <p>
                         Mobile Phone:
-                        <asp:TextBox ID="phoneTxt" runat="server" Text='<%# Bind("phoneNumber") %>' />
+                        </p>
+                        <p>
+                        <asp:TextBox ID="phoneTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("phoneNumber") %>' />
                     
                     </p>
                     <br />
                     <p>
                         Quote:
-                        <asp:TextBox ID="quoteTxt" runat="server" Text='<%# Bind("quote") %>' />
+                        </p>
+                        <p>
+                        <asp:TextBox ID="quoteTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("quote") %>' />
                    
                     </p>
                     <br />
                     <p>
                         Biography:
-                        <asp:TextBox ID="biotxt" runat="server" Text='<%# Bind("biography") %>' />
+                        </p>
+                        <p>
+                        <asp:TextBox ID="biotxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("biography") %>' />
                     
                     </p>
                     <br />
@@ -182,7 +213,7 @@
                 <ItemTemplate>
                     <div class="containerArtist" style="width: 100%;">
             
-            <img style="width:400px; height: 307px;" src="<%# Eval("profilePicURL")%>" />
+            <img style="width:400px; height: 307px;  border-radius: 4px;" src="<%# Eval("profilePicURL")%>" />
        
         <div class="overlay">
             <div class="text">
@@ -194,36 +225,56 @@
         </div>
                     <div class="artProf">
                     <p>
-                    Name:
-                    <asp:Label ID="UserNameLabel" runat="server" Text='<%# Eval("UserName") %>' />
+                        Name:
                     </p>
-                        <br />
-                  
-                    <p>
-                    Address:
-                    <asp:Label ID="addressLabel" runat="server" Text='<%# Eval("address") %>' />
+                        <b>
+                    <p style="color:darkgray;">
+                    <asp:Label ID="UserNameLabel" Font-Size="Medium" runat="server" Text='<%# Eval("UserName") %>' />
                     </p>
+                        </b>
                         <br />
                     <p>
-                    Mobile Phone:
-                    <asp:Label ID="phoneNumberLabel" runat="server" Text='<%# Eval("phoneNumber") %>' />
+                        Address:
                     </p>
-                        <br />
                     <p>
-                    Quote:
-                        <blockquote>
-                            <q>
-                                <asp:Label ID="quoteLabel" runat="server" Text='<%# Eval("quote") %>' />
-                            </q>
+                        <b>
+                        <blockquote  style="color:darkgray;">
+                            <asp:Label ID="addressLabel" Font-Size="Medium" runat="server" Text='<%# Eval("address") %>' />
                         </blockquote>
-                    
+                            </b>
                     </p>
                         <br />
                     <p>
-                    Biography:
-                        <blockquote>
-                    <asp:Label ID="biographyLabel" runat="server" Text='<%# Bind("biography") %>' />
+                        Mobile Phone:
+                    </p>
+                        <b>
+                    <p style="color:darkgray;">
+                        <asp:Label ID="phoneNumberLabel" Font-Size="Medium" runat="server" Text='<%# Eval("phoneNumber") %>' />
+                    </p>
+                        </b>
+                    <br />
+                    <p>
+                        Quote:
+                    </p>
+                    <p>
+                        <b>
+                            <blockquote style="color:darkgray;">
+                                <q>
+                                    <asp:Label ID="quoteLabel" Font-Size="Medium" runat="server" Text='<%# Eval("quote") %>' />
+                                </q>
                             </blockquote>
+                         </b>
+                    </p>
+                    <br />
+                    <p>
+                        Biography:
+                    </p>
+                    <p>
+                        <b>
+                            <blockquote style="color:darkgray;">
+                                <asp:Label ID="biographyLabel" Font-Size="Medium" runat="server" Text='<%# Bind("biography") %>' />
+                            </blockquote>
+                       </b>
                     </p>
                         <br />
                     <asp:Button ID="EditButton" class="btnEdit" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />

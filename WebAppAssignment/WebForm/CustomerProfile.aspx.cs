@@ -36,23 +36,14 @@ namespace WebAppAssignment.WebForm
 
 
             SqlCommand cmd;
-            TextBox username = (TextBox)fvCustomerProf.FindControl("usernameTxt");
+    
 
             TextBox address = (TextBox)fvCustomerProf.FindControl("addressTxt");
             TextBox phoneNo = (TextBox)fvCustomerProf.FindControl("phoneTxt");
           
             SqlDataAdapter adapter = new SqlDataAdapter();
             SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
-            String userSql = "Update aspnet_Users set UserName = '" + username.Text + "' where UserID = '" + Session["UserID"].ToString() + "'";
-            SqlDataSource1.DataBind();
-            fvCustomerProf.DataBind();
-            //update aspnet_Users
-            conn.Open();
-            cmd = new SqlCommand(userSql, conn);
-            adapter.UpdateCommand = new SqlCommand(userSql, conn);
-            adapter.UpdateCommand.ExecuteNonQuery();
-            cmd.Dispose();
-            conn.Close();
+            
 
 
             String profileSql = "Update UserProfile set address = '" + address.Text + "', phoneNumber = '" + phoneNo.Text + "' where UserID='" + Session["UserID"].ToString() + "'";
@@ -64,7 +55,7 @@ namespace WebAppAssignment.WebForm
 
             cmd.Dispose();
             conn.Close();
-            Response.Redirect("ArtistProfile.aspx");
+            Response.Redirect("CustomerProfile.aspx");
 
         }
 
