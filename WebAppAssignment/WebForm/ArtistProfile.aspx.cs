@@ -15,10 +15,23 @@ namespace WebAppAssignment.WebForm
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack == false)
+            SqlDataSource1.SelectCommand = "SELECT * from aspnet_Users inner join UserProfile on aspnet_Users.UserId = UserProfile.UserId inner " +
+                                           "join aspnet_UsersInRoles on aspnet_Users.UserId = aspnet_UsersInRoles.UserId inner " +
+                                           "join aspnet_Roles on aspnet_UsersInRoles.RoleId = aspnet_Roles.RoleId inner join Artwork on aspnet_Users.UserId = Artwork.artistID where aspnet_Roles.RoleName = '" + Session["Role"].ToString() + "' and aspnet_Users.UserName = '" + Session["UserName"].ToString() + "'";
+
+            SqlDataSource1.DataBind();
+
+        }
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if (Session["Username"] != null)
             {
-                Session["Username"] = "Ali";
-                Session["UserID"] = "e1f44526-dce3-4b11-99e3-c2be25d96473";
+                MasterPageFile = "~/MasterPage/LoggedInHeader.Master";
+            }
+            else
+            {
+                MasterPageFile = "~/MasterPage/GuestHeader.Master";
             }
         }
 
@@ -28,7 +41,7 @@ namespace WebAppAssignment.WebForm
 
             SqlCommand cmd;
             TextBox username = (TextBox)fvArtistProf.FindControl("usernameTxt");
-            TextBox pic = (TextBox)fvArtistProf.FindControl("pictureTxt");
+            
             TextBox address = (TextBox)fvArtistProf.FindControl("addressTxt");
             TextBox phoneNo = (TextBox)fvArtistProf.FindControl("phoneTxt");
             TextBox quote = (TextBox)fvArtistProf.FindControl("quoteTxt");

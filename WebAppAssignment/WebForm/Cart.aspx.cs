@@ -14,13 +14,25 @@ namespace WebAppAssignment.WebForm
         {
             if (IsPostBack == false)
             {
-                Session["UserID"] = "e1f44526-dce3-4b11-99e3-c2be25d96473";
+
                 SqlDataSource1.SelectCommand = "Select Artwork.artworkURL, Artwork.artworkName, Artwork.artworkPrice, Orders.orderStatus, Orders.orderDate, OrderDetails.orderQuantity, aspnet_Membership.UserId, Orders.orderID, Artwork.artworkID " +
                                                "from Orders inner join OrderDetails on Orders.orderID = OrderDetails.orderID " +
                                                "join Artwork on OrderDetails.artworkID = Artwork.artworkID join aspnet_Membership on aspnet_Membership.UserId = Orders.UserID " +
                                                "where Orders.UserId ='" + Session["UserID"].ToString() + "'";
                 SqlDataSource1.DataBind();
                 GridView1.DataBind();
+            }
+        }
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if (Session["Username"] != null)
+            {
+                MasterPageFile = "~/MasterPage/LoggedInHeader.Master";
+            }
+            else
+            {
+                MasterPageFile = "~/MasterPage/GuestHeader.Master";
             }
         }
 

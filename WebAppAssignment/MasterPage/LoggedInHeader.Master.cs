@@ -11,7 +11,15 @@ namespace WebAppAssignment.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SqlDataSource1.SelectCommand = "Select * from UserProfile inner join aspnet_Users on UserProfile.UserId = aspnet_Users.UserId where aspnet_Users.Username='" + Session["Username"].ToString() + "'";
+            SqlDataSource1.DataBind();
+            Repeater1.DataBind();
 
+        }
+
+        protected void LoginStatus1_LoggedOut(object sender, EventArgs e)
+        {
+            Session.Abandon();
         }
     }
 }

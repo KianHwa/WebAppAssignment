@@ -14,15 +14,31 @@ namespace WebAppAssignment.WebForm
         {
             if (IsPostBack == false)
             {
-                Session["UserID"] = "e1f44526-dce3-4b11-99e3-c2be25d96473";
+                if (Session["Role"] == null)
+                {
+                        Response.Redirect("Message.aspx?status=loggedOut");
+                }
+
                 SqlDataSource1.SelectCommand = "select * from Artwork inner join WishlistDetails on Artwork.artworkID = WishlistDetails.artworkID join " +
                                                "Wishlist on WishlistDetails.wishlistID = Wishlist.wishlistID join " +
-                                               "aspnet_Membership on aspnet_Membership.UserId = Wishlist.UserId where aspnet_Membership.UserId ='" + Session["UserId"].ToString() + "'";
+                                               "aspnet_Membership on aspnet_Membership.UserId = Wishlist.UserId where aspnet_Membership.UserId ='" + Session["UserID"].ToString() + "'";
                 SqlDataSource1.DataBind();
                 Repeater1.DataBind();
             }
             
             
+        }
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if (Session["Username"] != null)
+            {
+                MasterPageFile = "~/MasterPage/LoggedInHeader.Master";
+            }
+            else
+            {
+                MasterPageFile = "~/MasterPage/GuestHeader.Master";
+            }
         }
 
         protected void deleteWishlistBtn_Click(object sender, EventArgs e)

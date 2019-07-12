@@ -1,8 +1,8 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="Testimonial.aspx.cs" Inherits="WebAppAssignment.WebForm2" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="Testimonial.aspx.cs" Inherits="WebAppAssignment.WebForm.Testimonial" %>
 
 <asp:Content ID="Content1"  ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
     <style>
         body {
             background: url('../Images/grey.jpg');
@@ -56,7 +56,7 @@
     </style>
 
 
-       <asp:FormView ID="FormView1" runat="server" DataKeyNames="artworkID,UserId,ApplicationId,LoweredUserName" DataSourceID="SqlDataSource1" Width="100%">
+       <asp:FormView ID="FormView1" runat="server"  DataSourceID="SqlDataSource1" Width="100%">
                           
                           <ItemTemplate>
                           
@@ -84,6 +84,8 @@
                  
                       </asp:FormView>
        
+                        
+       
                         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
                             <ItemTemplate>
                                             
@@ -98,9 +100,9 @@
                                 </ItemTemplate>
                         </asp:Repeater>
 
-                  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="select * from Artwork inner join UserProfile on
-                    Artwork.artistID = UserProfile.UserId inner join aspnet_Users on
-                    UserProfile.UserId = aspnet_Users.UserId"></asp:SqlDataSource>
+                  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="select * from Artwork inner join UserProfile on
+                    Artwork.artistID = aspnet_Users.UserId inner join UserProfile on
+                    aspnet_Users.UserId = UserProfile.UserId"></asp:SqlDataSource>
                
     
                

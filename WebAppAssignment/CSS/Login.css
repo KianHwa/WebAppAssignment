@@ -1,0 +1,152 @@
+﻿body{
+    height:100%;
+    margin:0;
+    font-family:Artist;
+}
+.bgimage {
+    background-image:url('../../Images/Moss-Artwork.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+    height:100%;
+    filter:blur(3px);
+}
+
+#form1 {
+    position: absolute;
+    top: 40%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.6);
+    color:white;
+    font-weight: bold;
+    border: 2px solid #f1f1f1;
+    font-family:Arial;
+    border-radius:25px;
+    border:1px solid #808080;
+    padding:20px;
+}
+
+.myButton {
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+    background: -moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background: -webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background: -o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background: -ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+    background-color: #ffffff;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: #666666;
+    font-family: Artist;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+    opacity:0.8;
+}
+
+.myButton:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+    background: -moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background: -webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background: -o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background: -ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+    background-color: #f6f6f6;
+    opacity:0.5;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
+
+.txtBoxInput{
+    padding: 4px 20px;
+    margin:8px 0;
+    display: inline-block;
+    border:1px solid #ccc;
+    border-radius: 4px;
+    box-sizing:border-box;
+    width:50%;
+    opacity:0.6;
+}
+
+
+.txtBoxInput:hover{
+    opacity:0.8;
+}
+
+.chkBox{
+    width:20px;
+    position:relative;
+}
+
+.chkBox label{
+    cursor:pointer;
+    position:absolute;
+    width:20px;
+    height:20px;
+    top:0;
+    left:0;
+    background:#eee;
+    border:1px solid #ddd;
+}
+
+.chkBox label:after{
+    opacity:0.2;
+    content: '';
+    position:absolute;
+    width:9px;
+    height:5px;
+    background: transparent;
+    top:6px;
+    left:4px;
+    border:3px solid #333;
+    border-top:none;
+    border-right:none;
+    transform:rotate(-45deg);
+}
+
+.chkBox label:hover::after{
+    opacity:0.5;
+}
+
+.chkBox input[type=checkbox]:checked + label:after{
+    opacity: 1;
+}
+
+.lbl{
+    padding-left:10px;
+}
+
+@font-face {
+    font-family: Artist;
+    src:url('WebForm/The Artist.otf');
+}
+@font-face{
+    font-family: Design;
+    src:url('FontStyle/Endless Script DF.ttf');
+}
+
+.txtBoxwid{
+    width:80%;
+}
+
+.myStyle{
+    margin-right:15%;
+}
+
+.one{
+    margin:10px;
+    padding:10px;
+}

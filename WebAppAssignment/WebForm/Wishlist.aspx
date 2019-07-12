@@ -1,8 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="../MasterPage/LoggedInHeader.Master" CodeBehind="Wishlist.aspx.cs" Inherits="WebAppAssignment.WebForm.Wishlist" %>
 
 <asp:Content ID="Wishlist_Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" type="text/css" href="../Stylesheet/Wishlist.css">
-
+    <link rel="stylesheet" type="text/css" href="../CSS/Wishlist.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
     <div class="body">
         <div class="wishlistTitle">
             <h1>Your Wishlist<asp:Label ID="Label1" runat="server"></asp:Label>

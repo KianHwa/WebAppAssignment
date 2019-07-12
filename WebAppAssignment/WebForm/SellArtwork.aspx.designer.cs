@@ -40,6 +40,15 @@ namespace WebAppAssignment.WebForm {
         protected global::System.Web.UI.WebControls.DropDownList ddlArtworkCat;
         
         /// <summary>
+        /// txtArtworkDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtArtworkDesc;
+        
+        /// <summary>
         /// txtArtworkPrice control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace WebAppAssignment.WebForm {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtArtworkPrice;
+        
+        /// <summary>
+        /// txtStock control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtStock;
         
         /// <summary>
         /// btnUpload control.

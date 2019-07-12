@@ -31,6 +31,15 @@ namespace WebAppAssignment.WebForm {
         protected global::System.Web.UI.WebControls.Label lblQuote;
         
         /// <summary>
+        /// txtQuote control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtQuote;
+        
+        /// <summary>
         /// lblBiography control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace WebAppAssignment.WebForm {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBiography;
+        
+        /// <summary>
+        /// txtBiography control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtBiography;
         
         /// <summary>
         /// btnConfirm control.
@@ -56,5 +74,14 @@ namespace WebAppAssignment.WebForm {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSkip;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
     }
 }
