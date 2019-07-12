@@ -39,12 +39,12 @@
 
             <div class="categoryFilter">
                 <h4>Filter your search here </h4>
-                <asp:DropDownList ID="ddlCategory" runat="server" DataSourceID="SqlDataSource1" DataTextField="artworkCategory" DataValueField="artworkCategory" AppendDataBoundItems="True" CssClass="categoryFilterDdl" AutoPostBack="True" OnSelectedIndexChanged="filter_SelectedIndexChanged">
+                <asp:DropDownList ID="ddlCategory" runat="server" ForeColor="Gray" style="border-radius:8px;" BackColor="White" Font-Bold DataSourceID="SqlDataSource1" DataTextField="artworkCategory" DataValueField="artworkCategory" AppendDataBoundItems="True" CssClass="categoryFilterDdl" AutoPostBack="True" OnSelectedIndexChanged="filter_SelectedIndexChanged">
                     <asp:ListItem Text="Select a category" Value="0" />
                     <asp:ListItem>Painting</asp:ListItem>
                     <asp:ListItem>Portrait</asp:ListItem>
                 </asp:DropDownList>
-                <asp:DropDownList ID="ddlPrice" runat="server" AppendDataBoundItems="True" CssClass="categoryFilterDdl" AutoPostBack="True" OnSelectedIndexChanged="filter_SelectedIndexChanged">
+                <asp:DropDownList ID="ddlPrice" runat="server" ForeColor="Gray" style="border-radius:8px;" BackColor="White" Font-Bold AppendDataBoundItems="True" CssClass="categoryFilterDdl" AutoPostBack="True" OnSelectedIndexChanged="filter_SelectedIndexChanged">
                     <asp:ListItem Text="Select a price range" Value="0" />
                     <asp:ListItem>Less than 100</asp:ListItem>
                     <asp:ListItem>Between 100 and 500</asp:ListItem>
@@ -55,7 +55,7 @@
                     <asp:ListItem Text="Select an artist" Value="0" />
                 </asp:DropDownList>
                 <asp:TextBox ID="txtSearchArtwork" runat="server" OnTextChanged="txtSearchArtwork_TextChanged" CssClass="txtSearchArtwork"></asp:TextBox>
-                <asp:Button ID="btnSearchArtwork" runat="server" OnClick="txtSearch_Click" Text="Search" CssClass="btnSearchArtwork"/>
+                <asp:Button ID="btnSearchArtwork" runat="server" OnClick="txtSearch_Click" Text="Search" CssClass="myButton"/>
             </div>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [UserName] FROM [vw_aspnet_Users]"></asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Artwork]"></asp:SqlDataSource>
