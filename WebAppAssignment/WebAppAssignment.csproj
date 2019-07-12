@@ -98,6 +98,7 @@
     <Content Include="Images\salvadordali.jpg" />
     <Content Include="Images\scream.gif" />
     <Content Include="Images\yaesakura.jpg" />
+    <Content Include="CSS\Home.css" />
     <Content Include="Images\artist.jpg" />
     <Content Include="Images\545451.jpg" />
     <Content Include="Images\addtocart.png" />

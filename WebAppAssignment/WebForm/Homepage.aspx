@@ -1,48 +1,47 @@
 ﻿ <%@ Page Language="C#" MasterPageFile="~/MasterPage/GuestHeader.Master"  AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="WebAppAssignment.Homepage"%> 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" type="text/css" href="../CSS/Home.css">
-    <link rel="stylesheet" href="../CSS/HeaderFooter.css" type="text/css" runat="server"/>
+    <link rel="stylesheet" href="../CSS/Home.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!--CSS PART HERE-->
 
     <div class="margins">
        
        
-<section">
+<section>
 <div>
-<div class="slideshow-container">
+<div class="slideshow-container" ">
 
-<div class="mySlides fade">
+<div class="mySlides">
   <a href="#"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
-  <div class="text">Caption Text</div>
+  <div class="text"></div>
 </div>
 
 <div class="mySlides">
   <a href="#"><img src="../Images/background1.jpg" style="width:100%; height:500px;"></a>
-  <div class="text">Caption Two</div>
+  <div class="text"></div>
 </div>
 
 <div class="mySlides">
   <a href="#"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
-  <div class="text">Caption Three</div>
+  <div class="text"></div>
 </div>
 
 <div class="mySlides">
   <a href="#"><img src="../Images/background1.jpg" style="width:100%; height:500px;"></a>
-  <div class="text">Caption Four</div>
+  <div class="text"></div>
 </div>
 
 <div class="mySlides">
   <a href="Wishlist.aspx"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
-  <div class="text">Caption Five</div>
+  <div class="text"></div>
 </div>
 </div>
 <br/>
 
 
 <!--The dot line in here-->
-<div style="text-align:center">
+<div style="text-align:center; visibility:hidden;">
   <span class="dot"></span> 
   <span class="dot"></span> 
   <span class="dot"></span>

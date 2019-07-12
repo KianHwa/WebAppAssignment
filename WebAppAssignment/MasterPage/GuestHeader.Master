@@ -50,11 +50,10 @@
                     </tr>
                 </table>
             </div>
-
         <div class="navBar2">
             <table style="width:100%;">
                 <tr>
-                    <td style="width:30%; padding-top:21px;%;"><asp:TextBox ID="txtSearch" CssClass="textbox" runat="server" placeholder="Search"></asp:TextBox></td>
+                    <td style="width:30%;"><asp:TextBox ID="txtSearch" CssClass="textbox" runat="server" placeholder="Search .."></asp:TextBox></td>
                     <td style="width:10%;" class="signup"><a href="Registration.aspx">Sign Up</a></td>
                     <td style="width:10%; " class="login"><a href="../WebForm/Login.aspx">Login</a></td>
                 </tr>
