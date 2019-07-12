@@ -15,15 +15,16 @@
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           max-width: 400px;
           float:left;
-          
+          border-radius: 4px;
           margin: 80px 0 0 120px;
           text-align: center;
           font-family: arial;
+
         }
         
         .grid_image div {
           
-          border: hidden;
+        
           text-align: left;
         
         }
@@ -78,7 +79,7 @@
                             </div>
     
                           <br /><br /><br /><br /><br /><br /><br /><br />
-                            <h2 style="text-align: center;">Below is the artist's artwork</h2>
+                            <h2 style="text-align: center;">Below is the artist's artwork display</h2>
                       
                           </ItemTemplate>
                  
@@ -89,8 +90,8 @@
                         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
                             <ItemTemplate>
                                             
-                                        <div  class="grid_image">
-                                             <img class="artistImage" style="width:340px;height:250px;" 
+                                        <div  class="grid_image" style="margin-bottom: 30px;">
+                                             <img class="artistImage" style="width:340px;height:250px; border-radius: 4px;" 
                                               src="<%# Eval("artworkURL")%>" />
                                               <h1><%# Eval("artworkName") %></h1>
                                               <p><%# Eval("artworkCategory") %></p>
