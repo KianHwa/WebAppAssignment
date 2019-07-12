@@ -1,7 +1,78 @@
-﻿.menuItemHover {
+﻿
+.menuItemHover {
     padding: 15px;
     width: 250px;
     transition: 0.5s;
+}
+
+#logo {
+    float: left;
+    width: 10.5em;
+    background: #CCCCCC;
+    padding: 0.5em 0.5em 0.5em 1em;
+    margin: 0;
+}
+
+.primaryStaticMenu {
+    background-color: transparent;
+    float: right;
+}
+
+.primaryStaticMenuItem {
+    width: 10em;
+    background-color:white;
+    border-width: 1px;
+    border-color: #efefef #aaab9c #ccc #efefef;
+    border-style: solid;
+    color: black;
+    padding: 0.5em 0 0.5em 1em;
+}
+
+.primaryStaticHover {
+    color: #800000;
+    background: #f0e7d7;
+}
+
+.primaryDynamicMenu {
+    background-color: #f7f2ea;
+    border-bottom: solid 1px #ccc;
+    border-top: 2px solid lightgrey;
+}
+
+.primaryDynamicMenuItem {
+    width: 10em;
+    background-color: white;
+    color: #777;
+    padding: 0.5em 0 0.5em 1em;
+    border-width: 1px;
+    border-color: #f7f2ea #aaab9c #f7f2ea #efefef;
+    border-style: solid;
+}
+
+.primaryDynamicHover {
+    color: #800000;
+    background: #f0e7d7;
+}
+.borderline {
+    border-top: 1px solid lightgrey;
+}
+
+.secondaryLevelOne {
+    background-color: transparent;
+    background-repeat: repeat-x;
+    margin: 1.5em 0 0 0;
+    padding: 5px 0 0 5px;
+    width: 12em;
+    height: 35px;
+}
+
+.secondaryLevelTwo {
+    background: #FAFBFB;
+    padding: 5px 0 5px 5px;
+}
+
+.secondaryStaticHover {
+    color: #800000;
 }
 
 body {
@@ -9,6 +80,7 @@ body {
     margin: 0;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-top:80px;
+    z-index:10;
 }
 
 @media screen and (max-width: 1400px) {
@@ -50,16 +122,17 @@ body {
 }
 
 .navBar2 td{
-    
+    padding-top:28px;
 }
 
-.navBar2 a:hover{
-    color:white;
-    transition:0.5s;
-}
+    .navBar2 a:hover {
+        color: gray;
+        padding-bottom:8px;
+        border-bottom: 2px solid lightgrey;
+    }
 
 .navBar1 td {
-    padding: 16px;
+    padding:0px;
     padding-left: 40px;
     padding-top:30px;
     padding-bottom:20px;
@@ -67,11 +140,11 @@ body {
 
 #form1 {
     margin: 0;
+    transform: translateZ(0);
 }
 
 .navBar1 td:hover, .login:hover, .signup:hover, .signout:hover{
-    background: #cccccc;
-    color: white;
+    color: black;
     transition: 0.5s;
 }
 
@@ -88,7 +161,6 @@ body {
     content: '';
     position: absolute;
     width: 100%;
-    border-bottom: 2px solid black;
     bottom: 0px;
     transform: scaleX(0);
     transition: transform 0.2s ease-in;
@@ -97,12 +169,12 @@ body {
 
 #navBar {
    
-    height: 70px;
-    border-bottom: 1px solid #d9d9d9;
+    height: 78px;
+    border:0;
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: white;
+    background-color: #fff;
     transition: 0.5s;
     box-shadow: 0px 3px 6px 6px rgba(204,204,204,0.5);
 }
@@ -111,7 +183,6 @@ body {
     content: '';
     position: absolute;
     width: 100%;
-    border-bottom: 2px solid black;
     bottom: 0px;
     transform: scaleX(0);
     transition: transform 0.2s ease-in;
@@ -128,15 +199,12 @@ body {
     padding: 8px;
     height: 25px;
     border: none;
-    border-bottom: 2px solid #d9d9d9;
+    border-bottom: 1px solid #000000;
+    border-radius:2px;
+    box-sizing:border-box;
     margin-left: 50px;
     width: 250px;
     background-image:url("../Images/search.png");
-}
-
-.textbox:hover{
-    transition:0.5s;
-    background-color:#f2f2f2;
 }
 
 .addtocart img {
@@ -177,3 +245,23 @@ body {
         transition: 0.5s;
     }
 
+/*test*/
+#nav #main-menu ul li {
+    list-style-type: none;
+    float: left;
+    margin-right: 46px
+}
+
+@media screen and (max-width: 1220px) {
+    #nav #main-menu ul li {
+        list-style-type: none;
+        float: left;
+        margin-right: 20px
+    }
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}

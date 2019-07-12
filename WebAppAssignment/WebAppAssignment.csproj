@@ -83,13 +83,16 @@
     <Content Include="CSS\BuyArtwork.css" />
     <Content Include="CSS\Cart.css" />
     <Content Include="CSS\HeaderFooter.css" />
-    <Content Include="CSS\Home.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\Wishlist.css" />
+    <Content Include="Images\background.jpg" />
+    <Content Include="Images\background2.jpg" />
+    <Content Include="Images\background3.jpg" />
     <Content Include="Images\edgardegas.jpg" />
     <Content Include="Images\leonardo.jpg" />
     <Content Include="Images\lion.gif" />
     <Content Include="Images\pikaso.jpg" />
+    <Content Include="Images\raphael.jpg" />
     <Content Include="Images\salvadordali.jpg" />
     <Content Include="Images\scream.gif" />
     <Content Include="Images\yaesakura.jpg" />

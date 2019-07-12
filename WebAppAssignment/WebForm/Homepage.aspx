@@ -8,26 +8,26 @@
     <div class="margins">
        
        
-<section>
+<section">
 <div>
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <img src="../Images/download.jpg" style="width:100%; height:500px;">
+  <a href="#"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
   <div class="text">Caption Text</div>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides">
   <a href="#"><img src="../Images/background1.jpg" style="width:100%; height:500px;"></a>
   <div class="text">Caption Two</div>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides">
   <a href="#"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
   <div class="text">Caption Three</div>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides">
   <a href="#"><img src="../Images/background1.jpg" style="width:100%; height:500px;"></a>
   <div class="text">Caption Four</div>
 </div>
@@ -76,23 +76,28 @@
 <div class="background">
             <!--Part 1-->
                <div  class="grid_image">
-                  <img class="artistImage" style="width:200px; border-radius:20px;" src="../Images/leonardo.jpg" />
+                  <img class="artistImage" style="width:200px; border-radius:20px; height:270px;" src="../Images/leonardo.jpg" />
                    <label>Leonardo da Vinci</label>
               </div>
             <!--Part 2-->
                <div  class="grid_image">
-                  <a href="#"><img class="artistImage" style="width:200px; border-radius:20px;"src="../Images/salvadordali.jpg" /></a>
+                  <a href="#"><img class="artistImage" style="width:200px; border-radius:20px; height:270px;"src="../Images/salvadordali.jpg" /></a>
                    <label>Salvaldor Dali</label>
               </div>
             <!--Part 3-->
             <div  class="grid_image">
-                  <img class="artistImage" style="width:200px; border-radius:20px;"src="../Images/edgardegas.jpg" />
+                  <img class="artistImage" style="width:200px; border-radius:20px; height:270px; "src="../Images/edgardegas.jpg" />
                   <label>Edgar Degas</label>
               </div>
              <!--Part 4-->
                <div  class="grid_image">
-                  <img class="artistImage" style="width:200px; border-radius:20px;" src="../Images/pikaso.jpg" />
+                  <img class="artistImage" style="width:200px; border-radius:20px; height:270px; " src="../Images/pikaso.jpg" />
                    <label>Pablo Picasso</label>
+              </div>
+
+             <div  class="grid_image">
+                  <img class="artistImage" style="width:200px; border-radius:20px; height:270px; " src="../Images/raphael.jpg" />
+                   <label>Raphael</label>
               </div>
     </div>
     </div>
@@ -115,7 +120,7 @@
 </div>
 
         <div class="section">
-<h1>Famous Artist</h1>
+<h1>Famous Artwork</h1>
 <div class="background">
             <!--Part 1-->
      <%--<asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
@@ -135,7 +140,7 @@
 <br /><br />
 
         <!-- ZIG ZAG PART START HERE-->
-    <div class="container">
+    <div class="container" style="background-image:url('../Images/background3.jpg')">
   <div class="row">
     <div class="column">
       <h1 class="largefont"><b>Buy or Sell art with confidence</b></h1>
