@@ -6,9 +6,6 @@
     <!--CSS PART HERE-->
 
     <div class="margins">
-       
-       
-<section">
 <div>
 <div class="slideshow-container">
 
@@ -49,7 +46,6 @@
   <span class="dot"></span> 
 </div>
 </div>
-</section>
 <br />
 <hr />
 
@@ -119,11 +115,11 @@
   </div>
 </div>
 
-        <div class="section">
+        <%--<div class="section">
 <h1>Famous Artwork</h1>
 <div class="background">
             <!--Part 1-->
-     <%--<asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
          <ItemTemplate>
                <div  class="grid_image">
                   <img class="artistImage" style="width:240px; border-radius:20px;" src=" <%# Eval("artworkURL") %>" />
@@ -133,10 +129,10 @@
         </ItemTemplate>
          
       </asp:Repeater>
-      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ArtworkGalleryConnectionString %>" SelectCommand="SELECT artworkURL, artworkName, artworkCategory FROM Artwork"></asp:SqlDataSource>--%>
+      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ArtworkGalleryConnectionString %>" SelectCommand="SELECT artworkURL, artworkName, artworkCategory FROM Artwork"></asp:SqlDataSource>
 
 </div>
-</div>
+</div>--%>
 <br /><br />
 
         <!-- ZIG ZAG PART START HERE-->

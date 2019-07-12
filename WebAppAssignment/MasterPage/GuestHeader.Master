@@ -26,7 +26,7 @@
                     </tr>
                 </table>
             </div>
-        <%--<script>
+        <script>
             window.onscroll = function () { scrollFunction() };
 
             function scrollFunction() {
@@ -36,7 +36,7 @@
                     document.getElementById("navBar").style.top = "-80px";
                 }
             }
-</script>--%>
+</script>
         <div class="navBar2">
             <table style="width:100%;">
                 <tr>

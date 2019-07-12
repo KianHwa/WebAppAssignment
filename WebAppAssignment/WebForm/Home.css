@@ -3,6 +3,7 @@
 }
 
 body {
+    top:0;
     font-family: Verdana, sans-serif;
     background-color:indigo;
     /*background-image:url(../Images/grey.jpg);*/
@@ -15,13 +16,13 @@ body {
 
 img {
     vertical-align: middle;
-   display:block; 
+    display:block; 
 }
 
 /* Slideshow container */
 
 .slideshow-container {
-    max-width: 1000px;
+    width:1000px;
     margin: auto;
     border-radius: 30px;
     border: none;
