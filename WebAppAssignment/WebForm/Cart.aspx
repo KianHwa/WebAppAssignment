@@ -2,7 +2,6 @@
 
 <asp:Content ID="CartContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="../CSS/Cart.css" type="text/css" runat="server"/>
-    <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
 
     <div class="body">
         <h1>Your Order Cart</h1>
