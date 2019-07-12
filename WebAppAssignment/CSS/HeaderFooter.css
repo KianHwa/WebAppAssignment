@@ -1,5 +1,4 @@
-﻿
-.menuItemHover {
+﻿.menuItemHover {
     padding: 15px;
     width: 250px;
     transition: 0.5s;
@@ -20,7 +19,7 @@
 
 .primaryStaticMenuItem {
     width: 10em;
-    background-color:white;
+    background-color: white;
     border-width: 1px;
     border-color: #efefef #aaab9c #ccc #efefef;
     border-style: solid;
@@ -53,6 +52,7 @@
     color: #800000;
     background: #f0e7d7;
 }
+
 .borderline {
     border-top: 1px solid lightgrey;
 }
@@ -76,15 +76,13 @@
 }
 
 body {
-
     margin: 0;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-top:80px;
-    z-index:10;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 80px;
 }
 
 @media screen and (max-width: 1400px) {
-    body{
+    body {
         overflow: auto;
         width: 1400px;
     }
@@ -92,13 +90,13 @@ body {
 
 .logo {
     width: 15%;
-    float:left;
+    float: left;
     height: 70px;
     background-image: url('../Images/logo2.png');
-    background-color:#ffffff;
+    background-color: #ffffff;
     background-size: 170px 85px;
     background-repeat: no-repeat;
-    background-position:center;
+    background-position: center;
 }
 
 .navBar1 {
@@ -113,43 +111,39 @@ body {
     width: 45%;
     height: 70px;
     float: right;
-    background-color: white;
 }
 
-.navBar2 a {
-    text-decoration: none;
-    color:black;
-}
+    .navBar2 a {
+        text-decoration: none;
+        color: black;
+    }
 
-.navBar2 td{
-    padding-top:28px;
-}
+    .navBar2 td {
+    }
 
     .navBar2 a:hover {
         color: gray;
-        padding-bottom:8px;
-        border-bottom: 2px solid lightgrey;
     }
 
 .navBar1 td {
-    padding:0px;
+    padding: 16px;
     padding-left: 40px;
-    padding-top:30px;
-    padding-bottom:20px;
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
 
 #form1 {
     margin: 0;
-    transform: translateZ(0);
 }
 
-.navBar1 td:hover, .login:hover, .signup:hover, .signout:hover{
-    color: black;
+.navBar1 td:hover, .login:hover, .signup:hover, .signout:hover {
+    background: transparent;
+    color: white;
     transition: 0.5s;
 }
 
-.login{
-    height:70px;
+.login {
+    height: 70px;
 }
 
 .navBar1 td, .login, .signup, .signout {
@@ -157,24 +151,23 @@ body {
 }
 
 
-.navBar1 td:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    bottom: 0px;
-    transform: scaleX(0);
-    transition: transform 0.2s ease-in;
-    margin-left: -40px;
-}
+    .navBar1 td:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+        transform: scaleX(0);
+        transition: transform 0.2s ease-in;
+        margin-left: -40px;
+    }
 
 #navBar {
-   
-    height: 78px;
-    border:0;
+    height: 70px;
+    border-bottom: 1px solid #d9d9d9;
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: white;
     transition: 0.5s;
     box-shadow: 0px 3px 6px 6px rgba(204,204,204,0.5);
 }
@@ -183,6 +176,7 @@ body {
     content: '';
     position: absolute;
     width: 100%;
+    border-bottom: 2px solid black;
     bottom: 0px;
     transform: scaleX(0);
     transition: transform 0.2s ease-in;
@@ -199,13 +193,16 @@ body {
     padding: 8px;
     height: 25px;
     border: none;
-    border-bottom: 1px solid #000000;
-    border-radius:2px;
-    box-sizing:border-box;
+    border-bottom: 2px solid #d9d9d9;
     margin-left: 50px;
     width: 250px;
-    background-image:url("../Images/search.png");
+    background-image: url("../Images/search.png");
 }
+
+    .textbox:hover {
+        transition: 0.5s;
+        background-color: #f2f2f2;
+    }
 
 .addtocart img {
     width: 100%;
@@ -213,14 +210,14 @@ body {
     transform: scale(0.6);
 }
 
-    .addtocart:hover {
-        background-color: #cccccc;
-        transition:0.5s;
-    }
+.addtocart:hover {
+    background-color: #cccccc;
+    transition: 0.5s;
+}
 
-.wishlist img{
-    width:100%;
-    height:65px;
+.wishlist img {
+    width: 100%;
+    height: 65px;
     transform: scale(0.6);
 }
 
@@ -235,33 +232,12 @@ body {
     transform: scale(0.6);
 }
 
-.profileimg{
-    width:100%;
-    height:65px;
+.profileimg {
+    width: 100%;
+    height: 65px;
 }
 
     .profileimg:hover {
         background-color: #cccccc;
         transition: 0.5s;
     }
-
-/*test*/
-#nav #main-menu ul li {
-    list-style-type: none;
-    float: left;
-    margin-right: 46px
-}
-
-@media screen and (max-width: 1220px) {
-    #nav #main-menu ul li {
-        list-style-type: none;
-        float: left;
-        margin-right: 20px
-    }
-}
-
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box
-}
