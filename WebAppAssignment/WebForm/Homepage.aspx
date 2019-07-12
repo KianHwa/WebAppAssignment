@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!--CSS PART HERE-->
 
-    <div name="margins">
+    <div class="margins">
        
        
 <section>
@@ -119,7 +119,7 @@
 <h1>Famous Artist</h1>
 <div class="background">
             <!--Part 1-->
-     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+<%--     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
          <ItemTemplate>
                <div  class="grid_image">
                   <img class="artistImage" style="width:240px; border-radius:20px;" src=" <%# Eval("artworkURL") %>" />
@@ -130,7 +130,7 @@
          
       </asp:Repeater>
       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ArtworkGalleryConnectionString %>" SelectCommand="SELECT artworkURL, artworkName, artworkCategory FROM Artwork"></asp:SqlDataSource>
-
+--%>
 </div>
 </div>
 <br /><br /><br />

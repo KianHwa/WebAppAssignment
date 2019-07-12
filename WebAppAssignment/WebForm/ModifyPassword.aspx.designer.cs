@@ -9,7 +9,7 @@
 
 
 
-public partial class  {
+public partial class  ModifyPassword{
     
     /// <summary>
     /// form1 control.

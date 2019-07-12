@@ -16,15 +16,7 @@ namespace WebAppAssignment
 
         protected void Page_PreInit(object sender, EventArgs e)
         {
-            String masterPage = Request.QueryString["status"];
-            if (masterPage.Equals("loggedIn"))
-            {
-                MasterPageFile = "~/MasterPage/LoggedInHeader.Master";
-            }
-            else
-            {
-                MasterPageFile = "~/MasterPage/GuestHeader.Master";
-            }
+
 
         }
     }
