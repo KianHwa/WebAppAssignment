@@ -138,25 +138,9 @@
                                 </tr>
                                 <tr>
                                     <td class="auto-style3"><span class="auto-style2">Now you&#39;re ready to view, browse, and collecting your favourite </span> 
-                                        <br> 
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br></br>
+                                      
                                         <span class="auto-style2">artworks by purchasing them.</span><br />
-                                        <br />
-                                        <br>
-                                        <br>
-                                        <br></br>
-                                        <br></br>
-                                        <br></br>
-                                        <br></br>
-                                        <br></br>
-                                        </br>
-                                        </br>
-                                        </br>
-                                        </br>
-                                        </br>
+                                        
                                         </br> </td>
                                 </tr>
                                  <tr>
@@ -166,7 +150,7 @@
                                 </tr>
                                 <tr>
                                     <td align="center">
-                                        <asp:Button ID="ContinueButton" runat="server" CausesValidation="False" CommandName="Continue" OnClick="ContinueButton_Click" Text="Continue" ValidationGroup="CreateUserWizard1" PostBackUrl="Registration2.aspx" />
+                                        <asp:Button ID="ContinueButton" runat="server" CausesValidation="False" CommandName="Continue" OnClick="ContinueButton_Click" Text="Continue" ValidationGroup="CreateUserWizard1" />
                                     </td>
                                 </tr>
                             </table>

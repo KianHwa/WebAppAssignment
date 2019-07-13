@@ -76,6 +76,7 @@ namespace WebAppAssignment.WebForm
             {
                 Roles.AddUserToRole(tbName.Text, "Artist");
             }
+            Session["tempoName"] = tbName.Text;
         }
 
         protected void StepNextButton_Click(object sender, EventArgs e)
@@ -86,6 +87,7 @@ namespace WebAppAssignment.WebForm
         protected void ContinueButton_Click(object sender, EventArgs e)
         {
 
+            Response.Redirect("Registration2.aspx?tempoName=" + Session["tempoName"].ToString());
         }
     }
 }

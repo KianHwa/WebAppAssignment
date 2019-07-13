@@ -80,6 +80,8 @@
       <DependentUpon>ArtworkGallery.mdf</DependentUpon>
     </Content>
     <Content Include="CSS\Artwork.css" />
+    <Content Include="CSS\Home.css" />
+    <Content Include="CSS\SellArtwork.css" />
     <Content Include="CSS\BuyArtwork.css" />
     <Content Include="CSS\Cart.css" />
     <Content Include="WebForm\HeaderFooter.css" />
