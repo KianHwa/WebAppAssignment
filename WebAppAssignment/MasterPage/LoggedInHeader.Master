@@ -73,12 +73,8 @@
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT * FROM [UserProfile]"></asp:SqlDataSource>
                         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
                         <ItemTemplate>
-                            <%if (Repeater1.Items.Count == 0){%>
-                            <img src="../Images/profile.png" />
-                            <%}
-                            else{%>
+                            
                             <img src="<%# Eval("profilePicURL") %>"  style="border-radius:30px;"/>
-                            <%} %>
                         </ItemTemplate>
                         </asp:Repeater>
                     </a></td>
