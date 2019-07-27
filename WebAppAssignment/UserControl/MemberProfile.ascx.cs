@@ -7,28 +7,17 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebAppAssignment.WebForm
+namespace WebAppAssignment.UserControl
 {
-    public partial class CustomerProfile : System.Web.UI.Page
+    public partial class MemberProfile : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             SqlDataSource1.SelectCommand = "SELECT * from aspnet_Users inner join UserProfile on aspnet_Users.UserId = UserProfile.UserId inner " +
-                                            "join aspnet_UsersInRoles on aspnet_Users.UserId = aspnet_UsersInRoles.UserId inner " +
-                                            "join aspnet_Roles on aspnet_UsersInRoles.RoleId = aspnet_Roles.RoleId where aspnet_Roles.RoleName = '" + Session["Role"].ToString() + "' and aspnet_Users.UserName = '" + Session["UserName"].ToString() + "'";
+                                           "join aspnet_UsersInRoles on aspnet_Users.UserId = aspnet_UsersInRoles.UserId inner " +
+                                           "join aspnet_Roles on aspnet_UsersInRoles.RoleId = aspnet_Roles.RoleId where aspnet_Roles.RoleName = '" + Session["Role"].ToString() + "' and aspnet_Users.UserName = '" + Session["UserName"].ToString() + "'";
 
             SqlDataSource1.DataBind();
-        }
-        protected void Page_PreInit(object sender, EventArgs e)
-        {
-            if (Session["Username"] != null)
-            {
-                MasterPageFile = "~/MasterPage/LoggedInHeader.Master";
-            }
-            else
-            {
-                MasterPageFile = "~/MasterPage/GuestHeader.Master";
-            }
         }
 
         protected void UpdateButton_Click(object sender, EventArgs e)
@@ -36,14 +25,14 @@ namespace WebAppAssignment.WebForm
 
 
             SqlCommand cmd;
-    
+
 
             TextBox address = (TextBox)fvCustomerProf.FindControl("addressTxt");
             TextBox phoneNo = (TextBox)fvCustomerProf.FindControl("phoneTxt");
-          
+
             SqlDataAdapter adapter = new SqlDataAdapter();
             SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
-            
+
 
 
             String profileSql = "Update UserProfile set address = '" + address.Text + "', phoneNumber = '" + phoneNo.Text + "' where UserID='" + Session["UserID"].ToString() + "'";
@@ -55,7 +44,7 @@ namespace WebAppAssignment.WebForm
 
             cmd.Dispose();
             conn.Close();
-            Response.Redirect("CustomerProfile.aspx");
+            Response.Redirect("Profile.aspx");
 
         }
 
@@ -74,7 +63,7 @@ namespace WebAppAssignment.WebForm
                 cmd.ExecuteNonQuery();
                 conn.Close();
 
-                Response.Redirect("CustomerProfile.aspx");
+                Response.Redirect("Profile.aspx");
             }
         }
     }

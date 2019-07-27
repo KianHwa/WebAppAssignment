@@ -73,7 +73,7 @@ namespace WebAppAssignment.WebForm
                 SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
 
                 conn.Open();
-                String artistImg = "Update UserProfile set profilePicURL = '../Images/" + imageArtistFile + "'";
+                String artistImg = "Update UserProfile set UserProfile.profilePicURL = '../Images/" + imageArtistFile + "' from UserProfile inner join aspnet_Users on UserProfile.UserId = aspnet_Users.UserId where aspnet_Users.Username='" + Session["Username"] + "'";
                 SqlCommand cmd = new SqlCommand(artistImg, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();

@@ -1,10 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="ArtistProfile.aspx.cs" Inherits="WebAppAssignment.WebForm.ArtistProfile" %>
-<%@ Register TagPrefix="Artwork" TagName="Footer" Src="~/UserControl/Footer.ascx" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
-   
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MemberProfile.ascx.cs" Inherits="WebAppAssignment.UserControl.MemberProfile" %>
+<link rel="stylesheet" type="text/css" href="../Stylesheet/HeaderFooter.css">
+    
    
 <style>
         
@@ -25,7 +21,7 @@
           border: none;
           outline: 0;
           display: inline-block;
-          padding: 6px;
+          padding: 5px;
           color: white;
           background-color: #000;
           text-align: center;
@@ -40,7 +36,7 @@
             border: none;
             color: white;
             width:199px;
-            padding: 6px;
+            padding: 5px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -74,6 +70,7 @@
           transition: .5s ease;
           background-color: darkgray;
            border-radius: 4px;
+          
         }
 
         .containerArtist:hover .overlay {
@@ -122,7 +119,7 @@
               
         }
        .profileTxt{
-            padding: 4px 20px;
+            padding: 4px 10px;
             margin:8px 0;
             display: inline-block;
             border:1px solid #ccc;
@@ -130,27 +127,21 @@
             box-sizing:border-box;
             width:50%;
             opacity:0.6;
+            margin-left: 10px;
+
         }
 
 
         .profileTxt:hover{
             opacity:0.8;
         }
-        
 </style>
 
-    <h2 style="text-align:center">Artist Profile</h2>
-    <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-          max-width: 400px;
-          margin: auto;
-          text-align: center;
-          font-family: arial;
-          margin-bottom: 40px;
-          border-radius: 4px;
-          ">
+    <h2 style="text-align:center">Customer Profile</h2>
+    <div style="box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.2);max-width: 400px;text-align: center;margin:auto; border-radius: 4px;margin-bottom: 40px; font-family: arial;">
        
         
-    <asp:FormView ID="fvArtistProf" runat="server" DataSourceID="SqlDataSource1" > 
+    <asp:FormView ID="fvCustomerProf" runat="server" DataSourceID="SqlDataSource1" > 
             
                 <EditItemTemplate>
                     <div class="containerArtist" style="width: 100%;">
@@ -160,48 +151,33 @@
                     </div>
                     <div class="artProf">
                     
-                    <blockquote>
-                    <p>
-                        Name:
-                        </p>
-                        <b  style="color:darkgray;">
-                        <p>
-                        <asp:Label ID="usernameTxt" Font-Size="Medium" runat="server" Text='<%# Eval("UserName") %>' />
-                    </p>
-                        </b>
-                    <br />
-                    <p>
-                    Address:
-                        </p>
-                        <p style="darkgray">
-                    <asp:TextBox ID="addressTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("address") %>' />
-                    </p>
-                      <br />
-                    <p>
-                        Mobile Phone:
-                        </p>
-                        <p>
-                        <asp:TextBox ID="phoneTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("phoneNumber") %>' />
+                        <blockquote>
+                            <p>
+                                Name:
+                            </p>
+                            <p>
+                                <asp:Label ID="usernameTxt" runat="server" Text='<%# Eval("UserName") %>' />
+                            </p>
+                            <br />
+                            <p>
+                                Address:
+                            </p>
+                            <p>
+                                <blockquote>
+                                    <asp:TextBox ID="addressTxt" class="profileTxt" Width="80%"  runat="server" Text='<%# Bind("address") %>' />
+                                </blockquote>    
+                            </p>
+                            <br />
+                            <p>
+                                Mobile
+                            </p>
+                            <p>
+                                <asp:TextBox ID="phoneTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("phoneNumber") %>' />
                     
-                    </p>
-                    <br />
-                    <p>
-                        Quote:
-                        </p>
-                        <p>
-                        <asp:TextBox ID="quoteTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("quote") %>' />
-                   
-                    </p>
-                    <br />
-                    <p>
-                        Biography:
-                        </p>
-                        <p>
-                        <asp:TextBox ID="biotxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("biography") %>' />
+                            </p>
+                            <br />
                     
-                    </p>
-                    <br />
-                    </blockquote>
+                        </blockquote>
                        
                     <asp:Button ID="UpdateButton" class="btnEditCancel"  runat="server" CausesValidation="True" CommandName="Update" Text="Update   " OnClick="UpdateButton_Click" />
 
@@ -214,11 +190,11 @@
                 <ItemTemplate>
                     <div class="containerArtist" style="width: 100%;">
             
-            <img style="width:400px; height: 307px;  border-radius: 4px;" src="<%# Eval("profilePicURL")%>" />
+            <img style="width:400px; height: 307px; border-radius: 4px;" src="<%# Eval("profilePicURL")%>" />
        
         <div class="overlay">
             <div class="text">
-                <asp:FileUpload  ID="artistUpload" class="uploadArtist"  runat="server" />
+                <asp:FileUpload  ID="artistUpload" class="uploadCustomer"  runat="server" />
                 <asp:Button ID="UpdatePicButton" class="updatePic" runat="server" CausesValidation="True" CommandName="Update" Text="Edit" OnClick="UpdatePicButton_Click" />
             </div>
             
@@ -226,64 +202,37 @@
         </div>
                     <div class="artProf">
                     <p>
-                        Name:
+                         Name:
                     </p>
-                        <b>
                     <p style="color:darkgray;">
-                    <asp:Label ID="UserNameLabel" Font-Size="Medium" runat="server" Text='<%# Eval("UserName") %>' />
+                        <asp:Label ID="UserNameLabel" Font-Size="Medium"  runat="server" Text='<%# Bind("UserName") %>' />
                     </p>
-                        </b>
-                        <br />
+                    <br />
+                  
                     <p>
                         Address:
                     </p>
-                    <p>
-                        <b>
-                        <blockquote  style="color:darkgray;">
-                            <asp:Label ID="addressLabel" Font-Size="Medium" runat="server" Text='<%# Eval("address") %>' />
-                        </blockquote>
-                            </b>
+                        <blockquote>
+                    <p style="color:darkgray;">
+                        <asp:Label ID="addressLabel" Font-Size="Medium" runat="server" Text='<%# Eval("address") %>' />
                     </p>
-                        <br />
+                            </blockquote>
+                    <br />
                     <p>
                         Mobile Phone:
                     </p>
-                        <b>
                     <p style="color:darkgray;">
                         <asp:Label ID="phoneNumberLabel" Font-Size="Medium" runat="server" Text='<%# Eval("phoneNumber") %>' />
                     </p>
-                        </b>
                     <br />
-                    <p>
-                        Quote:
-                    </p>
-                    <p>
-                        <b>
-                            <blockquote style="color:darkgray;">
-                                <q>
-                                    <asp:Label ID="quoteLabel" Font-Size="Medium" runat="server" Text='<%# Eval("quote") %>' />
-                                </q>
-                            </blockquote>
-                         </b>
-                    </p>
-                    <br />
-                    <p>
-                        Biography:
-                    </p>
-                    <p>
-                        <b>
-                            <blockquote style="color:darkgray;">
-                                <asp:Label ID="biographyLabel" Font-Size="Medium" runat="server" Text='<%# Bind("biography") %>' />
-                            </blockquote>
-                       </b>
-                    </p>
-                        <br />
+                   
+                   
                     <asp:Button ID="EditButton" class="btnEdit" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
                      </div>   
                 </ItemTemplate>
             </asp:FormView>
         </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber,
-            Us.quote, Us.biography FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>
-
-</asp:Content>
+        
+    
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber
+            FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>

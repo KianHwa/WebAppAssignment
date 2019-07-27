@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/GuestHeader.Master" AutoEventWireup="true" CodeBehind="Artist.aspx.cs" Inherits="WebAppAssignment.WebForm.Artist" %>
-
+<%@ Register TagPrefix="Artwork" TagName="Footer" Src="~/UserControl/Footer.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
     <style>
@@ -27,7 +27,6 @@
           float:left;
           margin-right: 20px;
           border-radius: 80%;
-          height: 150px;
          
       }
      .artistH span{
@@ -63,18 +62,14 @@
            color: white;
        }
     </style>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT aspnet_Users.UserName, UserProfile.profilePicURL, UserProfile.quote FROM aspnet_Users INNER JOIN UserProfile ON aspnet_Users.UserId = UserProfile.UserId INNER JOIN aspnet_UsersInRoles ON aspnet_Users.UserId = aspnet_UsersInRoles.UserId INNER JOIN aspnet_Roles ON aspnet_UsersInRoles.RoleId = aspnet_Roles.RoleId"></asp:SqlDataSource>
     
-        
-    
-         
-    
-        
-    
+    <div class="body">
          <asp:Repeater ID="artistRepeater" runat="server" DataSourceID="SqlDataSource1" >
             
         <ItemTemplate>
             <div class="artistH">
-            <img class="artistImage" style="width:90px;" 
+            <img class="artistImage" style="width:150px;height:150px;" 
             src="<%# Eval("profilePicURL") %>" /><p class="p1" style="">
                 
                 <asp:Button ID="btnArt" class="btnArts" runat="server" Text="View Profile" CommandArgument='<%# Eval("UserName") %>' OnClick="btnArt_Click"/>
@@ -94,10 +89,6 @@
             
         </ItemTemplate>
              </asp:Repeater>
- 
-
+    </div>
     
-      
-  
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT aspnet_Users.UserName, UserProfile.profilePicURL, UserProfile.quote FROM aspnet_Users INNER JOIN UserProfile ON aspnet_Users.UserId = UserProfile.UserId INNER JOIN aspnet_UsersInRoles ON aspnet_Users.UserId = aspnet_UsersInRoles.UserId INNER JOIN aspnet_Roles ON aspnet_UsersInRoles.RoleId = aspnet_Roles.RoleId"></asp:SqlDataSource>
 </asp:Content>

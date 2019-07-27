@@ -75,6 +75,7 @@ table.CartGridView td{
 .noResultMsg{
     margin:80px;
     margin-left:150px;
+    margin-bottom:500px;
 }
 
 .oops{
@@ -92,7 +93,5 @@ table.CartGridView td{
     width:75%;
     padding-top:50px;
 }
-
-
 
 

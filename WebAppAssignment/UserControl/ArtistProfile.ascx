@@ -1,9 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="ArtistProfile.aspx.cs" Inherits="WebAppAssignment.WebForm.ArtistProfile" %>
-<%@ Register TagPrefix="Artwork" TagName="Footer" Src="~/UserControl/Footer.ascx" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ArtistProfile.ascx.cs" Inherits="WebAppAssignment.UserControl.ArtistProfile" %>
+<link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
    
    
 <style>
@@ -282,8 +278,8 @@
                      </div>   
                 </ItemTemplate>
             </asp:FormView>
+
+
         </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber,
             Us.quote, Us.biography FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>
-
-</asp:Content>

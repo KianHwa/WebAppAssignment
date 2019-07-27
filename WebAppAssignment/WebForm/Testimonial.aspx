@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="Testimonial.aspx.cs" Inherits="WebAppAssignment.WebForm.Testimonial" %>
+<%@ Register TagPrefix="Artwork" TagName="Footer" Src="~/UserControl/Footer.ascx" %>
 
 <asp:Content ID="Content1"  ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -19,39 +20,12 @@
           margin: 80px 0 0 120px;
           text-align: center;
           font-family: arial;
-
+          background-color:white;
         }
-        
-        .grid_image div {
-          
-        
-          text-align: left;
-        
+      
+        .artistImage{
+            border-radius:80%;
         }
-        
-      .artistH img{
-        
-          margin-right: 40px;
-          border-radius: 80%;
-          height: 150px;
-          
-      }
-        .justify {
-            display: block;
-           margin-right: 400px;
-           margin-left: 400px;
-            
-        }
-        .lead {
-            margin-bottom: 20px;
-            font-size: 20px;
-            font-weight: 300;
-            line-height: 1.4;
-        }
-        .text-justify{
-            text-align: justify!important;
-        }
-       
       
        
     </style>
@@ -60,51 +34,66 @@
        <asp:FormView ID="FormView1" runat="server"  DataSourceID="SqlDataSource1" Width="100%">
                           
                           <ItemTemplate>
-                          
-                            <div class="artistH" style="float:left;">
-                                <h1 style="margin-left: 110px;"><%# Eval("UserName") %></h1>
-                            <img class="artistImage" style="width:260px; height:200px; margin-left:50px;" 
+                          <div style="width:80%;height:400px;margin-left:10%;">
+                              <div style="width:100%;height:80px;float:left;">
+                                  <h1><%# Eval("UserName") %></h1>
+                              </div>
+                              
+                              <div style="width:25%;float:left;height:320px;">
+                                  <img class="artistImage" style="width:260px; height:250px;width:250px;" 
                                     src="<%# Eval("profilePicURL")%>" />
-                               
-                                
-                                </div>
-                            
-                            <h2 style="text-align: center;margin-right:340px;margin-bottom: 50px;">Testimonial</h2>
-                            <div class="text-justify lead">
+                              </div>
+
+                              <div style="width:55%;height:50px;float:left;text-align:center;">
+                                  <h2>Testimonial</h2>
+                              </div>
+                              
+                            <div style="height:350px;width:55%;float:left;">
                                 <blockquote>
-                                    <p class="justify" style="word-break: break-word;">
+                                    <p style="word-break: break-word;padding:30px;font-size:18px;">
                                         <%# Eval("biography") %>
                                     </p>
                                </blockquote>
                             </div>
-    
-                          <br /><br /><br /><br /><br /><br /><br /><br />
-                            <h2 style="text-align: center;">Below is the artist's artwork display</h2>
+                          </div>
+                              <div style="width:100%;height:50px;float:left;">
+                                <h2 style="text-align: center;">Below is the artist's artwork display</h2>
+                            </div>
+                            
                       
                           </ItemTemplate>
                  
                       </asp:FormView>
        
-                        
-       
-                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                        <div style="background-color:rgba(179,179,179,0.3);display:inline-block;width:100%;">
+                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource2" >
                             <ItemTemplate>
-                                            
+                                        <a href="Artwork.aspx?artworkID=<%# Eval("artworkID")%>" style="color:black">    
                                         <div  class="grid_image" style="margin-bottom: 30px;">
                                              <img class="artistImage" style="width:340px;height:250px; border-radius: 4px;" 
                                               src="<%# Eval("artworkURL")%>" />
                                               <h1><%# Eval("artworkName") %></h1>
                                               <p><%# Eval("artworkCategory") %></p>
-                            
                                          </div>                
-                                       
+                                        </a>
+
                                 </ItemTemplate>
                         </asp:Repeater>
+                            </div>
+                    
+                    <%
+                            String count = Repeater1.Items.Count.ToString();
+
+                            if (Convert.ToInt32(count) == 0){ %>
+                                    <div class="noResult" style="background-color:rgba(179,179,179,0.3);display:inline-block;width:100%;">
+                                        <h2 style="text-align:center;padding:200px;">Currently this artist doesn't have any artwork post</h2>
+                                    </div>
+
+                            <%}%>
 
                   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="select * from Artwork inner join UserProfile on
                     Artwork.artistID = aspnet_Users.UserId inner join UserProfile on
                     aspnet_Users.UserId = UserProfile.UserId"></asp:SqlDataSource>
                
-    
-               
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT * FROM [Artwork]"></asp:SqlDataSource>
 </asp:Content>

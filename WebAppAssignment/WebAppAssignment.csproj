@@ -80,12 +80,16 @@
       <DependentUpon>ArtworkGallery.mdf</DependentUpon>
     </Content>
     <Content Include="CSS\Artwork.css" />
-    <Content Include="CSS\Home.css" />
     <Content Include="CSS\SellArtwork.css" />
-    <Content Include="CSS\BuyArtwork.css" />
-    <Content Include="CSS\Cart.css" />
+    <Content Include="UserControl\ArtistProfile.ascx" />
+    <Content Include="UserControl\Footer.ascx" />
+    <Content Include="UserControl\MemberProfile.ascx" />
+    <Content Include="UserControl\Shipping.ascx" />
+    <Content Include="WebForm\BuyArtwork.css" />
+    <Content Include="WebForm\Cart.css" />
+    <Content Include="WebForm\CheckOut.aspx" />
     <Content Include="WebForm\HeaderFooter.css" />
-    <Content Include="WebForm\Home.css" />
+    <Content Include="CSS\Home.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\SellArtwork.css" />
     <Content Include="CSS\Wishlist.css" />
@@ -142,6 +146,7 @@
     <Content Include="WebForm\Login.aspx" />
     <Content Include="WebForm\Message.aspx" />
     <Content Include="WebForm\ModifyPassword.aspx" />
+    <Content Include="WebForm\Profile.aspx" />
     <Content Include="WebForm\RecoverPassword.aspx" />
     <Content Include="WebForm\Registration.aspx" />
     <Content Include="WebForm\Registration2.aspx" />
@@ -228,6 +233,34 @@
     <Compile Include="MasterPage\GuestHeader.Master.designer.cs">
       <DependentUpon>GuestHeader.Master</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\ArtistProfile.ascx.cs">
+      <DependentUpon>ArtistProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ArtistProfile.ascx.designer.cs">
+      <DependentUpon>ArtistProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\MemberProfile.ascx.cs">
+      <DependentUpon>MemberProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\MemberProfile.ascx.designer.cs">
+      <DependentUpon>MemberProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Shipping.ascx.cs">
+      <DependentUpon>Shipping.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Shipping.ascx.designer.cs">
+      <DependentUpon>Shipping.ascx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm\Artist.aspx.cs">
       <DependentUpon>Artist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -263,6 +296,13 @@
     <Compile Include="WebForm\Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm\CheckOut.aspx.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\CheckOut.aspx.designer.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm\CustomerProfile.aspx.cs">
       <DependentUpon>CustomerProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -297,6 +337,13 @@
     </Compile>
     <Compile Include="WebForm\ModifyPassword.aspx.designer.cs">
       <DependentUpon>ModifyPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm\RecoverPassword.aspx.cs">
       <DependentUpon>RecoverPassword.aspx</DependentUpon>

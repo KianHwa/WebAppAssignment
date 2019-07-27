@@ -1,4 +1,5 @@
-﻿ <%@ Page Language="C#" MasterPageFile="~/MasterPage/GuestHeader.Master"  AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="WebAppAssignment.WebForm.Homepage"%> 
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/GuestHeader.Master"  AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="WebAppAssignment.WebForm.Homepage"%> 
+<%@ Register TagPrefix="Artwork" TagName="Footer" Src="~/UserControl/Footer.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="Home.css" type="text/css" />
@@ -205,7 +206,6 @@
         dots[slideIndex - 1].className += " active";
         setTimeout(showSlides, 3500); // Change image every 2 seconds
     }
-
     </script>
 
  </asp:Content>

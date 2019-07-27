@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="../MasterPage/LoggedInHeader.Master" CodeBehind="Wishlist.aspx.cs" Inherits="WebAppAssignment.WebForm.Wishlist" %>
+<%@ Register TagPrefix="Artwork" TagName="Footer" Src="~/UserControl/Footer.ascx" %>
 
 <asp:Content ID="Wishlist_Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" type="text/css" href="../CSS/Wishlist.css">
@@ -9,6 +10,7 @@
         </div>
         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
             <ItemTemplate>
+                <a href="Artwork.aspx?artworkID=<%# Eval("artworkID")%>">
                 <div class="wishlistItem">
                 <div class="wishlistImg">
                     <img src="<%#Eval("artworkURL")%>" />
@@ -19,7 +21,8 @@
                 <div class="removeWishlist">
                     <asp:Button ID="deleteWishlistBtn" runat="server" Text="Remove" CssClass="btnRemoveWishlist" OnClick="deleteWishlistBtn_Click" CommandArgument='<%#Eval("wishlistID")+";"+ Eval("artworkID")%>'/>
                 </div>
-            </div>
+                </div>
+                </a>
             </ItemTemplate>
         </asp:Repeater>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Wishlist]"></asp:SqlDataSource>
@@ -33,7 +36,5 @@
                     </div>
 
             <%}%>
-            
-        
         </div>
 </asp:Content>
