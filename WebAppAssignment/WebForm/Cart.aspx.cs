@@ -90,5 +90,11 @@ namespace WebAppAssignment.WebForm
             conn.Close();
             Response.Redirect("Cart.aspx");
         }
+
+        protected void btnProceedPayment_Click(object sender, EventArgs e)
+        {
+            float total = float.Parse(ltrTotal.Text);
+            Response.Redirect("CheckOut.aspx?total=" + total + "&step=1");
+        }
     }
 }

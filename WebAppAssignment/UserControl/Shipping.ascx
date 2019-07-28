@@ -54,44 +54,10 @@
         width:70%;
     }
 
-    .orderSummary{
-        background-color:rgba(255,255,255,0.8);
-        width:35%;
-        float:left;
-        margin:10px;
-        padding:20px;
-    }
-
-    .orderSummaryInfo{
-        width:100%;
-    }
-
-    .orderSummary td{
-        height:20px;
-        width:50%;
-        font-size:18px;
-    }
-
-    .orderSummary td:nth-child(2){
-        text-align:right;
-    }
-
-    .btnContinuePayment{
-        width:80%;
-        height:50px;
-        background-color:green;
-        color:white;
-        border:none;
-        margin-left:10%;
-        font-size:14px;
-        transition:0.3s;
-    }
-
-    .btnContinuePayment:hover{
-        background-color:#00e600;
-        transition:0.3s;
-    }
+    
 </style>
+<%float total = float.Parse(Request.QueryString["total"].ToString()); %>
+
 <div class="progressBarContainer" style="width:100%;display:inline-block;">
     <ul class="progressBar">
         <li class="current">Shipping</li>
@@ -134,18 +100,18 @@
         <table class="orderSummaryInfo">
             <tr>
                 <td>Artwork's subtotal</td>
-                <td>RM 1010</td>
+                <td>RM <%= total %></td>
             </tr>
             <tr>
                 <td>Shipping cost</td>
-                <td>RM22</td>
+                <td>RM <%= total*0.02 %></td>
             </tr>
             <tr>
                 <td style="height:60px;font-size:20px;"><strong>Grand Total</strong></td>
-                <td><strong>RM 1032 </strong></td>
+                <td><strong>RM <%= total + (total*0.02) %></strong></td>
             </tr>
             <tr>
-                <td colspan="2"><asp:Button ID="btnContinuePayment" runat="server" Text="Continue to Payment"  CssClass="btnContinuePayment"/></td>
+                <td colspan="2"><asp:Button ID="btnContinuePayment" runat="server" Text="Continue to Payment"  CssClass="btnContinuePayment" OnClick="btnContinuePayment_Click"/></td>
             </tr>
         </table>
     </div>

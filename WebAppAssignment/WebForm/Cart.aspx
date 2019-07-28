@@ -51,6 +51,11 @@
                     <td style="width:20%; text-align:right">
                         RM <asp:Literal ID="ltrTotal" runat="server"></asp:Literal></td>
                 </tr>
+                <tr>
+                    <td style="text-align:right;" colspan="2">
+                        <asp:Button ID="btnProceedPayment" runat="server" Text="Check Out" CssClass="btnProceedPayment" OnClick="btnProceedPayment_Click"/>
+                    </td>
+                </tr>
             </table>
         <%} %>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="select Artwork.artworkURL, Artwork.artworkName, Artwork.artworkPrice, Orders.orderStatus, Orders.orderDate, OrderDetails.orderQuantity from Orders inner join OrderDetails on Orders.orderID = OrderDetails.orderID 

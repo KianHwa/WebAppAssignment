@@ -13,12 +13,12 @@ namespace WebAppAssignment.WebForm {
     public partial class CheckOut {
         
         /// <summary>
-        /// ctlShipping control.
+        /// ctlPayment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::WebAppAssignment.UserControl.Shipping ctlShipping;
+        protected global::WebAppAssignment.UserControl.Payment ctlPayment;
     }
 }

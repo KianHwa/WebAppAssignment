@@ -19,5 +19,10 @@ namespace WebAppAssignment.UserControl
             personalInfoFv.DataBind();
         }
 
+        protected void btnContinuePayment_Click(object sender, EventArgs e)
+        {
+            float total = float.Parse(Request.QueryString["total"].ToString());
+            Response.Redirect("CheckOut.aspx?total=" + total + "&step=2");
+        }
     }
 }

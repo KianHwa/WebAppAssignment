@@ -81,12 +81,14 @@
     </Content>
     <Content Include="CSS\Artwork.css" />
     <Content Include="CSS\SellArtwork.css" />
+    <Content Include="Global.asax" />
     <Content Include="UserControl\ArtistProfile.ascx" />
     <Content Include="UserControl\Footer.ascx" />
     <Content Include="UserControl\MemberProfile.ascx" />
+    <Content Include="UserControl\Payment.ascx" />
     <Content Include="UserControl\Shipping.ascx" />
     <Content Include="WebForm\BuyArtwork.css" />
-    <Content Include="WebForm\Cart.css" />
+    <Content Include="CSS\Cart.css" />
     <Content Include="WebForm\CheckOut.aspx" />
     <Content Include="WebForm\HeaderFooter.css" />
     <Content Include="CSS\Home.css" />
@@ -155,6 +157,9 @@
     <Content Include="WebForm\Wishlist.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage\LoggedInHeader.Master.cs">
       <DependentUpon>LoggedInHeader.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -253,6 +258,13 @@
     </Compile>
     <Compile Include="UserControl\MemberProfile.ascx.designer.cs">
       <DependentUpon>MemberProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Payment.ascx.cs">
+      <DependentUpon>Payment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Payment.ascx.designer.cs">
+      <DependentUpon>Payment.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Shipping.ascx.cs">
       <DependentUpon>Shipping.ascx</DependentUpon>
