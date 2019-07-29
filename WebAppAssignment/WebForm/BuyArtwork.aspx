@@ -63,6 +63,7 @@
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT * FROM [Artwork]"></asp:SqlDataSource>
             
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource3">
+                
                 <ItemTemplate>
                     <a href="Artwork.aspx?artworkID=<%# Eval("artworkID")%>">
                     <div class="artwork">

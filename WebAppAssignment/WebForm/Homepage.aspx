@@ -1,7 +1,7 @@
 ﻿ <%@ Page Language="C#" MasterPageFile="~/MasterPage/GuestHeader.Master"  AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="WebAppAssignment.WebForm.Homepage"%> 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="Home.css" type="text/css" />
+   
     <link rel="stylesheet" href="../CSS/Home.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -11,7 +11,7 @@
        
 <div>
 <div class="slideshow-container" ">
-
+    x
 <div class="mySlides">
   <a href="#"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
   <div class="text"></div>
