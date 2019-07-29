@@ -75,6 +75,7 @@ table.CartGridView td{
 .noResultMsg{
     margin:80px;
     margin-left:150px;
+    margin-bottom:500px;
 }
 
 .oops{
@@ -93,6 +94,18 @@ table.CartGridView td{
     padding-top:50px;
 }
 
+.btnProceedPayment{
+    width:200px;
+    height:40px;
+    background-color:white;
+    border:1px solid #d9d9d9;
+    margin:10px 0px 10px 10px;
+    transition:0.3s;
+}
 
-
+.btnProceedPayment:hover{
+    color:white;
+    background-color:black;
+    transition:0.3s;
+}
 

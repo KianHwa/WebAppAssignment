@@ -150,36 +150,90 @@ namespace WebAppAssignment.WebForm
                 SqlDataReader reader;
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
-                String ordersSql = "insert into Orders (orderStatus,UserId,orderDate) values('Pending','" + Session["UserId"].ToString() + "','07-06-2019')";
 
-                //Insert into Order table
-                cmd = new SqlCommand(ordersSql, conn);
+                //check duplicate order
                 conn.Open();
-                adapter.InsertCommand = new SqlCommand(ordersSql, conn);
-                adapter.InsertCommand.ExecuteNonQuery();
-                cmd.Dispose();
-                conn.Close();
-
-                //Find order ID
-                conn.Open();
-                int orderid = 0;
-                cmd = new SqlCommand("select top(1) orderID from Orders order by orderID desc", conn);
+                int duplicateOrder = 0;
+                int orderID = 0;
+                int orderQty = 0;
+                int artworkStock = 0;
+                cmd = new SqlCommand("select OrderDetails.artworkID, OrderDetails.OrderID, OrderDetails.orderQuantity from OrderDetails inner join Orders on OrderDetails.orderID = Orders.orderID " +
+                                     " inner join aspnet_Users on Orders.UserId = aspnet_Users.UserId where OrderDetails.artworkID=" + btn.CommandArgument + " and aspnet_Users.Username='" + Session["Username"].ToString() + "'", conn);
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    orderid = (int)reader.GetValue(0);
+                    orderID = (int)reader.GetValue(1);
+                    orderQty = (int)reader.GetValue(2);
+                    duplicateOrder++;
                 }
                 conn.Close();
 
-                //Insert into Associative Table (OrderDetails Table)
-                String orderDetailsSql = "insert into OrderDetails (orderID, artworkID,orderQuantity) select o.orderID, a.artworkID,1 from Orders o cross join Artwork a where o.orderID ='" + orderid + "' and a.artworkID = " + btn.CommandArgument; ;
-                cmd = new SqlCommand(orderDetailsSql, conn);
+                //check quantity
                 conn.Open();
-                adapter.InsertCommand = new SqlCommand(orderDetailsSql, conn);
-                adapter.InsertCommand.ExecuteNonQuery();
-                cmd.Dispose();
+                cmd = new SqlCommand("Select artworkStock from Artwork where artworkID ='" + btn.CommandArgument + "'", conn);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    artworkStock = (int)reader.GetValue(0);
+                }
                 conn.Close();
-                Response.Redirect("BuyArtwork.aspx?status=orderAdded");
+
+                if (1 <= artworkStock)
+                {
+                    if (duplicateOrder == 0)
+                    {
+
+                        String ordersSql = "insert into Orders (orderStatus,UserId,orderDate) values('Pending','" + Session["UserId"].ToString() + "','07-06-2019')";
+
+                        //Insert into Order table
+                        cmd = new SqlCommand(ordersSql, conn);
+                        conn.Open();
+                        adapter.InsertCommand = new SqlCommand(ordersSql, conn);
+                        adapter.InsertCommand.ExecuteNonQuery();
+                        cmd.Dispose();
+                        conn.Close();
+
+                        //Find order ID
+                        conn.Open();
+                        int orderid = 0;
+                        cmd = new SqlCommand("select top(1) orderID from Orders order by orderID desc", conn);
+                        reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            orderid = (int)reader.GetValue(0);
+                        }
+                        conn.Close();
+
+                        //Insert into Associative Table (OrderDetails Table)
+                        String orderDetailsSql = "insert into OrderDetails (orderID, artworkID,orderQuantity) select o.orderID, a.artworkID,1 from Orders o cross join Artwork a where o.orderID ='" + orderid + "' and a.artworkID = " + btn.CommandArgument;
+                        cmd = new SqlCommand(orderDetailsSql, conn);
+                        conn.Open();
+                        adapter.InsertCommand = new SqlCommand(orderDetailsSql, conn);
+                        adapter.InsertCommand.ExecuteNonQuery();
+                        cmd.Dispose();
+                        conn.Close();
+                        Response.Redirect("BuyArtwork.aspx?status=orderAdded");
+                    }
+                    else
+                    {
+                        orderQty++;
+                        String updateQtySql = "update OrderDetails set OrderQuantity =" + orderQty + " where orderID ='" + orderID + "'";
+                        conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
+
+                        conn.Open();
+                        cmd = new SqlCommand(updateQtySql, conn);
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+
+
+
+                        Response.Redirect("BuyArtwork.aspx?status=orderAdded");
+                    }
+                }
+                else
+                {
+                    Response.Redirect("BuyArtwork.aspx?status=noStock");
+                }
             }
             else
             {

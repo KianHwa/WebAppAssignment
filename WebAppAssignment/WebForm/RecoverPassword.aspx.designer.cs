@@ -22,12 +22,12 @@ namespace WebAppAssignment.WebForm {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// PasswordRecovery1 control.
+        /// PasswordRecovery2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PasswordRecovery PasswordRecovery1;
+        protected global::System.Web.UI.WebControls.PasswordRecovery PasswordRecovery2;
     }
 }

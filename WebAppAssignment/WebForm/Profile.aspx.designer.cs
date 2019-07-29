@@ -10,24 +10,24 @@
 namespace WebAppAssignment.WebForm {
     
     
-    public partial class Artist {
+    public partial class Profile {
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// ctlArtist control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::WebAppAssignment.UserControl.ArtistProfile ctlArtist;
         
         /// <summary>
-        /// artistRepeater control.
+        /// ctlMember control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater artistRepeater;
+        protected global::WebAppAssignment.UserControl.MemberProfile ctlMember;
     }
 }
