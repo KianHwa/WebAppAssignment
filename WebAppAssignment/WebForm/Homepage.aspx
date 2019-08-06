@@ -71,6 +71,8 @@
 <div class="section">
 <h1>Famous Artist</h1>
 <div class="background">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+    
             <!--Part 1-->
                <div  class="grid_image">
                   <a href="BuyArtwork.aspx"><img class="artistImage" style="width:200px; border-radius:20px; height:270px;" src="../Images/leonardo.jpg" /></a>
@@ -96,6 +98,7 @@
                   <a href="BuyArtwork.aspx"><img class="artistImage" style="width:200px; border-radius:20px; height:270px; " src="../Images/raphael.jpg" /></a>
                    <label>Raphael</label>
               </div>
+            
     </div>
     </div>
 
