@@ -11,7 +11,14 @@ namespace WebAppAssignment
     { 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            if (IsPostBack == false)
+            {
+
+                SqlDataSource1.SelectCommand = "Select * from Artwork";
+                SqlDataSource1.DataBind();
+                
+
+            }
         }
 
         protected void Page_PreInit(object sender, EventArgs e)
@@ -27,5 +34,6 @@ namespace WebAppAssignment
             
 
         }
+
     }
-}
+}   

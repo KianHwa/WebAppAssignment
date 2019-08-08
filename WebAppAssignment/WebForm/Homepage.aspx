@@ -55,6 +55,7 @@
 <div class="ulside">
 
 <div>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
 <ul class="filter-wrapper">
         <li><a href="BuyArtwork.aspx"">Painting</a></li>
         <li><a href="BuyArtwork.aspx">Portrait</a></li>
@@ -71,7 +72,7 @@
 <div class="section">
 <h1>Famous Artist</h1>
 <div class="background">
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
     
             <!--Part 1-->
                <div  class="grid_image">
