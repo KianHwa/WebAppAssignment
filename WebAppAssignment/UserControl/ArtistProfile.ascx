@@ -30,7 +30,25 @@
           font-size: 18px;
           border-radius: 4px;
         }
+        .btnStock{
+            border: none;
+          outline: 0;
+          display: inline-block;
+         padding : 6px;
+         margin-left: 650px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          width: 200px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          font-size: 18px;
+          border-radius: 4px;
+          margin-top: 40px;
+          margin-bottom: 40px;
 
+        }
         .btnEditCancel{
             background-color: #000;
             border: none;
@@ -51,6 +69,9 @@
         }
         .btnEdit:hover, a:hover {
           opacity: 0.7;
+        }
+        .btnStock:hover{
+            opacity: 0.7;
         }
         .artProf{
             font-size: 23px;
@@ -163,6 +184,7 @@
                         <b  style="color:darkgray;">
                         <p>
                         <asp:Label ID="usernameTxt" Font-Size="Medium" runat="server" Text='<%# Eval("UserName") %>' />
+                            
                     </p>
                         </b>
                     <br />
@@ -281,5 +303,6 @@
 
 
         </div>
+<asp:Button ID="StockButton" class="btnStock" runat="server" Text="Gallery Stock" PostBackUrl="~/WebForm/GalleryStock.aspx" />
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber,
             Us.quote, Us.biography FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>
