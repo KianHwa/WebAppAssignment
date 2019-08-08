@@ -13,14 +13,28 @@ namespace WebAppAssignment.WebForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(IsPostBack == false)
+           
+            if (IsPostBack == false)
             {
-
-                SqlDataSource3.SelectCommand = "Select * from Artwork";
-                SqlDataSource3.DataBind();
-                Repeater1.DataBind();
+                if (Request.QueryString["cat"]!=null)
+                {
+                    if (Request.QueryString["cat"].ToString().Equals("notnull"))
+                    {
+                        String artworkCategory = Request.QueryString["artworkCategory"].ToString();
+                        SqlDataSource3.SelectCommand = "Select * from Artwork where artworkCategory='" + artworkCategory + "'";
+                    }
+                }
+                else {
+                    SqlDataSource3.SelectCommand = "Select * from Artwork";
+                    SqlDataSource3.DataBind();
+                    Repeater1.DataBind();
+                }
+                
 
             }
+
+
+
         }
 
         protected void Page_PreInit(object sender, EventArgs e)

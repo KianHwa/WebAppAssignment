@@ -167,13 +167,16 @@
           ">
        
         
+        
+       
+        
     <asp:FormView ID="fvArtistProf" runat="server" DataSourceID="SqlDataSource1" > 
             
                 <EditItemTemplate>
                     <div class="containerArtist" style="width: 100%;">
             
-                        <img style="width:400px; height:307px; border-radius: 4px;" src="<%# Eval("profilePicURL")%>" />
-       
+                        <img id="imgFile" style="width:400px; height:307px; border-radius: 4px;" src="<%# Eval("profilePicURL")%>" />
+                        
                     </div>
                     <div class="artProf">
                     
@@ -301,6 +304,8 @@
                 </ItemTemplate>
             </asp:FormView>
 
+
+        
 
         </div>
 <asp:Button ID="StockButton" class="btnStock" runat="server" Text="Gallery Stock" PostBackUrl="~/WebForm/GalleryStock.aspx" />

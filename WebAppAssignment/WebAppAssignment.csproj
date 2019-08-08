@@ -137,11 +137,9 @@
     <Content Include="Images\search.png" />
     <Content Include="Web.config" />
     <Content Include="WebForm\Artist.aspx" />
-    <Content Include="WebForm\ArtistProfile.aspx" />
     <Content Include="WebForm\Artwork.aspx" />
     <Content Include="WebForm\BuyArtwork.aspx" />
     <Content Include="WebForm\Cart.aspx" />
-    <Content Include="WebForm\CustomerProfile.aspx" />
     <Content Include="WebForm\HeaderFooter.js" />
     <Content Include="WebForm\Homepage.aspx" />
     <Content Include="WebForm\Homepage.js" />
@@ -287,13 +285,6 @@
     <Compile Include="WebForm\Artist.aspx.designer.cs">
       <DependentUpon>Artist.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\ArtistProfile.aspx.cs">
-      <DependentUpon>ArtistProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm\ArtistProfile.aspx.designer.cs">
-      <DependentUpon>ArtistProfile.aspx</DependentUpon>
-    </Compile>
     <Compile Include="WebForm\Artwork.aspx.cs">
       <DependentUpon>Artwork.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -321,13 +312,6 @@
     </Compile>
     <Compile Include="WebForm\CheckOut.aspx.designer.cs">
       <DependentUpon>CheckOut.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm\CustomerProfile.aspx.cs">
-      <DependentUpon>CustomerProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm\CustomerProfile.aspx.designer.cs">
-      <DependentUpon>CustomerProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm\Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
