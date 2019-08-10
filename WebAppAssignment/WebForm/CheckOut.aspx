@@ -1,6 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/MasterPage/GuestHeader.Master" CodeBehind="CheckOut.aspx.cs" Inherits="WebAppAssignment.WebForm.CheckOut" %>
 <%@ Register TagPrefix="CheckOut" TagName="Shipping" Src="~/UserControl/Shipping.ascx" %>
 <%@ Register TagPrefix="CheckOut" TagName="Payment" Src="~/UserControl/Payment.ascx" %>
+<%@ Register TagPrefix="CheckOut" TagName="Review" Src="~/UserControl/Review.ascx" %>
+<%@ Register TagPrefix="CheckOut" TagName="Complete" Src="~/UserControl/Complete.ascx" %>
 
 <asp:Content ID="CheckOut" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
@@ -89,9 +91,18 @@
     }
     </style>
     
-    
+    <%String step = Request.QueryString["step"]; %>
         <div class="body" style="background-color:rgba(89,89,89,0.3);z-index:-3;position:relative;">
+            <%if (step != null) {
+            if (step.Equals("1")){%>
+                <CheckOut:Shipping ID="ctlShipping" runat="server"/>
+            <%}else if (step.Equals("2")){ %>
+                 <CheckOut:Payment ID="ctlPayment" runat="server"/>
+            <%}else if (step.Equals("3")){ %>
+                 <CheckOut:Review ID="ctlReview" runat="server"/>
+            <%}else if (step.Equals("4")){ %>
+                 <CheckOut:Complete ID="ctlComplete" runat="server"/>
+            <%} } %>
            
-            <CheckOut:Payment ID="ctlPayment" runat="server"/>
         </div>
 </asp:Content>

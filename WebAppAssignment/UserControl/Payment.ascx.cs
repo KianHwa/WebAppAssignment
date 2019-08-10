@@ -11,13 +11,16 @@ namespace WebAppAssignment.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           foreach(ListItem item in rblCard.Items)
+            {
+                item.Attributes.Add("class","cardimg");
+            }
         }
 
         protected void btnContinuePayment_Click(object sender, EventArgs e)
         {
-            float total = float.Parse(Request.QueryString["total"].ToString());
-            Response.Redirect("CheckOut.aspx?total=" + total + "&step=3");
+            Response.Redirect("CheckOut.aspx?step=3");
         }
+      
     }
 }

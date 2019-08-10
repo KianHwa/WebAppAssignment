@@ -18,7 +18,7 @@
   <div class="text"></div>
 </div>
 
-<div class="mySlides">
+<div class="mySlides">d
   <a href="#"><img src="../Images/background1.jpg" style="width:100%; height:500px;"></a>
   <div class="text"></div>
 </div>

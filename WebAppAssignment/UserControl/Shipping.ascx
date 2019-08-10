@@ -56,14 +56,14 @@
 
     
 </style>
-<%float total = float.Parse(Request.QueryString["total"].ToString()); %>
+<%float total = (float)Session["subtotal"]; %>
 
 <div class="progressBarContainer" style="width:100%;display:inline-block;">
     <ul class="progressBar">
         <li class="current">Shipping</li>
         <li>Payment</li>
         <li>Review</li>
-        <li>Completed</li>
+        <li>Complete</li>
     </ul>
 </div>
 <div class="shippingInfo">

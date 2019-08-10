@@ -49,7 +49,7 @@
                 <tr>
                     <td style="width:80%; text-align:right; ">Total</td>
                     <td style="width:20%; text-align:right">
-                        RM <asp:Literal ID="ltrTotal" runat="server"></asp:Literal></td>
+                        RM <%= Session["subtotal"].ToString() %></td>
                 </tr>
                 <tr>
                     <td style="text-align:right;" colspan="2">

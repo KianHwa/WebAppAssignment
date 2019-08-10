@@ -18,7 +18,7 @@ namespace WebAppAssignment.WebForm
                 SqlDataSource1.SelectCommand = "Select Artwork.artworkURL, Artwork.artworkName, Artwork.artworkPrice, Orders.orderStatus, Orders.orderDate, OrderDetails.orderQuantity, aspnet_Membership.UserId, Orders.orderID, Artwork.artworkID " +
                                                "from Orders inner join OrderDetails on Orders.orderID = OrderDetails.orderID " +
                                                "join Artwork on OrderDetails.artworkID = Artwork.artworkID join aspnet_Membership on aspnet_Membership.UserId = Orders.UserID " +
-                                               "where Orders.UserId ='" + Session["UserID"].ToString() + "'";
+                                               "where Orders.UserId ='" + Session["UserID"].ToString() + "' and Orders.orderStatus='Pending'";
                 SqlDataSource1.DataBind();
                 GridView1.DataBind();
 
@@ -28,7 +28,7 @@ namespace WebAppAssignment.WebForm
                 String totalSql = "select Artwork.artworkPrice, OrderDetails.orderQuantity from Artwork inner join OrderDetails on Artwork.artworkID = OrderDetails.artworkID " +
                                      "inner join Orders on OrderDetails.orderID = Orders.OrderID inner " +
                                      "join aspnet_Users on Orders.UserID = aspnet_Users.UserId " +
-                                     "where aspnet_Users.UserName ='" + Session["Username"].ToString() + "'";
+                                     "where aspnet_Users.UserName ='" + Session["Username"].ToString() + "' and Orders.orderStatus='Pending'";
 
                 double total = 0;
                 conn.Open();
@@ -40,7 +40,7 @@ namespace WebAppAssignment.WebForm
                 }
                 conn.Close();
 
-                ltrTotal.Text = total.ToString();
+                Session["subtotal"] = float.Parse(total.ToString());
             }
         }
 
@@ -93,8 +93,7 @@ namespace WebAppAssignment.WebForm
 
         protected void btnProceedPayment_Click(object sender, EventArgs e)
         {
-            float total = float.Parse(ltrTotal.Text);
-            Response.Redirect("CheckOut.aspx?total=" + total + "&step=1");
+            Response.Redirect("CheckOut.aspx?step=1");
         }
     }
 }

@@ -13,6 +13,15 @@ namespace WebAppAssignment.UserControl {
     public partial class Payment {
         
         /// <summary>
+        /// rblCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rblCard;
+        
+        /// <summary>
         /// cardHolderNameRequired control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace WebAppAssignment.UserControl {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator cardNumberRequired;
+        
+        /// <summary>
+        /// CustomValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
         
         /// <summary>
         /// txtCardNumber control.

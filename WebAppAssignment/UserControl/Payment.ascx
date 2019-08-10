@@ -54,11 +54,23 @@
 
     .validationMsg{
         color:red;
+        position:absolute;
+        margin-left:10px;   
     }
 
     .ddlDate{
         width:100%;
         height:35px;
+    }
+
+    .cardimg td{
+        width:25%;
+    }
+
+    .cardimg img{
+        width:60px;
+        height:45px;
+        vertical-align:middle;
     }
     
 </style>
@@ -68,26 +80,42 @@
         <li class="finished">Shipping</li>
         <li class="active">Payment</li>
         <li>Review</li>
-        <li>Completed</li>
+        <li>Complete</li>
     </ul>
 </div>
 
-    <%float total = float.Parse("1"); %>
+    <%float total =  (float)Session["subtotal"]; %>
 <div class="paymentInfo">
     <table class="paymentDetails">
         <tr>
-            <td style="padding-bottom:0px;" colspan="3" class="auto-style1">Cardholder&#39;s Name *  <asp:RequiredFieldValidator ID="cardHolderNameRequired" runat="server" ControlToValidate="txtCardHolderName" ErrorMessage="CardHolder's Name is required" ToolTip="CardHolder's Name is required" CssClass="validationMsg"></asp:RequiredFieldValidator></td>
+            <td style="width:100%;height:80px;" colspan="3">
+                <asp:RadioButtonList ID="rblCard" runat="server" RepeatDirection="Horizontal" CssClass="card" TextAlign="Right">
+                    <asp:ListItem Text='<img src="../Images/mastercard.png">' Value="Master Card" Selected="True"></asp:ListItem>
+                    <asp:ListItem Text='<img src="../Images/visa.png">' Value="Visa"></asp:ListItem>
+                    <asp:ListItem Text='<img src="../Images/discover.jpg">' Value="Discover"></asp:ListItem>
+                    <asp:ListItem Text='<img src="../Images/jcb.png">' Value="JCB"></asp:ListItem>
+                    <asp:ListItem Text='<img src="../Images/americanexpress.png">' Value="American Express"></asp:ListItem>
+                </asp:RadioButtonList >
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-bottom:0px;" colspan="3" class="auto-style1">Cardholder&#39;s Name *  <asp:RequiredFieldValidator ID="cardHolderNameRequired" runat="server" ControlToValidate="txtCardHolderName" ErrorMessage="CardHolder's Name is required" ToolTip="CardHolder's Name is required" CssClass="validationMsg"></asp:RequiredFieldValidator>
+             
+            </td>
         </tr>
         <tr>
             <td style="padding-top:10px;" colspan="3" class="auto-style1"><asp:TextBox ID="txtCardHolderName" runat="server" CssClass="txtCardHolderName" placeholder="  As shown on card"></asp:TextBox></td>
         </tr>
 
         <tr>
-            <td style="padding-bottom:0px;" colspan="3">Card Number * <asp:RequiredFieldValidator ID="cardNumberRequired" runat="server" ControlToValidate="txtCardNumber" ErrorMessage="Card Number is required" ToolTip="Card Number is required" CssClass="validationMsg"></asp:RequiredFieldValidator></td>
+            <td style="padding-bottom:0px;" colspan="3">Card Number * <asp:RequiredFieldValidator ID="cardNumberRequired" runat="server" ControlToValidate="txtCardNumber" ErrorMessage="Card Number is required" ToolTip="Card Number is required" CssClass="validationMsg"></asp:RequiredFieldValidator>
+                <asp:CustomValidator ID="CustomValidator1" ClientValidationFunction="cardNumValidate" runat="server" ErrorMessage="CustomValidator" ControlToValidate="txtCardNumber" CssClass="validationMsg"></asp:CustomValidator>
+            </td>
+            
         </tr>
         <tr>
             <td  style="padding-top:10px;" colspan="3" class="auto-style1">
-                <asp:TextBox ID="txtCardNumber" runat="server" CssClass="txtCardNumber" placeholder="  16-digit code on card" MaxLength="16"></asp:TextBox>
+                <asp:TextBox ID="txtCardNumber" runat="server" CssClass="txtCardNumber" placeholder="  Card number as shown on card" MaxLength="16"></asp:TextBox>
             </td>
         </tr>
 
@@ -143,11 +171,97 @@
                 </asp:DropDownList>
                 </td>
             <td style="padding-top:10px;">
-                <asp:TextBox ID="txtCVV" runat="server" CssClass="txtCVV" MaxLength="4"></asp:TextBox>
+                <asp:TextBox ID="txtCVV" runat="server" CssClass="txtCVV" MaxLength="3"></asp:TextBox>
             </td>
         </tr>
     </table>
 </div>
+
+<script type="text/javascript">
+
+    function cardNumValidate(source, args) {
+        var cardNum = document.getElementById('<%= txtCardNumber.ClientID%>');
+        var cardType = document.getElementById('<%= rblCard.ClientID%>');
+        var radio = cardType.getElementsByTagName("input");
+
+        if (radio[0].checked) {
+            if (cardNum.value.length == 16) {
+                if (cardNum.value.charAt(0) == "5") {
+                    args.IsValid = true;
+                }
+                else {
+                    args.IsValid = false;
+                    source.textContent = "Invalid card number, must start with '5'";
+                }
+            }
+            else {
+                args.IsValid = false;
+                source.textContent = "Invalid card number, must be 16 digits";
+            }
+        }
+        else if (radio[1].checked) {
+            if (cardNum.value.length == 16) {
+                if (cardNum.value.charAt(0) == "4") {
+                    args.IsValid = true;
+                }
+                else {
+                    args.IsValid = false;
+                    source.textContent = "Invalid card number, must start with '4'";
+                }
+            }
+            else {
+                args.IsValid = false;
+                source.textContent = "Invalid card number, must be 16 digits";
+            }
+        }
+        else if (radio[2].checked) {
+            if (cardNum.value.length == 16) {
+                if (cardNum.value.charAt(0) == "6") {
+                    args.IsValid = true;
+                }
+                else {
+                    args.IsValid = false;
+                    source.textContent = "Invalid card number, must start with '6'";
+                }
+            }
+            else {
+                args.IsValid = false;
+                source.textContent = "Invalid card number, must be 16 digits";
+            }
+        }
+        else if (radio[3].checked) {
+            if (cardNum.value.length == 16) {
+                if (cardNum.value.charAt(0) == "3") {
+                    args.IsValid = true;
+                }
+                else {
+                    args.IsValid = false;
+                    source.textContent = "Invalid card number, must start with '3'";
+                }
+            }
+            else {
+                args.IsValid = false;
+                source.textContent = "Invalid card number, must be 16 digits";
+            }
+        }
+        else if (radio[4].checked) {
+            if (cardNum.value.length == 15) {
+                if (cardNum.value.charAt(0) == "3") {
+                    args.IsValid = true;
+                }
+                else {
+                    args.IsValid = false;
+                    source.textContent = "Invalid card number, must start with '3'";
+                }
+            }
+            else {
+                args.IsValid = false;
+                source.textContent = "Invalid card number, must be 15 digits";
+            }
+        }
+        
+    }
+</script>
 
 <div class="orderSummary">
         <h3>Order Summary</h3>
