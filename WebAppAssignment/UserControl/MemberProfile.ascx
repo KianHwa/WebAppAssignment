@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MemberProfile.ascx.cs" Inherits="WebAppAssignment.UserControl.MemberProfile" %>
-<link rel="stylesheet" type="text/css" href="../Stylesheet/HeaderFooter.css">
+<link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
     
    
 <style>
@@ -58,11 +58,11 @@
             word-break: break-word;
             border-radius: 4px;
         }
-        .overlay {
+        .overlayPic {
           position: absolute;
           top: 126px;
           bottom: 0;
-          left: 560px;
+          left: 644px;
           right: 0;
           height: 310px;
           width: 401px;
@@ -73,7 +73,7 @@
           
         }
 
-        .containerArtist:hover .overlay {
+        .containerArtist:hover .overlayPic {
           opacity: 1;
         }
 
@@ -165,15 +165,23 @@
                             <p>
                                 <blockquote>
                                     <asp:TextBox ID="addressTxt" class="profileTxt" Width="80%"  runat="server" Text='<%# Bind("address") %>' />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                                ControlToValidate="addressTxt" ErrorMessage="Address field is required" Display="Dynamic" ForeColor="Red" Font-Size="Small">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="addressTxt"
+                                 ForeColor="Red"  Font-Size="Small" ValidationExpression="^[a-zA-Z0-9+\\s(),-]+$" ErrorMessage="Please enter correct address format"></asp:RegularExpressionValidator>
                                 </blockquote>    
                             </p>
                             <br />
                             <p>
-                                Mobile
+                                Mobile Phone
                             </p>
                             <p>
                                 <asp:TextBox ID="phoneTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("phoneNumber") %>' />
-                    
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ForeColor="Red"
+                                ControlToValidate="phoneTxt" ErrorMessage="Please enter a valid phone number"
+                            ValidationExpression="[0-9]{10}" Display="Dynamic" Font-Size="Small">*</asp:RegularExpressionValidator> 
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                ControlToValidate="phoneTxt" ErrorMessage="Mobile Phone field is required" Font-Size="Small" ForeColor="Red" Display="Dynamic">*</asp:RequiredFieldValidator>   
                             </p>
                             <br />
                     
@@ -192,7 +200,7 @@
             
             <img style="width:400px; height: 307px; border-radius: 4px;" src="<%# Eval("profilePicURL")%>" />
        
-        <div class="overlay">
+        <div class="overlayPic">
             <div class="text">
                 <asp:FileUpload  ID="artistUpload" class="uploadCustomer"  runat="server" />
                 <asp:Button ID="UpdatePicButton" class="updatePic" runat="server" CausesValidation="True" CommandName="Update" Text="Edit" OnClick="UpdatePicButton_Click" />

@@ -30,7 +30,25 @@
           font-size: 18px;
           border-radius: 4px;
         }
+        .btnStock{
+            border: none;
+          outline: 0;
+          display: inline-block;
+         padding : 6px;
+         margin-left: 650px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          width: 200px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          font-size: 18px;
+          border-radius: 4px;
+          margin-top: 40px;
+          margin-bottom: 40px;
 
+        }
         .btnEditCancel{
             background-color: #000;
             border: none;
@@ -52,17 +70,20 @@
         .btnEdit:hover, a:hover {
           opacity: 0.7;
         }
+        .btnStock:hover{
+            opacity: 0.7;
+        }
         .artProf{
             font-size: 23px;
             text-align: center;
             word-break: break-word;
             border-radius: 4px;
         }
-        .overlay {
+        .overlayPic{
           position: absolute;
           top: 126px;
           bottom: 0;
-          left: 560px;
+          left: 644px;
           right: 0;
           height: 310px;
           width: 401px;
@@ -72,7 +93,7 @@
            border-radius: 4px;
         }
 
-        .containerArtist:hover .overlay {
+        .containerArtist:hover .overlayPic {
           opacity: 1;
         }
 
@@ -135,7 +156,8 @@
         
 </style>
 
-    <h2 style="text-align:center">Artist Profile</h2>
+    <h2 style="text-align:center">
+     Artist Profile</h2>
     <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           max-width: 400px;
           margin: auto;
@@ -146,13 +168,16 @@
           ">
        
         
+        
+       
     <asp:FormView ID="fvArtistProf" runat="server" DataSourceID="SqlDataSource1" > 
             
                 <EditItemTemplate>
+
                     <div class="containerArtist" style="width: 100%;">
             
-                        <img style="width:400px; height:307px; border-radius: 4px;" src="<%# Eval("profilePicURL")%>" />
-       
+                        <img id="imgFile" style="width:400px; height:307px; border-radius: 4px;" src="<%# Eval("profilePicURL")%>" />
+                        
                     </div>
                     <div class="artProf">
                     
@@ -163,6 +188,7 @@
                         <b  style="color:darkgray;">
                         <p>
                         <asp:Label ID="usernameTxt" Font-Size="Medium" runat="server" Text='<%# Eval("UserName") %>' />
+                               
                     </p>
                         </b>
                     <br />
@@ -171,6 +197,10 @@
                         </p>
                         <p style="darkgray">
                     <asp:TextBox ID="addressTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("address") %>' />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                                ControlToValidate="addressTxt" ErrorMessage="Address field is required" Display="Dynamic" ForeColor="Red" Font-Size="Small">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="addressTxt"
+                                 ForeColor="Red"  Font-Size="Small" ValidationExpression="^[a-zA-Z0-9 +(),-]+$" ErrorMessage="Please enter correct address format"></asp:RegularExpressionValidator>
                     </p>
                       <br />
                     <p>
@@ -178,7 +208,11 @@
                         </p>
                         <p>
                         <asp:TextBox ID="phoneTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("phoneNumber") %>' />
-                    
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ForeColor="Red"
+                                ControlToValidate="phoneTxt" ErrorMessage="Please enter a valid phone number"
+                            ValidationExpression="[0-9]{10}" Display="Dynamic" Font-Size="Small">*</asp:RegularExpressionValidator> 
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                ControlToValidate="phoneTxt" ErrorMessage="Mobile Phone field is required" Font-Size="Small" ForeColor="Red" Display="Dynamic">*</asp:RequiredFieldValidator>   
                     </p>
                     <br />
                     <p>
@@ -186,7 +220,10 @@
                         </p>
                         <p>
                         <asp:TextBox ID="quoteTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("quote") %>' />
-                   
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
+                                ErrorMessage="Quote field is required" ForeColor="red" Font-Size="Small" ControlToValidate="quoteTxt"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server"
+                                ErrorMessage="Please enter only alphabet value" ForeColor="Red" Font-Size="Small" ControlToValidate="quoteTxt" ValidationExpression="^[a-zA-Z_ ]*$"></asp:RegularExpressionValidator>
                     </p>
                     <br />
                     <p>
@@ -194,11 +231,14 @@
                         </p>
                         <p>
                         <asp:TextBox ID="biotxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("biography") %>' />
-                    
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
+                                ErrorMessage="Biography field is required" ForeColor="Red" Font-Size="Small" ControlToValidate="bioTxt"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator4" ControlToValidate="bioTxt" runat="server"
+                                ErrorMessage="Please enter only alphabet value" ForeColor="Red" Font-Size="Small" ValidationExpression="^[a-zA-Z_ ]*$"></asp:RegularExpressionValidator>
                     </p>
                     <br />
                     </blockquote>
-                       
+                      <asp:ValidationSummary runat="server" ForeColor="Red" Font-Size="Small"></asp:ValidationSummary>  
                     <asp:Button ID="UpdateButton" class="btnEditCancel"  runat="server" CausesValidation="True" CommandName="Update" Text="Update   " OnClick="UpdateButton_Click" />
 
                     <asp:Button ID="UpdateCancelButton" class="btnEditCancel" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
@@ -212,7 +252,7 @@
             
             <img style="width:400px; height: 307px;  border-radius: 4px;" src="<%# Eval("profilePicURL")%>" />
        
-        <div class="overlay">
+        <div class="overlayPic">
             <div class="text">
                 <asp:FileUpload  ID="artistUpload" class="uploadArtist"  runat="server" />
                 <asp:Button ID="UpdatePicButton" class="updatePic" runat="server" CausesValidation="True" CommandName="Update" Text="Edit" OnClick="UpdatePicButton_Click" />
@@ -277,9 +317,12 @@
                     <asp:Button ID="EditButton" class="btnEdit" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
                      </div>   
                 </ItemTemplate>
+       
             </asp:FormView>
 
+        
 
         </div>
+<asp:Button ID="StockButton" class="btnStock" runat="server" Text="Gallery Stock" PostBackUrl="~/WebForm/GalleryStock.aspx" />
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber,
             Us.quote, Us.biography FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>

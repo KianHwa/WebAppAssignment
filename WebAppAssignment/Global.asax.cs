@@ -42,7 +42,7 @@ namespace WebAppAssignment
 
         protected void Application_End(object sender, EventArgs e)
         {
-            Session.Abandon();
+            
         }
     }
 }

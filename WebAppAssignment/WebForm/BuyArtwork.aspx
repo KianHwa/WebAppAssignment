@@ -71,6 +71,7 @@
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Artwork]"></asp:SqlDataSource>
             
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource3">
+                
                 <ItemTemplate>
                     <a href="Artwork.aspx?artworkID=<%# Eval("artworkID")%>">
                     <div class="artwork">

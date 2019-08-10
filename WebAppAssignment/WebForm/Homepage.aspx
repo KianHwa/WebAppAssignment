@@ -1,18 +1,26 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/GuestHeader.Master"  AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="WebAppAssignment.WebForm.Homepage"%> 
 <%@ Register TagPrefix="Artwork" TagName="Footer" Src="~/UserControl/Footer.ascx" %>
 
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="Home.css" type="text/css" />
+   
+    
+   
     <link rel="stylesheet" href="../CSS/Home.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!--CSS PART HERE-->
-
+  
+    
+  
     <div class="margins">
+       
+        
        
 <div>
 <div class="slideshow-container" ">
-
+    x
 <div class="mySlides">
   <a href="#"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
   <div class="text"></div>
@@ -51,14 +59,27 @@
 </div>
 </div>
 <br />
+   
 <hr />
 
 <!--Section 2 the Ul part-->
 <h1><b>Category</b></h1>
-<div class="ulside">
-
-<div>
-<ul class="filter-wrapper">
+<div class="ulside">       
+         <asp:Repeater ID="Repeater1"  runat="server" DataSourceID="SqlDataSource1">
+        
+        <ItemTemplate>
+           <ul class="filter-wrapper">
+             
+               
+               <li><asp:Button
+                   ID="BtnGoCat" runat="server" CommandArgument='<%# Eval("artworkCategory") %>' OnClick="BtnGoCat_Click" Text='<%# Eval("artworkCategory") %>' /></li>
+            </ul>
+            
+        </ItemTemplate>
+    </asp:Repeater>
+</div>
+   
+<%--<ul class="filter-wrapper">
         <li><a href="BuyArtwork.aspx"">Painting</a></li>
         <li><a href="BuyArtwork.aspx">Portrait</a></li>
         <li><a href="BuyArtwork.aspx">Color</a></li>
@@ -67,7 +88,7 @@
 </ul>
 
 </div>
-</div>
+</div>--%>
 
 <!--Section 3-->
 <hr />
@@ -99,6 +120,7 @@
                   <a href="BuyArtwork.aspx"><img class="artistImage" style="width:200px; border-radius:20px; height:270px; " src="../Images/raphael.jpg" /></a>
                    <label>Raphael</label>
               </div>
+            
     </div>
     </div>
 
@@ -207,5 +229,5 @@
         setTimeout(showSlides, 3500); // Change image every 2 seconds
     }
     </script>
-
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT DISTINCT [artworkCategory] FROM [Artwork]"></asp:SqlDataSource>
  </asp:Content>

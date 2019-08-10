@@ -11,7 +11,8 @@ namespace WebAppAssignment.WebForm
     { 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            
+
         }
 
         protected void Page_PreInit(object sender, EventArgs e)
@@ -26,6 +27,13 @@ namespace WebAppAssignment.WebForm
             }
             
 
+        }
+
+        protected void BtnGoCat_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            
+            Response.Redirect("BuyArtwork.aspx?cat=notnull&artworkCategory=" + btn.CommandArgument);
         }
     }
 }
