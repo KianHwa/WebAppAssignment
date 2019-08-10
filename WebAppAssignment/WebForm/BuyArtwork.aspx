@@ -2,8 +2,7 @@
 <%@ Register TagPrefix="Artwork" TagName="Footer" Src="~/UserControl/Footer.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="BuyArtwork.css" type="text/css" runat="server"/>
-    <link rel="stylesheet" href="../CSS/HeaderFooter.css" type="text/css" runat="server"/>
+    <link rel="stylesheet" href="../CSS/BuyArtwork.css" type="text/css" runat="server"/>
 
     <div class="body" style="float:left;">
         <% 
