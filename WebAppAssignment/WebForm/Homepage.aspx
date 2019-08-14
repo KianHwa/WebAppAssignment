@@ -19,30 +19,30 @@
         
        
 <div>
-<div class="slideshow-container" ">
-    x
+<div class="slideshow-container" >
+    
 <div class="mySlides">
-  <a href="#"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
+  <a href="#"><img src="../Images/honkaiFireYae.jpg" style="width:100%; height:500px;"></a>
   <div class="text"></div>
 </div>
 
 <div class="mySlides">
-  <a href="#"><img src="../Images/background1.jpg" style="width:100%; height:500px;"></a>
+  <a href="#"><img src="../Images/deadpool.jpg" style="width:100%; height:500px;"></a>
   <div class="text"></div>
 </div>
 
 <div class="mySlides">
-  <a href="#"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
+  <a href="#"><img src="../Images/miku art.jpg" style="width:100%; height:500px;"></a>
   <div class="text"></div>
 </div>
 
 <div class="mySlides">
-  <a href="#"><img src="../Images/background1.jpg" style="width:100%; height:500px;"></a>
+  <a href="#"><img src="../Images/rainbowSix.jpg" style="width:100%; height:500px;"></a>
   <div class="text"></div>
 </div>
 
 <div class="mySlides">
-  <a href="Wishlist.aspx"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
+  <a href="Wishlist.aspx"><img src="../Images/dark dragon.jpg" style="width:100%; height:500px;"></a>
   <div class="text"></div>
 </div>
 </div>
@@ -64,16 +64,12 @@
 
 <!--Section 2 the Ul part-->
 <h1><b>Category</b></h1>
-<div class="ulside">       
+<div class="ulside">   
          <asp:Repeater ID="Repeater1"  runat="server" DataSourceID="SqlDataSource1">
         
         <ItemTemplate>
-           <ul class="filter-wrapper">
-             
-               
-               <li><asp:Button
-                   ID="BtnGoCat" runat="server" CommandArgument='<%# Eval("artworkCategory") %>' OnClick="BtnGoCat_Click" Text='<%# Eval("artworkCategory") %>' /></li>
-            </ul>
+            
+               <asp:Button ID="BtnGoCat" CssClass="filter-wrapper" runat="server" CommandArgument='<%# Eval("artworkCategory") %>' OnClick="BtnGoCat_Click" Text='<%# Eval("artworkCategory") %>' />
             
         </ItemTemplate>
     </asp:Repeater>
@@ -83,7 +79,7 @@
         <li><a href="BuyArtwork.aspx"">Painting</a></li>
         <li><a href="BuyArtwork.aspx">Portrait</a></li>
         <li><a href="BuyArtwork.aspx">Color</a></li>
-        <li><a href="BuyArtwork.aspx">Photoshop</a></li>
+        <li><a href="BuyArtwork.aspx">Photoshop</a></li>g
         <li><a href="BuyArtwork.aspx">Poster</a></li>
 </ul>
 

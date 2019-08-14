@@ -82,6 +82,11 @@
     <Content Include="CSS\Artwork.css" />
     <Content Include="CSS\SellArtwork.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\rainbowSix.jpg" />
+    <Content Include="Images\dark dragon.jpg" />
+    <Content Include="Images\deadpool.jpg" />
+    <Content Include="Images\honkaiFireYae.jpg" />
+    <Content Include="Images\miku art.jpg" />
     <Content Include="UserControl\ArtistProfile.ascx" />
     <Content Include="UserControl\Footer.ascx" />
     <Content Include="UserControl\MemberProfile.ascx" />
