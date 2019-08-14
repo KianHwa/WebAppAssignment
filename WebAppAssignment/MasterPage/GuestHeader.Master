@@ -7,7 +7,7 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link rel="stylesheet" href="../WebForm/HeaderFooter.css" type="text/css" runat="server"/>
+    <link rel="stylesheet" href="../CSS/HeaderFooter.css" type="text/css" runat="server"/>
 </head>
 
 <body>

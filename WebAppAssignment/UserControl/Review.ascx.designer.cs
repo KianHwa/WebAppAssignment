@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebAppAssignment.WebForm {
+namespace WebAppAssignment.UserControl {
     
     
-    public partial class CheckOut {
+    public partial class Review {
         
         /// <summary>
-        /// ctlShipping control.
+        /// Repeater1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::WebAppAssignment.UserControl.Shipping ctlShipping;
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
         
         /// <summary>
-        /// ctlPayment control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::WebAppAssignment.UserControl.Payment ctlPayment;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
-        /// ctlReview control.
+        /// btnContinuePayment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::WebAppAssignment.UserControl.Review ctlReview;
-        
-        /// <summary>
-        /// ctlComplete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::WebAppAssignment.UserControl.Complete ctlComplete;
+        protected global::System.Web.UI.WebControls.Button btnContinuePayment;
     }
 }

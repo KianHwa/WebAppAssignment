@@ -3,7 +3,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="../CSS/Artwork.css" type="text/css" runat="server"/>
-    <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
         <div class="body">
             <% 
                 String status = Request.QueryString["status"];

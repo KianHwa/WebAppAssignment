@@ -3,7 +3,6 @@
 
 <asp:Content ID="CartContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="../CSS/Cart.css" type="text/css" runat="server"/>
-    <link rel="stylesheet" href="Cart.css" type="text/css" runat="server"/>
 
     <div class="body">
         <h1>Your Order Cart</h1>
@@ -49,7 +48,7 @@
                 <tr>
                     <td style="width:80%; text-align:right; ">Total</td>
                     <td style="width:20%; text-align:right">
-                        RM <asp:Literal ID="ltrTotal" runat="server"></asp:Literal></td>
+                        RM <%= Session["subtotal"].ToString() %></td>
                 </tr>
                 <tr>
                     <td style="text-align:right;" colspan="2">

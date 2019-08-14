@@ -80,6 +80,7 @@
       <DependentUpon>ArtworkGallery.mdf</DependentUpon>
     </Content>
     <Content Include="CSS\Artwork.css" />
+    <Content Include="CSS\HeaderFooter.css" />
     <Content Include="CSS\SellArtwork.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\rainbowSix.jpg" />
@@ -87,10 +88,35 @@
     <Content Include="Images\deadpool.jpg" />
     <Content Include="Images\honkaiFireYae.jpg" />
     <Content Include="Images\miku art.jpg" />
+    <Content Include="Images\294360.jpg" />
+    <Content Include="Images\3295a9fd50727c34eb63112488240d34--kirito-asuna-swords.jpg" />
+    <Content Include="Images\505441.jpg" />
+    <Content Include="Images\545454.jpg" />
+    <Content Include="Images\62307_darling_in_the_franxx.jpg" />
+    <Content Include="Images\673478.png" />
+    <Content Include="Images\676951.jpg" />
+    <Content Include="Images\676976.jpg" />
+    <Content Include="Images\akbarsaheb.jpg" />
+    <Content Include="Images\americanexpress.png" />
+    <Content Include="Images\c82cb83eead9496858a0dc8f0a14eb4c.jpg" />
+    <Content Include="Images\discover.jpg" />
+    <Content Include="Images\drytree.jpg" />
+    <Content Include="Images\DSC_0002.JPG" />
+    <Content Include="Images\jcb.png" />
+    <Content Include="Images\mastercard.png" />
+    <Content Include="Images\moon.jpg" />
+    <Content Include="Images\pp.jpg" />
+    <Content Include="Images\thumb-1920-632056.png" />
+    <Content Include="Images\tick.png" />
+    <Content Include="Images\visa.png" />
+    <Content Include="Images\wallhaven-668036.jpg" />
+    <Content Include="Images\WhatsApp Image 2019-01-16 at 00.42.27%281%29.jpeg" />
     <Content Include="UserControl\ArtistProfile.ascx" />
+    <Content Include="UserControl\Complete.ascx" />
     <Content Include="UserControl\Footer.ascx" />
     <Content Include="UserControl\MemberProfile.ascx" />
     <Content Include="UserControl\Payment.ascx" />
+    <Content Include="UserControl\Review.ascx" />
     <Content Include="UserControl\Shipping.ascx" />
     <Content Include="CSS\BuyArtwork.css" />
     <Content Include="CSS\Cart.css" />
@@ -255,6 +281,13 @@
     <Compile Include="UserControl\ArtistProfile.ascx.designer.cs">
       <DependentUpon>ArtistProfile.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\Complete.ascx.cs">
+      <DependentUpon>Complete.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Complete.ascx.designer.cs">
+      <DependentUpon>Complete.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\Footer.ascx.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -275,6 +308,13 @@
     </Compile>
     <Compile Include="UserControl\Payment.ascx.designer.cs">
       <DependentUpon>Payment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Review.ascx.cs">
+      <DependentUpon>Review.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Review.ascx.designer.cs">
+      <DependentUpon>Review.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Shipping.ascx.cs">
       <DependentUpon>Shipping.ascx</DependentUpon>

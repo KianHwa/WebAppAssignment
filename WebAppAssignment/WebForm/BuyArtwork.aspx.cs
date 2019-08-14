@@ -172,7 +172,7 @@ namespace WebAppAssignment.WebForm
                 int orderQty = 0;
                 int artworkStock = 0;
                 cmd = new SqlCommand("select OrderDetails.artworkID, OrderDetails.OrderID, OrderDetails.orderQuantity from OrderDetails inner join Orders on OrderDetails.orderID = Orders.orderID " +
-                                     " inner join aspnet_Users on Orders.UserId = aspnet_Users.UserId where OrderDetails.artworkID=" + btn.CommandArgument + " and aspnet_Users.Username='" + Session["Username"].ToString() + "'", conn);
+                                     " inner join aspnet_Users on Orders.UserId = aspnet_Users.UserId where OrderDetails.artworkID=" + btn.CommandArgument + " and aspnet_Users.Username='" + Session["Username"].ToString() + "' and Orders.orderStatus='Pending'", conn);
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -192,13 +192,13 @@ namespace WebAppAssignment.WebForm
                 }
                 conn.Close();
 
-                if (1 <= artworkStock)
+                if (artworkStock > 0)
                 {
                     if (duplicateOrder == 0)
                     {
 
-                        String ordersSql = "insert into Orders (orderStatus,UserId,orderDate) values('Pending','" + Session["UserId"].ToString() + "','07-06-2019')";
-
+                        String ordersSql = "insert into Orders (orderStatus,UserId,orderDate) values('Pending','" + Session["UserId"].ToString() + "','" + DateTime.Now.ToString("MM/dd/yyyy")  + "')";
+                        
                         //Insert into Order table
                         cmd = new SqlCommand(ordersSql, conn);
                         conn.Open();
