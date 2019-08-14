@@ -1,8 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="ArtistProfile.aspx.cs" Inherits="WebAppAssignment.WebForm.ArtistProfile" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ArtistProfile.ascx.cs" Inherits="WebAppAssignment.UserControl.ArtistProfile" %>
+<link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
    
    
 <style>
@@ -33,7 +30,25 @@
           font-size: 18px;
           border-radius: 4px;
         }
+        .btnStock{
+            border: none;
+          outline: 0;
+          display: inline-block;
+         padding : 6px;
+         margin-left: 650px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          width: 200px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          font-size: 18px;
+          border-radius: 4px;
+          margin-top: 40px;
+          margin-bottom: 40px;
 
+        }
         .btnEditCancel{
             background-color: #000;
             border: none;
@@ -54,6 +69,9 @@
         }
         .btnEdit:hover, a:hover {
           opacity: 0.7;
+        }
+        .btnStock:hover{
+            opacity: 0.7;
         }
         .artProf{
             font-size: 23px;
@@ -149,13 +167,16 @@
           ">
        
         
+        
+       
+        
     <asp:FormView ID="fvArtistProf" runat="server" DataSourceID="SqlDataSource1" > 
             
                 <EditItemTemplate>
                     <div class="containerArtist" style="width: 100%;">
             
-                        <img style="width:400px; height:307px; border-radius: 4px;" src="<%# Eval("profilePicURL")%>" />
-       
+                        <img id="imgFile" style="width:400px; height:307px; border-radius: 4px;" src="<%# Eval("profilePicURL")%>" />
+                        
                     </div>
                     <div class="artProf">
                     
@@ -166,6 +187,7 @@
                         <b  style="color:darkgray;">
                         <p>
                         <asp:Label ID="usernameTxt" Font-Size="Medium" runat="server" Text='<%# Eval("UserName") %>' />
+                            
                     </p>
                         </b>
                     <br />
@@ -281,7 +303,11 @@
                      </div>   
                 </ItemTemplate>
             </asp:FormView>
+
+
+        
+
         </div>
+<asp:Button ID="StockButton" class="btnStock" runat="server" Text="Gallery Stock" PostBackUrl="~/WebForm/GalleryStock.aspx" />
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber,
             Us.quote, Us.biography FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>
-        </asp:Content>

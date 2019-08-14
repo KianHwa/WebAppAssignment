@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="GuestHeader.Master.cs" Inherits="WebAppAssignment.Site1" %>
-
+<%@ Register TagPrefix="Artwork" TagName="Footer" Src="~/UserControl/Footer.ascx" %>
 <!DOCTYPE html>
 
 <html>
@@ -7,13 +7,14 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link rel="stylesheet" href="../CSS/HeaderFooter.css" type="text/css" runat="server"/>
+    <link rel="stylesheet" href="../WebForm/HeaderFooter.css" type="text/css" runat="server"/>
 </head>
 
 <body>
+    <header>
     <form id="form1" runat="server">
         <div id="navBar">
-            <a href="../WebForm/Homepage.aspx?status=loggedOut"><div class="logo"></div></a>
+            <a href="../WebForm/Homepage.aspx?"><div class="logo"></div></a>
             <div class="navBar1">
                 <table style="width:100%;" >
                     <tr>
@@ -65,6 +66,9 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
     </form>
-    
+    </header>
+    <footer>
+        <Artwork:Footer ID="ctlFooter" runat="server"></Artwork:Footer>
+    </footer>
 </body>
 </html>

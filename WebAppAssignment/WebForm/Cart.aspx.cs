@@ -21,6 +21,26 @@ namespace WebAppAssignment.WebForm
                                                "where Orders.UserId ='" + Session["UserID"].ToString() + "'";
                 SqlDataSource1.DataBind();
                 GridView1.DataBind();
+
+                SqlCommand cmd;
+                SqlDataReader reader;
+                SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
+                String totalSql = "select Artwork.artworkPrice, OrderDetails.orderQuantity from Artwork inner join OrderDetails on Artwork.artworkID = OrderDetails.artworkID " +
+                                     "inner join Orders on OrderDetails.orderID = Orders.OrderID inner " +
+                                     "join aspnet_Users on Orders.UserID = aspnet_Users.UserId " +
+                                     "where aspnet_Users.UserName ='" + Session["Username"].ToString() + "'";
+
+                double total = 0;
+                conn.Open();
+                cmd = new SqlCommand(totalSql, conn);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    total += ((double)reader.GetValue(0) * (int)reader.GetValue(1));
+                }
+                conn.Close();
+
+                ltrTotal.Text = total.ToString();
             }
         }
 
@@ -69,6 +89,12 @@ namespace WebAppAssignment.WebForm
             cmd.Dispose();
             conn.Close();
             Response.Redirect("Cart.aspx");
+        }
+
+        protected void btnProceedPayment_Click(object sender, EventArgs e)
+        {
+            float total = float.Parse(ltrTotal.Text);
+            Response.Redirect("CheckOut.aspx?total=" + total + "&step=1");
         }
     }
 }

@@ -5,20 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebAppAssignment
+namespace WebAppAssignment.WebForm
 {
     public partial class Homepage : System.Web.UI.Page
     { 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack == false)
-            {
+            
 
-                SqlDataSource1.SelectCommand = "Select * from Artwork";
-                SqlDataSource1.DataBind();
-                
-
-            }
         }
 
         protected void Page_PreInit(object sender, EventArgs e)
@@ -33,6 +27,13 @@ namespace WebAppAssignment
             }
             
 
+        }
+
+        protected void BtnGoCat_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            
+            Response.Redirect("BuyArtwork.aspx?cat=notnull&artworkCategory=" + btn.CommandArgument);
         }
 
     }

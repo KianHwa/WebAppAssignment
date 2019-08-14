@@ -23,7 +23,7 @@ namespace WebAppAssignment.WebForm
 
             conn.Open();
             Guid userID = new Guid();
-            cmd = new SqlCommand("select top(1) UserId from aspnet_Membership order by UserId desc", conn);
+            cmd = new SqlCommand("select UserId from aspnet_Users where UserName='" + Request.QueryString["tempoName"].ToString() + "'", conn);
             reader = cmd.ExecuteReader();
             while (reader.Read())
             {

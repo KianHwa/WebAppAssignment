@@ -15,6 +15,7 @@ namespace WebAppAssignment.MasterPage
             SqlDataSource1.DataBind();
             Repeater1.DataBind();
 
+
         }
 
         protected void LoginStatus1_LoggedOut(object sender, EventArgs e)

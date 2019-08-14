@@ -1,10 +1,32 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/LoggedInHeader.Master" AutoEventWireup="true" CodeBehind="SellArtwork.aspx.cs" Inherits="WebAppAssignment.WebForm.SellArtwork" %>
-
+<%@ Register TagPrefix="Artwork" TagName="Footer" Src="~/UserControl/Footer.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
     <link rel="stylesheet" type="text/css" href="../CSS/SellArtwork.css">
-    
+    <style type="text/css">
+        .auto-style2 {
+            width: 161px;
+        }
+        .auto-style3 {
+            width: 100%;
+        }
+        .auto-style4 {
+            width: 127px;
+            text-align:right;
+            padding-right:10px;
+        }
+        .auto-style5 {
+            width: 161px;
+            margin-left: 40px;
+        }
+        .auto-style6 {
+            width: 127px;
+            text-align: right;
+            padding-right: 10px;
+            margin-left: 40px;
+        }
+    </style>
     <div class="body">
         <h1 style="border-left:2px solid #d9d9d9;margin-top:150px;text-align:center">Upload your artwork here</h1>
         <div class="uploadForm">
@@ -24,8 +46,15 @@
                     <td class="auto-style4">Artwork Category</td>
                     <td class="auto-style2">
             <asp:DropDownList ID="ddlArtworkCat" runat="server" CssClass="uploadFill">
+                <asp:ListItem>Collages</asp:ListItem>
+                <asp:ListItem>Design</asp:ListItem>
+                <asp:ListItem>Digital Arts</asp:ListItem>
+                <asp:ListItem>DrawingDrawing</asp:ListItem>
                 <asp:ListItem>Painting</asp:ListItem>
+                <asp:ListItem>Photography</asp:ListItem>
                 <asp:ListItem>Portrait</asp:ListItem>
+                <asp:ListItem>Printmaking</asp:ListItem>
+                <asp:ListItem>Sculpture</asp:ListItem>
             </asp:DropDownList>
                     </td>
                 </tr>
@@ -57,30 +86,10 @@
             <br />
         </div>
         </div>
+    
         </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="head">
-    <style type="text/css">
-        .auto-style2 {
-            width: 161px;
-        }
-        .auto-style3 {
-            width: 100%;
-        }
-        .auto-style4 {
-            width: 127px;
-            text-align:right;
-            padding-right:10px;
-        }
-        .auto-style5 {
-            width: 161px;
-            margin-left: 40px;
-        }
-        .auto-style6 {
-            width: 127px;
-            text-align: right;
-            padding-right: 10px;
-            margin-left: 40px;
-        }
-    </style>
+    
+    
 </asp:Content>
 
