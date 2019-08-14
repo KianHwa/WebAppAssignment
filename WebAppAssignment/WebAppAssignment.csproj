@@ -83,6 +83,11 @@
     <Content Include="CSS\HeaderFooter.css" />
     <Content Include="CSS\SellArtwork.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\rainbowSix.jpg" />
+    <Content Include="Images\dark dragon.jpg" />
+    <Content Include="Images\deadpool.jpg" />
+    <Content Include="Images\honkaiFireYae.jpg" />
+    <Content Include="Images\miku art.jpg" />
     <Content Include="Images\294360.jpg" />
     <Content Include="Images\3295a9fd50727c34eb63112488240d34--kirito-asuna-swords.jpg" />
     <Content Include="Images\505441.jpg" />

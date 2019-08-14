@@ -35,5 +35,6 @@ namespace WebAppAssignment.WebForm
             
             Response.Redirect("BuyArtwork.aspx?cat=notnull&artworkCategory=" + btn.CommandArgument);
         }
+
     }
-}
+}   

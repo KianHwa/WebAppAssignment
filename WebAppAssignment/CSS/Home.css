@@ -137,42 +137,37 @@ h3 {
     cursor: pointer;
 }
 
+
 .filter-wrapper {
-    width: 100%;
-    border-radius: 25px;
+    width:250px;
     overflow: hidden;
+    display: inline-block;
+    margin: 2px;
+    position: center;
+    color: #666;
+    border-radius: 25px;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    padding: 8px 17px;
+    border: 2px solid #000000;
+    margin-right: 4px;
+    margin-left: 4px;
+    text-transform: uppercase;
+    display: block;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    cursor:pointer;
 }
 
-    .filter-wrapper li {
-        display: inline-block;
-        margin: 2px;
-        position: center;
-    }
-
-        .filter-wrapper li a {
-            color: #666;
-            border-radius: 25px;
-            font-size: 24px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            padding: 8px 17px;
-            border: 2px solid #000000;
-            margin-right: 4px;
-            margin-left: 4px;
-            text-transform: uppercase;
-            display: block;
-            text-decoration: none;
-            transition: all 0.4s ease-in-out;
-        }
-
-            .filter-wrapper li a:hover,
-            .filter-wrapper li a:focus {
-                background: #808080;
-                color: #ffffff;
-                border: 2px solid #909090;
-                font-weight: 800;
-                font-size: 30px;
-            }
+.filter-wrapper:hover,
+.filter-wrapper:focus {
+    background: #808080;
+    color: #ffffff;
+    border: 2px solid #909090;
+    font-weight: 400;
+    font-size: 30px;
+}
 
 /*ulside*/
 .ulside {
