@@ -90,7 +90,6 @@
         transition:0.3s;
     }
     </style>
-    
     <%String step = Request.QueryString["step"]; %>
         <div class="body" style="background-color:rgba(89,89,89,0.3);z-index:-3;position:relative;">
             <%if (step != null) {

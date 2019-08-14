@@ -26,7 +26,7 @@
   <div class="text"></div>
 </div>
 
-<div class="mySlides">d
+<div class="mySlides">
   <a href="#"><img src="../Images/background1.jpg" style="width:100%; height:500px;"></a>
   <div class="text"></div>
 </div>

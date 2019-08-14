@@ -62,7 +62,7 @@
           position: absolute;
           top: 126px;
           bottom: 0;
-          left: 644px;
+          left: 560px;
           right: 0;
           height: 310px;
           width: 401px;
@@ -75,6 +75,7 @@
 
         .containerArtist:hover .overlayPic {
           opacity: 1;
+          transition:0.3s;
         }
 
         .text {
@@ -93,7 +94,6 @@
            
             border: none;
               color: white;
-             
               text-align: center;
               text-decoration: none;
               display: inline-block;
@@ -107,6 +107,7 @@
         .updatePic:hover {
               background-color: black;
               color: white;
+              transition:0.3s;
         }
         .uploadArtist{
               border: none;
@@ -134,6 +135,30 @@
 
         .profileTxt:hover{
             opacity:0.8;
+            transition:0.3s;
+        }
+
+        .btnHistory{
+            border: none;
+          outline: 0;
+          display: inline-block;
+         padding : 6px;
+         margin-left: 650px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          width: 200px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          font-size: 18px;
+          border-radius: 4px;
+          margin-top: 40px;
+          margin-bottom: 40px;
+        }
+        .btnHistory:hover{
+            opacity: 0.7;
+            transition:0.3s;
         }
 </style>
 
@@ -240,7 +265,7 @@
                 </ItemTemplate>
             </asp:FormView>
         </div>
-        
+        <asp:Button ID="btnHistory" CssClass="btnHistory" runat="server" Text="Payment History" PostBackUrl="~/WebForm/PaymentHistory.aspx" />
     
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber
             FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>

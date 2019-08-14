@@ -73,10 +73,10 @@
                 
                 <ItemTemplate>
                     <a href="Artwork.aspx?artworkID=<%# Eval("artworkID")%>">
-                    <div class="artwork">
+                    <div class="artwork" style="width:300px;height:650px;">
                     <div class="artworkimg"><img src="<%# Eval("artworkURL")%>" /></div>
                     <div class="artworkdetails" style="padding:10px;">
-                        <h1 style="color:#383838"><%#Eval("artworkName")%></h1>
+                        <h1 style="color:#383838;height:130px;"><%#Eval("artworkName")%></h1>
                         <p style="color:#8c8c8c"></p>
                         <p class="price">RM <%# Eval("artworkPrice") %></p>
                         <p style="color:#383838">In stock: <%# Eval("artworkStock")%></p>
