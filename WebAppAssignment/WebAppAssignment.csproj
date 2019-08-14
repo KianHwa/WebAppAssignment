@@ -122,7 +122,7 @@
     <Content Include="CSS\Cart.css" />
     <Content Include="WebForm2.aspx" />
     <Content Include="WebForm\CheckOut.aspx" />
-    <Content Include="CSS\Home.css" />
+    <Content Include="WebForm\Home.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\Wishlist.css" />
     <Content Include="WebForm\GalleryStock.aspx" />

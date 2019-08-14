@@ -135,12 +135,12 @@ namespace WebAppAssignment.UserControl
                                    "<div>" +
                                    "<table style =\"width:70%;>" +
                                    "<tr>" +
-                                   "<th style =\"width:100%;text-align:left\">" + paymentID + "</th>" +
-                                   "<th style =\"width:100%;text-align:right\">" + paymentdate + "</th>" +
+                                   "<th style =\"width:100%;text-align:left\">" + "Payment ID" + "</th>" +
+                                   "<th style =\"width:100%;text-align:right\">" + "Payment Date" + "</th>" +
                                    "</tr >" +
                                    "<tr >" +
-                                   "<td style =\"width:70%;text-align:left\">1</td>" +
-                                   "<td style =\"width:70%;text-align:right;\" > 1 / 1 / 1999 </td>" +
+                                   "<td style =\"width:70%;text-align:left\">" + paymentID + "</td>" +
+                                   "<td style =\"width:70%;text-align:right;\" >" + paymentdate + "</td>" +
                                    "</tr>" +
                                    "</table>" +
                                    "<table style = \"width:70%;text-align:center;padding:10px;border-collapse:collapse\">" +
@@ -151,9 +151,19 @@ namespace WebAppAssignment.UserControl
                                    "</tr>" +
                                    receiptMsg + 
                                    "<tr>" +
+                                   "<td></td>" +
+                                   "<td> SubTotal </td>" +
+                                   "<td> RM" + Session["subtotal"].ToString() + "</td>" +
+                                   "</tr>" +
+                                   "<tr>" +
                                    "<td ></td>" +
-                                   "<td > Total </td>" +
-                                   "<td> 100 </td>" +
+                                   "<td > Shipping cost </td>" +
+                                   "<td> RM" + float.Parse(Session["subtotal"].ToString()) * 0.02 + "</td>" +
+                                   "</tr>" +
+                                   "<tr>" +
+                                   "<td></td>" +
+                                   "<td> Total </td>" +
+                                   "<td> RM" + float.Parse(Session["subtotal"].ToString())*1.02 + "</td>" +
                                    "</tr>" +
                                    "</table>" +
                                    "</div>" +
