@@ -91,7 +91,9 @@
 <div class="section">
 <h1>Famous Artist</h1>
 <div class="background">
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server">
+
+    </asp:SqlDataSource>
     
             <!--Part 1-->
                <div  class="grid_image">

@@ -139,10 +139,11 @@ h3 {
 
 
 .filter-wrapper {
-    width:250px;
+
+    width:280px;
     overflow: hidden;
-    display: inline-block;
-    margin: 2px;
+    display:inline-block;
+    margin: 5px;
     position: center;
     color: #666;
     border-radius: 25px;
@@ -154,7 +155,6 @@ h3 {
     margin-right: 4px;
     margin-left: 4px;
     text-transform: uppercase;
-    display: block;
     text-decoration: none;
     transition: all 0.4s ease-in-out;
     cursor:pointer;
@@ -214,14 +214,13 @@ h3 {
     border: none;
     color: black;
     padding: 14px 28px;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 300;
     cursor: pointer;
     background: #fff;
     border-radius: 50px;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
     border: 1px solid black;
-    
 }
 
     .button a {
@@ -244,14 +243,15 @@ h3 {
 }
 
 .button:hover,
-.button:focus{
+.button:focus {
     /*background-image: linear-gradient(to right, #2ac275, #cbdc0b, #2ac275);
     background: #2ac275;
     background: linear-gradient(to right, #2ac275, #cbdc0b, #2ac275);*/
     background-color: #717171;
     padding: 16px 34px;
-    transition: all 0.4s;
-    font-weight:700;
-    border:0 none;
-    color:gold;
+    transition: all 0.3s ease-in-out;
+    font-weight: 400;
+    font-size: 30px;
+    border: 0 none;
+    color: white;
 }
