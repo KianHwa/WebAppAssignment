@@ -81,7 +81,7 @@
     </Content>
     <Content Include="CSS\Artwork.css" />
     <Content Include="CSS\HeaderFooter.css" />
-    <Content Include="CSS\Home.css" />
+    <Content Include="WebForm\Home.css" />
     <Content Include="CSS\SellArtwork.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\rainbowSix.jpg" />
