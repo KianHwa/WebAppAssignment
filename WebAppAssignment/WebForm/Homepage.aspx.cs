@@ -8,13 +8,11 @@ using System.Web.UI.WebControls;
 namespace WebAppAssignment.WebForm
 {
     public partial class Homepage : System.Web.UI.Page
-    { 
+    {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-
+   
         }
-
         protected void Page_PreInit(object sender, EventArgs e)
         {
             if (Session["Username"] != null)
@@ -36,5 +34,11 @@ namespace WebAppAssignment.WebForm
             Response.Redirect("BuyArtwork.aspx?cat=notnull&artworkCategory=" + btn.CommandArgument);
         }
 
+        protected void BtnGoCat_Click1(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            Response.Redirect("Testimonial.aspx?name=" + btn.CommandArgument);
+        }
     }
 }   
