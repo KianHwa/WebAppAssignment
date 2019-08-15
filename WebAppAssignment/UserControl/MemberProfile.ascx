@@ -135,13 +135,23 @@
         .profileTxt:hover{
             opacity:0.8;
         }
+        .noImageLbls{
+            font-size: small;
+            color: red;
+        }
 </style>
 
     <h2 style="text-align:center">Customer Profile</h2>
-    <div style="box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.2);max-width: 400px;text-align: center;margin:auto; border-radius: 4px;margin-bottom: 40px; font-family: arial;">
+    <div style="box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        text-align: center;
+        margin:auto;
+        border-radius: 4px;
+        margin-bottom: 40px;
+        font-family: arial;">
        
         
-    <asp:FormView ID="fvCustomerProf" runat="server" DataSourceID="SqlDataSource1" > 
+    <asp:FormView ID="fvCustomerProf" runat="server" DataSourceID="SqlDataSource1"> 
             
                 <EditItemTemplate>
                     <div class="containerArtist" style="width: 100%;">
@@ -166,7 +176,7 @@
                                 <blockquote>
                                     <asp:TextBox ID="addressTxt" class="profileTxt" Width="80%"  runat="server" Text='<%# Bind("address") %>' />
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
-                                ControlToValidate="addressTxt" ErrorMessage="Address field is required" Display="Dynamic" ForeColor="Red" Font-Size="Small">*</asp:RequiredFieldValidator>
+                                ControlToValidate="addressTxt" ErrorMessage="Address field is required" Display="Dynamic" ForeColor="Red" Font-Size="Small"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="addressTxt"
                                  ForeColor="Red"  Font-Size="Small" ValidationExpression="^[a-zA-Z0-9+\\s(),-]+$" ErrorMessage="Please enter correct address format"></asp:RegularExpressionValidator>
                                 </blockquote>    
@@ -178,10 +188,10 @@
                             <p>
                                 <asp:TextBox ID="phoneTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("phoneNumber") %>' />
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ForeColor="Red"
-                                ControlToValidate="phoneTxt" ErrorMessage="Please enter a valid phone number"
-                            ValidationExpression="[0-9]{10}" Display="Dynamic" Font-Size="Small">*</asp:RegularExpressionValidator> 
+                                ControlToValidate="phoneTxt" ErrorMessage="Please enter only number without (-) and number not more than 11 digits."
+                            ValidationExpression="^\d{10,11}$" Display="Dynamic" Font-Size="Small"></asp:RegularExpressionValidator> 
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                                ControlToValidate="phoneTxt" ErrorMessage="Mobile Phone field is required" Font-Size="Small" ForeColor="Red" Display="Dynamic">*</asp:RequiredFieldValidator>   
+                                ControlToValidate="phoneTxt" ErrorMessage="Mobile Phone field is required" Font-Size="Small" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>   
                             </p>
                             <br />
                     
@@ -202,8 +212,10 @@
        
         <div class="overlayPic">
             <div class="text">
-                <asp:FileUpload  ID="artistUpload" class="uploadCustomer"  runat="server" />
-                <asp:Button ID="UpdatePicButton" class="updatePic" runat="server" CausesValidation="True" CommandName="Update" Text="Edit" OnClick="UpdatePicButton_Click" />
+                <asp:FileUpload  ID="memberUpload" class="uploadCustomer"  runat="server" />
+                <asp:Label ID="noImageLbl" class="noImageLbls" runat="server" ></asp:Label>
+                <br />
+                <asp:Button ID="UpdatePicButton1" class="updatePic" runat="server" CausesValidation="True"  Text="Edit" OnClick="UpdatePicButton1_Click" />
             </div>
             
         </div>
@@ -242,5 +254,5 @@
         </div>
         
     
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber
-            FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber,
+             FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>

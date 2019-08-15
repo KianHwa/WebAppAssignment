@@ -17,7 +17,7 @@ namespace WebAppAssignment.UserControl
                                            "join aspnet_UsersInRoles on aspnet_Users.UserId = aspnet_UsersInRoles.UserId inner " +
                                            "join aspnet_Roles on aspnet_UsersInRoles.RoleId = aspnet_Roles.RoleId where aspnet_Roles.RoleName = '" + Session["Role"].ToString() + "' and aspnet_Users.UserName = '" + Session["UserName"].ToString() + "'";
 
-            SqlDataSource1.DataBind();
+            
         }
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
@@ -48,20 +48,36 @@ namespace WebAppAssignment.UserControl
         protected void UpdatePicButton_Click(object sender, EventArgs e)
         {
             FileUpload fp = (FileUpload)fvArtistProf.FindControl("artistUpload");
+            
             if (fp.PostedFile != null)
             {
-                String imageArtistFile = Path.GetFileName(fp.PostedFile.FileName);
-                fp.SaveAs(HttpContext.Current.Server.MapPath("../Images/" + imageArtistFile));
-                SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
+                
+                try
+                {
+                    
+                    String imageArtistFile = Path.GetFileName(fp.PostedFile.FileName);
+                    fp.SaveAs(HttpContext.Current.Server.MapPath("../Images/" + imageArtistFile));
 
-                conn.Open();
-                String artistImg = "Update UserProfile set UserProfile.profilePicURL = '../Images/" + imageArtistFile + "' from UserProfile inner join aspnet_Users on UserProfile.UserId = aspnet_Users.UserId where aspnet_Users.Username='" + Session["Username"] + "'";
-                SqlCommand cmd = new SqlCommand(artistImg, conn);
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                    SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ArtworkGallery.mdf;Integrated Security=SSPI");
 
-                Response.Redirect("Profile.aspx");
+                    conn.Open();
+                    String artistImg = "Update UserProfile set UserProfile.profilePicURL = '../Images/" + imageArtistFile + "' from UserProfile inner join aspnet_Users on UserProfile.UserId = aspnet_Users.UserId where aspnet_Users.Username='" + Session["Username"] + "'";
+                    SqlCommand cmd = new SqlCommand(artistImg, conn);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    Response.Redirect("Profile.aspx");
+                }
+                catch (DirectoryNotFoundException)
+                {
+                    Label imglbl = (Label)fvArtistProf.FindControl("noImageLbl");
+                    imglbl.Text = "Please select an image to edit.";
+                }
+                
             }
+            
+           
         }
+
     }
 }
