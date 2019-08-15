@@ -26,11 +26,14 @@
         html{
             height:100%;
         }
+        .marginleft{
+            margin-left:20%;
+        }
     </style>
 </head>
 <body style="height:100%;">
     <img src="../Images/oldcity.jpg" alt="background" style="height:100%; width:100%; background-repeat:no-repeat; background-size:cover;margin-left:auto; margin-right:auto; display:block; filter:blur(3px);"/>
-    <form id="form1" runat="server" style="position:fixed; right:30%; left:30%; top:10%;">
+    <form id="form1" runat="server" style="position:fixed; right:30%; left:30%; top:3%;">
         <div align="center">
             <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnContinueButtonClick="CreateUserWizard1_ContinueButtonClick1" OnCreatedUser="CreateUserWizard1_CreatedUser1">
                 <WizardSteps>
@@ -40,73 +43,101 @@
                                 <tr>
                                     <td align="center" class="auto-style5"><span class="auto-style4">Create your account to join us!</span><br /></td>
                                 </tr>
+                            </table>
+                            <table class="tablesclass">
+                                <div style="border-bottom:1.5px solid gray;">Account</div>
                                 <tr>
-                                    <td class="auto-style3">
+                                    <td class="auto-style3" style="text-align:right;">
                                         <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName" CssClass="auto-style6">User Name</asp:Label>
-                                        <asp:TextBox style="margin-left:11%;" CssClass="txtBoxInput" placeholder="user name" ID="UserName" runat="server"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox CssClass="txtBoxInput marginleft" placeholder="user name" ID="UserName" runat="server"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style3">
+                                    <td class="auto-style3" style="text-align:right;">
                                         <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" CssClass="auto-style6">Password</asp:Label>
-                                        <asp:TextBox style="margin-left:59px;" CssClass="txtBoxInput" placeholder="password" ID="Password" runat="server" TextMode="Password"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox CssClass="txtBoxInput marginleft" placeholder="password" ID="Password" runat="server" TextMode="Password"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style3">
+                                    <td class="auto-style3" style="text-align:right;">
                                         <asp:Label ID="ConfirmPasswordLabel" runat="server" AssociatedControlID="ConfirmPassword" CssClass="auto-style6">Confirm Password</asp:Label>
-                                        <asp:TextBox style="margin-left:4px;" CssClass="txtBoxInput" placeholder="confirm password" ID="ConfirmPassword" runat="server" TextMode="Password"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox CssClass="txtBoxInput marginleft" placeholder="confirm password" ID="ConfirmPassword" runat="server" TextMode="Password"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="ConfirmPasswordRequired" runat="server" ControlToValidate="ConfirmPassword" ErrorMessage="Confirm Password is required." ToolTip="Confirm Password is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style3">
+                                    <td class="auto-style3" style="text-align:right;">
                                         <asp:Label ID="EmailLabel" runat="server" AssociatedControlID="Email" CssClass="auto-style6">E-mail</asp:Label>
-                                        <asp:TextBox style="margin-left:81px;" CssClass="txtBoxInput" placeholder="email" ID="Email" runat="server"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox CssClass="txtBoxInput marginleft" placeholder="email" ID="Email" runat="server"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" ErrorMessage="E-mail is required." ToolTip="E-mail is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Email Address is invalid." ValidationGroup="CreateUserWizard1" ControlToValidate="Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style3">
-                                        <asp:Label ID="lblPhoneNumber" runat="server" Text="Phone Number" CssClass="auto-style6"></asp:Label>
-                                        <asp:TextBox style="margin-left:26px;" CssClass="txtBoxInput" placeholder="e.g. 0128345686" ID="txtPhoneNumber" runat="server"></asp:TextBox>
-                                        <%--<asp:RequiredFieldValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtNo" ErrorMessage="Phone Number is required." ToolTip="Phone Number is required." ValidationExpression="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$">*</asp:RequiredFieldValidator> --%>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style3">
-                                        <asp:Label ID="lblAddress" runat="server" Text="Address" CssClass="auto-style6 myStyle"></asp:Label>
-                                        <asp:TextBox style="margin-left:-3px;" CssClass="txtBoxInput" placeholder="address" ID="txtAddress" runat="server"></asp:TextBox>
-                                        <%--<asp:RequiredFieldValidator ID="AddressRequired" runat="server" ControlToValidate="Address" ErrorMessage="Address is required." ToolTip="Address is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>--%>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style3">
+                                    <td class="auto-style3" style="text-align:right;">
                                         <asp:Label ID="QuestionLabel" runat="server" AssociatedControlID="Question" CssClass="auto-style6">Security Question</asp:Label>
-                                        <asp:TextBox style="margin-left:7px;" CssClass="txtBoxInput" placeholder="security question" ID="Question" runat="server"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox CssClass="txtBoxInput marginleft" placeholder="security question" ID="Question" runat="server"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="QuestionRequired" runat="server" ControlToValidate="Question" ErrorMessage="Security question is required." ToolTip="Security question is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style3">
+                                    <td class="auto-style3" style="text-align:right;">
                                         <asp:Label ID="AnswerLabel" runat="server" AssociatedControlID="Answer" CssClass="auto-style6">Security Answer</asp:Label>
-                                        <asp:TextBox style="margin-left:16px;" CssClass="txtBoxInput" placeholder="security answer" ID="Answer" runat="server"></asp:TextBox>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox CssClass="txtBoxInput marginleft" placeholder="security answer" ID="Answer" runat="server"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="AnswerRequired" runat="server" ControlToValidate="Answer" ErrorMessage="Security answer is required." ToolTip="Security answer is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
+                                </table>
+                                <table style="margin-left:6%;">
+                                <div style="border-bottom:1.5px solid gray;">Contact</div>
                                 <tr>
-                                    <td class="auto-style3" align="center">
+                                    <td class="auto-style3" style="text-align:right;">
+                                        <asp:Label ID="lblPhoneNumber" runat="server" Text="Phone Number" CssClass="auto-style6"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox CssClass="txtBoxInput" style="margin-left:20%;" placeholder="e.g. 0128345686" ID="txtPhoneNumber" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtPhoneNumber" ErrorMessage="Phone Number is required." ToolTip="Phone Number is required.">*</asp:RequiredFieldValidator>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Phone Number is not valid!" ControlToValidate="txtPhoneNumber" ValidationExpression="^(01)[0-46-9]-*[0-9]{7,8}$"></asp:RegularExpressionValidator>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style3" style="text-align:right;">
+                                        <asp:Label ID="lblAddress" runat="server" Text="Address" CssClass="auto-style6"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox CssClass="txtBoxInput" style="margin-left:20%;" placeholder="address" ID="txtAddress" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="AddressRequired" runat="server" ControlToValidate="txtAddress" ErrorMessage="Address is required." ToolTip="Address is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                                    </td>
+                                </tr>
+                                </table>
+                                <table style="margin-left:33%;">
+                                <tr>
+                                    <td class="auto-style3">
                                         <asp:RadioButtonList ID="rblRole" runat="server" RepeatDirection="Horizontal">
-                                            <asp:ListItem CssClass="one">Member</asp:ListItem>
+                                            <asp:ListItem Text="Collect, Buy your favourite arts." CssClass="one">Member</asp:ListItem>
                                             <asp:ListItem CssClass="one">Artist</asp:ListItem>
                                         </asp:RadioButtonList>
                                         <asp:RequiredFieldValidator ID="RoleRequired" runat="server" ErrorMessage="Role is required" ControlToValidate="rblRole" ToolTip="Role is required" ValidationGroup="CreateUserWizard1"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
+                                </table>
+                                <table>
                                 <tr>
-                                    <td align="center">
+                                    <td>
                                         <br />
                                         <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword" Display="Dynamic" ErrorMessage="The Password and Confirmation Password must match." ValidationGroup="CreateUserWizard1"></asp:CompareValidator>
                                     </td>
@@ -114,6 +145,7 @@
                                 <tr>
                                     <td align="center" style="color:Red;">
                                         <asp:Literal ID="ErrorMessage" runat="server" EnableViewState="False"></asp:Literal>
+                                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
                                     </td>
                                 </tr>
                             </table>
@@ -140,6 +172,8 @@
                                     <td class="auto-style3"><span class="auto-style2">Now you&#39;re ready to view, browse, and collecting your favourite </span> 
                                       
                                         <span class="auto-style2">artworks by purchasing them.</span><br />
+                                        
+                                        <br>
                                         
                                         </br> </td>
                                 </tr>

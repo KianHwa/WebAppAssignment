@@ -159,9 +159,11 @@
             opacity:0.8;
             transition:0.3s;
         }
-        
+        .noImageLbls{
+            font-size: small;
+            color: red;
+        }
 </style>
-
     <h2 style="text-align:center">
      Artist Profile</h2>
     <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -176,15 +178,17 @@
         
         
        
-    <asp:FormView ID="fvArtistProf" runat="server" DataSourceID="SqlDataSource1" > 
+    <asp:FormView ID="fvArtistProf" runat="server" DataSourceID="SqlDataSource1"  > 
             
                 <EditItemTemplate>
-
-                    <div class="containerArtist" style="width: 100%;">
+                     <div class="containerArtist" style="width: 100%;">
             
                         <img id="imgFile" style="width:400px; height:307px; border-radius: 4px;" src="<%# Eval("profilePicURL")%>" />
                         
                     </div>
+            
+        
+                    
                     <div class="artProf">
                     
                     <blockquote>
@@ -203,10 +207,11 @@
                         </p>
                         <p style="darkgray">
                     <asp:TextBox ID="addressTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("address") %>' />
+                            <br />
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
-                                ControlToValidate="addressTxt" ErrorMessage="Address field is required" Display="Dynamic" ForeColor="Red" Font-Size="Small">*</asp:RequiredFieldValidator>
+                                ControlToValidate="addressTxt" Display="Dynamic" ErrorMessage="Address field is required"  ForeColor="Red" Font-Size="Small"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="addressTxt"
-                                 ForeColor="Red"  Font-Size="Small" ValidationExpression="^[a-zA-Z0-9 +(),-]+$" ErrorMessage="Please enter correct address format"></asp:RegularExpressionValidator>
+                                 ForeColor="Red"  Font-Size="Small" Display="Dynamic" ValidationExpression="^[a-zA-Z0-9 +(),-]+$" ErrorMessage="Please enter correct address format"></asp:RegularExpressionValidator>
                     </p>
                       <br />
                     <p>
@@ -214,11 +219,12 @@
                         </p>
                         <p>
                         <asp:TextBox ID="phoneTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("phoneNumber") %>' />
+                            <br />
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ForeColor="Red"
-                                ControlToValidate="phoneTxt" ErrorMessage="Please enter a valid phone number"
-                            ValidationExpression="[0-9]{10}" Display="Dynamic" Font-Size="Small">*</asp:RegularExpressionValidator> 
+                                ControlToValidate="phoneTxt" ErrorMessage="Please enter only number without (-) and number not more than 11 digits."
+                            ValidationExpression="^(01)[0-46-9]-*[0-9]{7,8}$" Display="Dynamic" Font-Size="Small"></asp:RegularExpressionValidator> 
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                                ControlToValidate="phoneTxt" ErrorMessage="Mobile Phone field is required" Font-Size="Small" ForeColor="Red" Display="Dynamic">*</asp:RequiredFieldValidator>   
+                                ControlToValidate="phoneTxt" ErrorMessage="Mobile Phone field is required." Font-Size="Small" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>   
                     </p>
                     <br />
                     <p>
@@ -226,10 +232,11 @@
                         </p>
                         <p>
                         <asp:TextBox ID="quoteTxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("quote") %>' />
+                            <br />
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
-                                ErrorMessage="Quote field is required" ForeColor="red" Font-Size="Small" ControlToValidate="quoteTxt"></asp:RequiredFieldValidator>
+                                ErrorMessage="Quote field is required." Display="Dynamic" ForeColor="red" Font-Size="Small" ControlToValidate="quoteTxt"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server"
-                                ErrorMessage="Please enter only alphabet value" ForeColor="Red" Font-Size="Small" ControlToValidate="quoteTxt" ValidationExpression="^[a-zA-Z_ ]*$"></asp:RegularExpressionValidator>
+                                ErrorMessage="Please enter only alphabets with/without space or comma." Display="Dynamic" ForeColor="Red" Font-Size="Small" ControlToValidate="quoteTxt" ValidationExpression="^[a-zA-Z, ]*$"></asp:RegularExpressionValidator>
                     </p>
                     <br />
                     <p>
@@ -237,14 +244,15 @@
                         </p>
                         <p>
                         <asp:TextBox ID="biotxt" class="profileTxt" Width="80%" runat="server" Text='<%# Bind("biography") %>' />
+                            <br />
                          <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
-                                ErrorMessage="Biography field is required" ForeColor="Red" Font-Size="Small" ControlToValidate="bioTxt"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator4" ControlToValidate="bioTxt" runat="server"
-                                ErrorMessage="Please enter only alphabet value" ForeColor="Red" Font-Size="Small" ValidationExpression="^[a-zA-Z_ ]*$"></asp:RegularExpressionValidator>
+                                ErrorMessage="Biography field is required" Display="Dynamic" ForeColor="Red" Font-Size="Small" ControlToValidate="biotxt"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator4" ControlToValidate="biotxt" runat="server"
+                                ErrorMessage="Please enter only alphabets with/without space,comma,brackets or double quote" Display="Dynamic" ForeColor="Red" Font-Size="Small" ValidationExpression="^[a-zA-Z(), \&quot; ]*$"></asp:RegularExpressionValidator>
                     </p>
                     <br />
                     </blockquote>
-                      <asp:ValidationSummary runat="server" ForeColor="Red" Font-Size="Small"></asp:ValidationSummary>  
+                      
                     <asp:Button ID="UpdateButton" class="btnEditCancel"  runat="server" CausesValidation="True" CommandName="Update" Text="Update   " OnClick="UpdateButton_Click" />
 
                     <asp:Button ID="UpdateCancelButton" class="btnEditCancel" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
@@ -260,12 +268,17 @@
        
         <div class="overlayPic">
             <div class="text">
-                <asp:FileUpload  ID="artistUpload" class="uploadArtist"  runat="server" />
-                <asp:Button ID="UpdatePicButton" class="updatePic" runat="server" CausesValidation="True" CommandName="Update" Text="Edit" OnClick="UpdatePicButton_Click" />
+ 
+                <asp:FileUpload  ID="artistUpload" class="uploadArtist"   runat="server" />
+                <asp:Label ID="noImageLbl" class="noImageLbls"  runat="server"></asp:Label>
+                <br />
+                <asp:Button ID="UpdatePicButton" class="updatePic" runat="server" CausesValidation="true"  Text="Edit" OnClick="UpdatePicButton_Click" />
+                 
+                        
             </div>
-            
+                  </div>
         </div>
-        </div>
+                    
                     <div class="artProf">
                     <p>
                         Name:

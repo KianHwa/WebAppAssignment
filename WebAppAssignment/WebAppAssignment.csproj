@@ -122,7 +122,9 @@
     <Content Include="CSS\Cart.css" />
     <Content Include="WebForm2.aspx" />
     <Content Include="WebForm\CheckOut.aspx" />
-    <Content Include="CSS\Home.css" />
+    <Content Include="WebForm\ContactUs.aspx" />
+    <Content Include="WebForm\FAQ.aspx" />
+    <Content Include="WebForm\Home.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\Wishlist.css" />
     <Content Include="WebForm\GalleryStock.aspx" />
@@ -184,7 +186,9 @@
     <Content Include="WebForm\Registration.aspx" />
     <Content Include="WebForm\Registration2.aspx" />
     <Content Include="WebForm\SellArtwork.aspx" />
+    <Content Include="WebForm\TermsNCondition.aspx" />
     <Content Include="WebForm\Testimonial.aspx" />
+    <Content Include="WebForm\whysell.aspx" />
     <Content Include="WebForm\Wishlist.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -197,6 +201,20 @@
     </Compile>
     <Compile Include="WebForm2.aspx.designer.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm\GalleryStock.aspx.cs">
       <DependentUpon>GalleryStock.aspx</DependentUpon>
@@ -444,12 +462,26 @@
     <Compile Include="WebForm\SellArtwork.aspx.designer.cs">
       <DependentUpon>SellArtwork.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm\TermsNCondition.aspx.cs">
+      <DependentUpon>TermsNCondition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\TermsNCondition.aspx.designer.cs">
+      <DependentUpon>TermsNCondition.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm\Testimonial.aspx.cs">
       <DependentUpon>Testimonial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebForm\Testimonial.aspx.designer.cs">
       <DependentUpon>Testimonial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\whysell.aspx.cs">
+      <DependentUpon>whysell.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\whysell.aspx.designer.cs">
+      <DependentUpon>whysell.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm\Wishlist.aspx.cs">
       <DependentUpon>Wishlist.aspx</DependentUpon>
