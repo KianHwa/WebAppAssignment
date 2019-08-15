@@ -143,7 +143,7 @@
           outline: 0;
           display: inline-block;
           padding : 6px;
-          margin-left: 45%;
+          margin-left: 43%;
           color: white;
           background-color: #000;
           text-align: center;

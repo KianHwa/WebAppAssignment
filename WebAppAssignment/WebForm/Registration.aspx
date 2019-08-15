@@ -52,7 +52,7 @@
                                     </td>
                                     <td>
                                         <asp:TextBox CssClass="txtBoxInput marginleft" placeholder="user name" ID="UserName" runat="server"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                                        <br /><asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="CreateUserWizard1"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
@@ -158,6 +158,7 @@
                                     </td>
                                 </tr>
                             </table>
+                            <asp:ValidationSummary ID="ValidationSummary3" runat="server" />
                         </CustomNavigationTemplate>
                     </asp:CreateUserWizardStep>
                     <asp:CompleteWizardStep runat="server" >

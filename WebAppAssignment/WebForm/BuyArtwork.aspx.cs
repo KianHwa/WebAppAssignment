@@ -214,7 +214,7 @@ namespace WebAppAssignment.WebForm
                         reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            orderid = (int)reader.GetValue(0);
+                            orderid = (int)reader.GetValue(0);  
                         }
                         conn.Close();
 

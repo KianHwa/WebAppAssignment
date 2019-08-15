@@ -81,6 +81,7 @@
     </Content>
     <Content Include="CSS\Artwork.css" />
     <Content Include="CSS\HeaderFooter.css" />
+    <Content Include="CSS\Home.css" />
     <Content Include="CSS\SellArtwork.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\rainbowSix.jpg" />
@@ -124,7 +125,6 @@
     <Content Include="WebForm\CheckOut.aspx" />
     <Content Include="WebForm\ContactUs.aspx" />
     <Content Include="WebForm\FAQ.aspx" />
-    <Content Include="WebForm\Home.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\Wishlist.css" />
     <Content Include="WebForm\GalleryStock.aspx" />
