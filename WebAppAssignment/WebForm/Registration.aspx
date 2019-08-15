@@ -111,7 +111,7 @@
                                     <td>
                                         <asp:TextBox CssClass="txtBoxInput" style="margin-left:8%;" placeholder="e.g. 0128345686" ID="txtPhoneNumber" runat="server"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RegularExpressionValidator2" runat="server" Font-Size="Small" ControlToValidate="txtPhoneNumber" ErrorMessage="Phone Number is required." ToolTip="Phone Number is required."></asp:RequiredFieldValidator>
-                                        <br /><asp:RegularExpressionValidator ID="RegularExpressionValidator1" Font-Size="Small" runat="server" ErrorMessage="Phone Number is not valid!" ControlToValidate="txtPhoneNumber" ValidationExpression="^(01)[0-46-9]-*[0-9]{7,8}$"></asp:RegularExpressionValidator>
+                                        <br /><asp:RegularExpressionValidator ID="RegularExpressionValidator1" Font-Size="Small" runat="server" ForeColor="Red" ErrorMessage="Phone Number is not valid!" ControlToValidate="txtPhoneNumber" ValidationExpression="^(01)[0-46-9]-*[0-9]{7,8}$"></asp:RegularExpressionValidator>
                                     </td>
                                 </tr>
                                 <tr>
