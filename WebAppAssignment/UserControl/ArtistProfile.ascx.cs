@@ -23,7 +23,6 @@ namespace WebAppAssignment.UserControl
         {
             SqlCommand cmd;
 
-
             TextBox address = (TextBox)fvArtistProf.FindControl("addressTxt");
             TextBox phoneNo = (TextBox)fvArtistProf.FindControl("phoneTxt");
             TextBox quote = (TextBox)fvArtistProf.FindControl("quoteTxt");

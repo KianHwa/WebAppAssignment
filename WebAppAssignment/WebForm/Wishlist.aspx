@@ -31,7 +31,7 @@
             String count = Repeater1.Items.Count.ToString();
 
             if (Convert.ToInt32(count) == 0){ %>
-                    <div class="noResult">
+                    <div class="noResult" style="margin-bottom:300px;">
                         <h2 style="text-align:center">Currently you dont have any wishlist</h2>
                     </div>
 

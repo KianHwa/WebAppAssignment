@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -86,7 +87,97 @@ namespace WebAppAssignment.UserControl
             }
 
 
-            Session.Remove("subtotal");
+            //send receipt
+            String artworkname = "";
+            double artworkprice = 0.00;
+            int qty = 0;
+            int paymentID = 0;
+            DateTime paymentdate = new DateTime();
+
+            String receiptMsg = "";
+            conn.Open();
+            cmd = new SqlCommand("select Artwork.artworkName, Artwork.artworkprice, OrderDetails.orderQuantity, Payment.paymentID, Payment.paymentDate from Artwork inner join OrderDetails on " +
+                                               "Artwork.artworkID = OrderDetails.artworkID inner join Orders on " +
+                                               "OrderDetails.orderID = Orders.orderID inner join aspnet_Users on " +
+                                               "Orders.UserID = aspnet_Users.UserId inner join Payment on " +
+                                               "Payment.paymentID = Orders.paymentID " +
+                                               "where Payment.paymentID='" + paymentid + "'", conn);
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                artworkname = (String)reader.GetValue(0);
+                artworkprice = (Double)reader.GetValue(1);
+                qty = (int)reader.GetValue(2);
+                paymentID = (int)reader.GetValue(3);
+                paymentdate = (DateTime)reader.GetValue(4);
+
+                receiptMsg += "<tr>" +
+                               "<td style=\"border: 1px solid #d9d9d9\">" + artworkname + "</td>" +
+                               "<td style=\"border: 1px solid #d9d9d9\">" + qty + "</td>" +
+                               "<td style=\"border: 1px solid #d9d9d9\">" + artworkprice + "</td>" +
+                               "</tr>";
+            }
+            conn.Close();
+
+            try
+            {
+                MailMessage mailmessage = new MailMessage();
+                mailmessage.From = new MailAddress("artisticsdnbhd@gmail.com");
+                String email = "jasonthemember@gmail.com";
+                mailmessage.To.Add(email);
+                mailmessage.Subject = "E-receipt";
+                mailmessage.IsBodyHtml = true;
+                mailmessage.Body = "<div style= \"width:70%;\">" +
+                                   "<div style =\"width:70%;\">" +
+                                   "<h2 style=\"text-align:center\" > Your Receipt </h2>" +
+                                   "<p style=\"text-align:center\"> Here is your E - receipt.Please keep it somewhere safe,<br/> just in case you need to talk about us</p>" +
+                                   "</div>" +
+                                   "<div>" +
+                                   "<table style =\"width:70%;>" +
+                                   "<tr>" +
+                                   "<th style =\"width:100%;text-align:left\">" + "Payment ID" + "</th>" +
+                                   "<th style =\"width:100%;text-align:right\">" + "Payment Date" + "</th>" +
+                                   "</tr >" +
+                                   "<tr >" +
+                                   "<td style =\"width:70%;text-align:left\">" + paymentID + "</td>" +
+                                   "<td style =\"width:70%;text-align:right;\" >" + paymentdate + "</td>" +
+                                   "</tr>" +
+                                   "</table>" +
+                                   "<table style = \"width:70%;text-align:center;padding:10px;border-collapse:collapse\">" +
+                                   "<tr>" +
+                                   "<th style = \"width:40%;border:3px solid #d9d9d9\"> Artwork Name </th>" +
+                                   "<th style = \"width:40%;border:3px solid #d9d9d9\"> Quantity </th>" +
+                                   "<th style = \"width:40%;border:3px solid #d9d9d9\"> Artwork Price (RM) </th>" +
+                                   "</tr>" +
+                                   receiptMsg + 
+                                   "<tr>" +
+                                   "<td></td>" +
+                                   "<td> SubTotal </td>" +
+                                   "<td> RM" + Session["subtotal"].ToString() + "</td>" +
+                                   "</tr>" +
+                                   "<tr>" +
+                                   "<td ></td>" +
+                                   "<td > Shipping cost </td>" +
+                                   "<td> RM" + float.Parse(Session["subtotal"].ToString()) * 0.02 + "</td>" +
+                                   "</tr>" +
+                                   "<tr>" +
+                                   "<td></td>" +
+                                   "<td> Total </td>" +
+                                   "<td> RM" + float.Parse(Session["subtotal"].ToString())*1.02 + "</td>" +
+                                   "</tr>" +
+                                   "</table>" +
+                                   "</div>" +
+                                   "</div>"; 
+
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                smtpClient.EnableSsl = true;
+                smtpClient.Credentials = new System.Net.NetworkCredential("artisticsdnbhd@gmail.com", "Artistic12345");
+                smtpClient.Send(mailmessage);
+            }
+            catch (Exception)
+            {
+
+            }
 
             Response.Redirect("CheckOut.aspx?step=4");
         }

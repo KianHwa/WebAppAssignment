@@ -83,6 +83,11 @@
     <Content Include="CSS\HeaderFooter.css" />
     <Content Include="CSS\SellArtwork.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\rainbowSix.jpg" />
+    <Content Include="Images\dark dragon.jpg" />
+    <Content Include="Images\deadpool.jpg" />
+    <Content Include="Images\honkaiFireYae.jpg" />
+    <Content Include="Images\miku art.jpg" />
     <Content Include="Images\294360.jpg" />
     <Content Include="Images\3295a9fd50727c34eb63112488240d34--kirito-asuna-swords.jpg" />
     <Content Include="Images\505441.jpg" />
@@ -115,10 +120,10 @@
     <Content Include="UserControl\Shipping.ascx" />
     <Content Include="CSS\BuyArtwork.css" />
     <Content Include="CSS\Cart.css" />
+    <Content Include="WebForm2.aspx" />
     <Content Include="WebForm\CheckOut.aspx" />
-    <Content Include="CSS\Home.css" />
+    <Content Include="WebForm\Home.css" />
     <Content Include="CSS\Login.css" />
-    <Content Include="CSS\SellArtwork.css" />
     <Content Include="CSS\Wishlist.css" />
     <Content Include="WebForm\GalleryStock.aspx" />
     <Content Include="Images\Arrowhead-Down-01.png" />
@@ -172,6 +177,8 @@
     <Content Include="WebForm\Login.aspx" />
     <Content Include="WebForm\Message.aspx" />
     <Content Include="WebForm\ModifyPassword.aspx" />
+    <Content Include="WebForm\PaymentHistory.aspx" />
+    <Content Include="WebForm\PaymentHistoryDetails.aspx" />
     <Content Include="WebForm\Profile.aspx" />
     <Content Include="WebForm\RecoverPassword.aspx" />
     <Content Include="WebForm\Registration.aspx" />
@@ -183,6 +190,13 @@
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm\GalleryStock.aspx.cs">
       <DependentUpon>GalleryStock.aspx</DependentUpon>
@@ -380,6 +394,20 @@
     </Compile>
     <Compile Include="WebForm\ModifyPassword.aspx.designer.cs">
       <DependentUpon>ModifyPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\PaymentHistory.aspx.cs">
+      <DependentUpon>PaymentHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\PaymentHistory.aspx.designer.cs">
+      <DependentUpon>PaymentHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\PaymentHistoryDetails.aspx.cs">
+      <DependentUpon>PaymentHistoryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\PaymentHistoryDetails.aspx.designer.cs">
+      <DependentUpon>PaymentHistoryDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm\Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>

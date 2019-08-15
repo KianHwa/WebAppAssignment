@@ -30,7 +30,7 @@
           font-size: 18px;
           border-radius: 4px;
         }
-        .btnStock{
+        .btnStock, .btnHistory{
             border: none;
           outline: 0;
           display: inline-block;
@@ -66,12 +66,15 @@
         }
         .btnEditCancel:hover{
             opacity: 0.7;
+            transition:0.3s;
         }
         .btnEdit:hover, a:hover {
           opacity: 0.7;
+          transition:0.3s;
         }
-        .btnStock:hover{
+        .btnStock:hover, .btnHistory:hover{
             opacity: 0.7;
+            transition:0.3s;
         }
         .artProf{
             font-size: 23px;
@@ -83,7 +86,7 @@
           position: absolute;
           top: 126px;
           bottom: 0;
-          left: 644px;
+          left: 560px;
           right: 0;
           height: 310px;
           width: 401px;
@@ -95,6 +98,7 @@
 
         .containerArtist:hover .overlayPic {
           opacity: 1;
+          transition:0.3s;
         }
 
         .text {
@@ -127,6 +131,7 @@
         .updatePic:hover {
               background-color: black;
               color: white;
+              transition:0.3s;
         }
         .uploadArtist{
               border: none;
@@ -152,6 +157,7 @@
 
         .profileTxt:hover{
             opacity:0.8;
+            transition:0.3s;
         }
         .noImageLbls{
             font-size: small;
@@ -332,11 +338,9 @@
                 </ItemTemplate>
        
             </asp:FormView>
-
-        
-
         </div>
         
 <asp:Button ID="StockButton" class="btnStock" runat="server" Text="Gallery Stock" PostBackUrl="~/WebForm/GalleryStock.aspx" />
+<asp:Button ID="btnHistory" CssClass="btnHistory" runat="server" Text="Payment History" PostBackUrl="~/WebForm/PaymentHistory.aspx" />
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber,
             Us.quote, Us.biography FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>

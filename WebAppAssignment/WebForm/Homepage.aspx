@@ -7,7 +7,7 @@
    
     
    
-    <link rel="stylesheet" href="../CSS/Home.css" type="text/css" />
+    <link rel="stylesheet" href="Home.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!--CSS PART HERE-->
@@ -19,30 +19,30 @@
         
        
 <div>
-<div class="slideshow-container" ">
-    x
+<div class="slideshow-container" >
+    
 <div class="mySlides">
-  <a href="#"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
-  <div class="text"></div>
-</div>
-
-<div class="mySlides">d
-  <a href="#"><img src="../Images/background1.jpg" style="width:100%; height:500px;"></a>
+  <a href="#"><img src="../Images/honkaiFireYae.jpg" style="width:100%; height:500px;"></a>
   <div class="text"></div>
 </div>
 
 <div class="mySlides">
-  <a href="#"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
+  <a href="#"><img src="../Images/deadpool.jpg" style="width:100%; height:500px;"></a>
   <div class="text"></div>
 </div>
 
 <div class="mySlides">
-  <a href="#"><img src="../Images/background1.jpg" style="width:100%; height:500px;"></a>
+  <a href="#"><img src="../Images/miku art.jpg" style="width:100%; height:500px;"></a>
   <div class="text"></div>
 </div>
 
 <div class="mySlides">
-  <a href="Wishlist.aspx"><img src="../Images/artist-Scott.jpg" style="width:100%; height:500px;"></a>
+  <a href="#"><img src="../Images/rainbowSix.jpg" style="width:100%; height:500px;"></a>
+  <div class="text"></div>
+</div>
+
+<div class="mySlides">
+  <a href="Wishlist.aspx"><img src="../Images/dark dragon.jpg" style="width:100%; height:500px;"></a>
   <div class="text"></div>
 </div>
 </div>
@@ -64,16 +64,12 @@
 
 <!--Section 2 the Ul part-->
 <h1><b>Category</b></h1>
-<div class="ulside">       
+<div class="ulside">   
          <asp:Repeater ID="Repeater1"  runat="server" DataSourceID="SqlDataSource1">
         
         <ItemTemplate>
-           <ul class="filter-wrapper">
-             
-               
-               <li><asp:Button
-                   ID="BtnGoCat" runat="server" CommandArgument='<%# Eval("artworkCategory") %>' OnClick="BtnGoCat_Click" Text='<%# Eval("artworkCategory") %>' /></li>
-            </ul>
+            
+               <asp:Button ID="BtnGoCat" CssClass="filter-wrapper" runat="server" CommandArgument='<%# Eval("artworkCategory") %>' OnClick="BtnGoCat_Click" Text='<%# Eval("artworkCategory") %>' />
             
         </ItemTemplate>
     </asp:Repeater>
@@ -83,7 +79,7 @@
         <li><a href="BuyArtwork.aspx"">Painting</a></li>
         <li><a href="BuyArtwork.aspx">Portrait</a></li>
         <li><a href="BuyArtwork.aspx">Color</a></li>
-        <li><a href="BuyArtwork.aspx">Photoshop</a></li>
+        <li><a href="BuyArtwork.aspx">Photoshop</a></li>g
         <li><a href="BuyArtwork.aspx">Poster</a></li>
 </ul>
 
@@ -95,6 +91,10 @@
 <div class="section">
 <h1>Famous Artist</h1>
 <div class="background">
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server">
+
+    </asp:SqlDataSource>
+    
             <!--Part 1-->
                <div  class="grid_image">
                   <a href="BuyArtwork.aspx"><img class="artistImage" style="width:200px; border-radius:20px; height:270px;" src="../Images/leonardo.jpg" /></a>

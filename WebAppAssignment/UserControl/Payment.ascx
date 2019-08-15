@@ -125,6 +125,7 @@
             <td style="padding-bottom:0px;">Expiry Year *  <asp:RequiredFieldValidator ID="yearRequired" runat="server" ControlToValidate="ddlYear" ErrorMessage="Required" ToolTip="Expiry Year is required" CssClass="validationMsg"></asp:RequiredFieldValidator>
             </td>
             <td style="padding-bottom:0px;">Security Code / CVV *   <asp:RequiredFieldValidator ID="cvvRequired" runat="server" ControlToValidate="txtCVV" ErrorMessage="Required" ToolTip="CVV is required" CssClass="validationMsg"></asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="noAlphabet" runat="server" ControlToValidate="txtCVV" ErrorMessage="Numbers only" Type="Integer" CssClass="validationMsg" Operator="DataTypeCheck"></asp:CompareValidator>
             </td>
         </tr>
         <tr>

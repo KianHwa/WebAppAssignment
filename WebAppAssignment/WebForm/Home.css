@@ -137,42 +137,37 @@ h3 {
     cursor: pointer;
 }
 
+
 .filter-wrapper {
-    width: 100%;
-    border-radius: 25px;
+
+    width:280px;
     overflow: hidden;
+    display:inline-block;
+    margin: 5px;
+    position: center;
+    color: #666;
+    border-radius: 25px;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    padding: 8px 17px;
+    border: 2px solid #000000;
+    margin-right: 4px;
+    margin-left: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    cursor:pointer;
 }
 
-    .filter-wrapper li {
-        display: inline-block;
-        margin: 2px;
-        position: center;
-    }
-
-        .filter-wrapper li a {
-            color: #666;
-            border-radius: 25px;
-            font-size: 24px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            padding: 8px 17px;
-            border: 2px solid #000000;
-            margin-right: 4px;
-            margin-left: 4px;
-            text-transform: uppercase;
-            display: block;
-            text-decoration: none;
-            transition: all 0.4s ease-in-out;
-        }
-
-            .filter-wrapper li a:hover,
-            .filter-wrapper li a:focus {
-                background: #808080;
-                color: #ffffff;
-                border: 2px solid #909090;
-                font-weight: 800;
-                font-size: 30px;
-            }
+.filter-wrapper:hover,
+.filter-wrapper:focus {
+    background: #808080;
+    color: #ffffff;
+    border: 2px solid #909090;
+    font-weight: 400;
+    font-size: 30px;
+}
 
 /*ulside*/
 .ulside {
@@ -219,14 +214,13 @@ h3 {
     border: none;
     color: black;
     padding: 14px 28px;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 300;
     cursor: pointer;
     background: #fff;
     border-radius: 50px;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
     border: 1px solid black;
-    
 }
 
     .button a {
@@ -249,14 +243,15 @@ h3 {
 }
 
 .button:hover,
-.button:focus{
+.button:focus {
     /*background-image: linear-gradient(to right, #2ac275, #cbdc0b, #2ac275);
     background: #2ac275;
     background: linear-gradient(to right, #2ac275, #cbdc0b, #2ac275);*/
     background-color: #717171;
     padding: 16px 34px;
-    transition: all 0.4s;
-    font-weight:700;
-    border:0 none;
-    color:gold;
+    transition: all 0.3s ease-in-out;
+    font-weight: 400;
+    font-size: 30px;
+    border: 0 none;
+    color: white;
 }
