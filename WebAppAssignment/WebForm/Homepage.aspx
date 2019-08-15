@@ -7,7 +7,7 @@
    
     
    
-    <link rel="stylesheet" href="Home.css" type="text/css" />
+    <link rel="stylesheet" href="../CSS/Home.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!--CSS PART HERE-->
@@ -91,39 +91,26 @@
 <div class="section">
 <h1>Famous Artist</h1>
 <div class="background">
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server">
-
-    </asp:SqlDataSource>
-    
+    <div class="background">
             <!--Part 1-->
+     <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSource2">
+         <ItemTemplate>
                <div  class="grid_image">
-                  <a href="BuyArtwork.aspx"><img class="artistImage" style="width:200px; border-radius:20px; height:270px;" src="../Images/leonardo.jpg" /></a>
-                   <label>Leonardo da Vinci</label>
+                  <img class="artistImage" style="width:200px; border-radius:20px; height:270px;" src=" <%# Eval("profilePicURL") %>" />
+                   <asp:Button ID="BtnGoCat" CssClass="filter2" runat="server" CommandArgument='<%# Eval("UserName") %>' Onclick="BtnGoCat_Click1" Text='<%# Eval("UserName") %>' />                 
               </div>
-            <!--Part 2-->
-               <div  class="grid_image">
-                  <a href="BuyArtwork.aspx"><img class="artistImage" style="width:200px; border-radius:20px; height:270px;"src="../Images/salvadordali.jpg" /></a>
-                   <label>Salvaldor Dali</label>
-              </div>
-            <!--Part 3-->
-            <div  class="grid_image">
-                  <a href="BuyArtwork.aspx"><img class="artistImage" style="width:200px; border-radius:20px; height:270px; "src="../Images/edgardegas.jpg" /></a>
-                  <label>Edgar Degas</label>
-              </div>
-             <!--Part 4-->
-               <div  class="grid_image">
-                  <a href="BuyArtwork.aspx"><img class="artistImage" style="width:200px; border-radius:20px; height:270px; " src="../Images/pikaso.jpg" /></a>
-                   <label>Pablo Picasso</label>
-              </div>
-
-             <div  class="grid_image">
-                  <a href="BuyArtwork.aspx"><img class="artistImage" style="width:200px; border-radius:20px; height:270px; " src="../Images/raphael.jpg" /></a>
-                   <label>Raphael</label>
-              </div>
-            
+         
+        </ItemTemplate>
+         
+      </asp:Repeater>
+      <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT Distinct top 5 aspnet_Users.UserName, UserProfile.profilePicURL FROM Artwork 
+inner join aspnet_Users on Artwork.artistID = aspnet_Users.UserId inner join UserProfile  on aspnet_Users.UserId = UserProfile.UserId 
+inner join aspnet_UsersInRoles on aspnet_Users.UserId = aspnet_UsersInRoles.UserId
+inner join aspnet_Roles on aspnet_UsersInRoles.RoleId = aspnet_Roles.RoleId where aspnet_Roles.RoleName = 'Artist'"></asp:SqlDataSource>
+</div>      
     </div>
     </div>
-
+        <br />
 <!-- Clarity Section -->
 <div class="container" style="background-color:rgba(255,255,255,0.5)">
   <div class="row">
@@ -139,25 +126,6 @@
      
   </div>
 </div>
-
-        <%--<div class="section">
-<h1>Famous Artwork</h1>
-<div class="background">
-            <!--Part 1-->
-     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
-         <ItemTemplate>
-               <div  class="grid_image">
-                  <img class="artistImage" style="width:240px; border-radius:20px;" src=" <%# Eval("artworkURL") %>" />
-                  <h1><%# Eval("artworkName") %></h1>
-                  <p><%# Eval("artworkCategory") %></p>
-              </div>
-        </ItemTemplate>
-         
-      </asp:Repeater>
-      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ArtworkGalleryConnectionString %>" SelectCommand="SELECT artworkURL, artworkName, artworkCategory FROM Artwork"></asp:SqlDataSource>
-
-</div>
-</div>--%>
 <br /><br />
 
         <!-- ZIG ZAG PART START HERE-->
