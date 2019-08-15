@@ -41,8 +41,9 @@
                         </div>
                         <div class="orderBtn">
                             <asp:Label ID="lblQty" runat="server" Text="Quantity : " CssClass="lblQty"></asp:Label>
-                            <asp:TextBox ID="txtQty" runat="server" CssClass="txtQty" Text="1"></asp:TextBox><asp:Label ID="errorMsg" runat="server" Text="" style="color:red;"></asp:Label>
+                            <asp:TextBox ID="txtQty" runat="server" CssClass="txtQty" Text="1"></asp:TextBox>
                             <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddToCart_Click" CommandArgument='<%# Eval("artworkID") %>'/>
+                            <br /><asp:Label ID="errorMsg" runat="server" Text="" style="color:red;margin-left:50px;"></asp:Label>
                         </div>
                     </div>
                 </ItemTemplate>

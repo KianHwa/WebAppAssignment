@@ -142,8 +142,8 @@
             border: none;
           outline: 0;
           display: inline-block;
-         padding : 6px;
-         margin-left: 650px;
+          padding : 6px;
+          margin-left: 45%;
           color: white;
           background-color: #000;
           text-align: center;
@@ -153,8 +153,8 @@
           padding-bottom: 20px;
           font-size: 18px;
           border-radius: 4px;
-          margin-top: 40px;
-          margin-bottom: 40px;
+          margin-top: 10px;
+          margin-bottom: 10px;
         }
         .btnHistory:hover{
             opacity: 0.7;
@@ -265,7 +265,8 @@
                 </ItemTemplate>
             </asp:FormView>
         </div>
-        <asp:Button ID="btnHistory" CssClass="btnHistory" runat="server" Text="Payment History" PostBackUrl="~/WebForm/PaymentHistory.aspx" />
+<asp:Button ID="btnChgPassword" CssClass="btnHistory" runat="server" Text="Change Password" PostBackUrl="~/WebForm/ModifyPassword.aspx" />
     
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber
+        <asp:Button ID="btnHistory" CssClass="btnHistory" runat="server" Text="Payment History" PostBackUrl="~/WebForm/PaymentHistory.aspx" />
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT U.UserName, Us.profilePicURL, Us.address, Us.phoneNumber
             FROM vw_aspnet_Users AS U INNER JOIN UserProfile AS Us ON U.UserId = Us.UserId"></asp:SqlDataSource>

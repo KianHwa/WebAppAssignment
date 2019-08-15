@@ -7,9 +7,9 @@
    
     
    
-    <link rel="stylesheet" href="Home.css" type="text/css" />
+    <link rel="stylesheet" href="../CSS/Home.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../CSS/HeaderFooter.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.oudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!--CSS PART HERE-->
   
     
