@@ -56,6 +56,22 @@
         .descBox{
             margin-left: 10px;
         }
+
+        .oopsMsg{
+            width:95%;
+            padding:50px;
+            text-align:center;
+            margin-bottom:200px;
+        }
+        #style1{
+            color:black;
+            text-decoration:none;
+        }
+
+        #style1:hover{
+            transition:0.3s;
+            color:gray;
+        }
     </style>
     <h2 style="text-align:center"> Art Gallery</h2>
         
@@ -115,6 +131,18 @@
 
             </ItemTemplate>
         </asp:ListView>
+
+    <%
+                String count = lvGallery.Items.Count.ToString();
+
+                if (Convert.ToInt32(count) == 0)
+                { %>
+                    <div class="oopsMsg">
+                        <h1>Your gallery is empty</h1>
+                        <h2><a href="SellArtwork.aspx" id="style1">Post your favourite art now</a></h2>
+                    </div>
+
+            <%}%>
     
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT * FROM [Artwork]" UpdateCommand="UPDATE Artwork SET artworkName = @artworkName, artworkPrice = @artworkPrice, artworkStock = @artworkStock, artworkDesc = @artworkDesc WHERE (artworkID = @artworkID)" DeleteCommand="DELETE FROM Artwork WHERE (artworkID = @artworkID)">
         <DeleteParameters>

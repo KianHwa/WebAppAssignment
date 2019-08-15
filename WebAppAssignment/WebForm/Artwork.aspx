@@ -23,9 +23,9 @@
 
             <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1">
                 <ItemTemplate>
-                    <div class="artItem">
+                    <div class="artItem" style="height:600px;">
                         <div class="artImg">
-                            <img src="<%# Eval("artworkURL")%>"" />
+                            <img src="<%# Eval("artworkURL")%>"" style="height:400px;"/>
                         </div>
                         <div class="artName">
                             <p><%# Eval("artworkName") %></p>
@@ -41,7 +41,7 @@
                         </div>
                         <div class="orderBtn">
                             <asp:Label ID="lblQty" runat="server" Text="Quantity : " CssClass="lblQty"></asp:Label>
-                            <asp:TextBox ID="txtQty" runat="server" CssClass="txtQty" Text="1"></asp:TextBox>
+                            <asp:TextBox ID="txtQty" runat="server" CssClass="txtQty" Text="1"></asp:TextBox><asp:Label ID="errorMsg" runat="server" Text="" style="color:red;"></asp:Label>
                             <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddToCart_Click" CommandArgument='<%# Eval("artworkID") %>'/>
                         </div>
                     </div>
