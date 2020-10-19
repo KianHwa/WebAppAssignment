@@ -121,7 +121,7 @@ inner join aspnet_Roles on aspnet_UsersInRoles.RoleId = aspnet_Roles.RoleId wher
       <h1 class="largefont"><b>Artist</b></h1>
       <h1 class="bigfont" style="color:red;"><b>Looking for the best artist artwork?</b></h1>
       <p><span style="font-size:24px">Best artist create </span>best art. Art enable us find ourselves and lost ourselves at the same time.</p>
-      <button class="button"><a href="BuyArtwork.aspx">Find More</a></button>
+      <button class="button"><a href="Artist.aspx">Find More</a></button>
     </div>
      
   </div>
